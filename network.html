@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Networking Questions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h2 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Networking Questions</h1>
+
+    <h2>1. What is a network?</h2>
+    <p>A network is a collection of computers and devices interconnected by communication channels that allow sharing of resources and information.</p>
+
+    <h2>2. What are the types of networks?</h2>
+    <ul>
+        <li>LAN (Local Area Network)</li>
+        <li>WAN (Wide Area Network)</li>
+        <li>MAN (Metropolitan Area Network)</li>
+        <li>CAN (Campus Area Network)</li>
+        <li>VPN (Virtual Private Network)</li>
+    </ul>
+
+    <h2>3. Explain the OSI Model.</h2>
+<p>The OSI (Open Systems Interconnection) Model is a framework that standardizes the functions of a telecommunication or computing system into seven abstract layers:</p>
+<ol>
+    <li>Physical Layer: Handles the physical connection and transmission of raw bit streams over a medium.</li>
+    <li>Data Link Layer: Manages node-to-node data transfer and error detection and correction.</li>
+    <li>Network Layer: Responsible for routing data packets between devices across different networks.</li>
+    <li>Transport Layer: Ensures reliable data transfer with error recovery and flow control.</li>
+    <li>Session Layer: Manages sessions or connections between applications, establishing and terminating communication.</li>
+    <li>Presentation Layer: Transforms data into a format suitable for the application layer, handling encryption and compression.</li>
+    <li>Application Layer: Provides network services directly to end-user applications, enabling user interface and communication functionalities.</li>
+</ol>
+
+
+    <h2>4. What is a router?</h2>
+    <p>A router is a networking device that forwards data packets between computer networks. It directs traffic on the Internet by determining the best path for data transmission.</p>
+
+    <h2>5. What is the purpose of the DNS?</h2>
+    <p>The DNS (Domain Name System) translates domain names into IP addresses, allowing users to access websites using human-readable names instead of numerical IP addresses.</p>
+
+    <h2>6. Define bandwidth.</h2>
+    <p>Bandwidth is the maximum rate of data transfer across a network path. It is typically measured in bits per second (bps) and determines the amount of data that can be transmitted in a given time period.</p>
+
+    <h2>7. What is a subnet mask?</h2>
+    <p>A subnet mask is a 32-bit address that divides an IP address into network and host portions. It helps identify which part of the IP address refers to the network and which part refers to the individual device.</p>
+
+    <h2>8. What are the different types of network topologies?</h2>
+    <ul>
+        <li>Bus Topology</li>
+        <li>Star Topology</li>
+        <li>Ring Topology</li>
+        <li>Mesh Topology</li>
+        <li>Hybrid Topology</li>
+    </ul>
+
+    <h2>9. Differentiate between MAC address and IP address.</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>MAC Address</th>
+                <th>IP Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Media Access Control Address</td>
+                <td>Internet Protocol Address</td>
+            </tr>
+            <tr>
+                <td>6 or 8-byte hexadecimal number</td>
+                <td>4 (IPv4) or 16 (IPv6) Byte address</td>
+            </tr>
+            <tr>
+                <td>It is embedded with NIC</td>
+                <td>It is obtained from the network</td>
+            </tr>
+            <tr>
+                <td>Physical Address</td>
+                <td>Logical Address</td>
+            </tr>
+            <tr>
+                <td>Operates at Data Link Layer</td>
+                <td>Operates at Network Layer.</td>
+            </tr>
+            <tr>
+                <td>Helps to identify the device</td>
+                <td>Helps to identify the device connectivity on the network.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>10. What are the main functions of a Transport Layer?</h2>
+    <p>The transport layer performs the following main functions:</p>
+    <ul>
+        <li>It establishes a connection between the sender and receiver.</li>
+        <li>It segments and reassembles the data. This layer breaks the complete data from the application layer into segments and then reassembles the segments into complete data.</li>
+        <li>It handles the flow control of the data being sent.</li>
+        <li>It provides error control. If there is a data error, it checks for errors, retransmits the data segment, and keeps track of the number of times it has sent a segment.</li>
+        <li>It maintains the quality of service (QoS) while transmitting.</li>
+    </ul>
+
+    <h2>11. Explain TCP and UDP.</h2>
+    <p>TCP (Transmission Control Protocol) is a connection-oriented protocol. It ensures that data is delivered accurately and in the correct order. It establishes a connection before transmitting data and guarantees that all data packets are received correctly.</p>
+    <p>UDP (User Datagram Protocol) is a connectionless protocol. It does not guarantee the delivery of packets, making it faster but less reliable than TCP. UDP is used in applications where speed is crucial and occasional data loss is acceptable, such as video streaming or online gaming.</p>
+    <img src="tcpudp.png" alt="TCP vs UDP">
+
+    <h2>12. How does the HTTP protocol work?</h2>
+    <p>The HTTP (Hypertext Transfer Protocol) protocol is a protocol used for transferring hypertext requests and information on the web. When a user requests a webpage, the browser sends an HTTP request to the server, which then responds with the requested data. The communication between the client and server occurs over a connection that can be established using TCP. HTTP operates on port 80 by default.</p>
+
+    <h2>13. Define the role of an IP address.</h2>
+    <p>An IP address serves two main functions:</p>
+    <ul>
+        <li>It identifies the host or network interface, providing a unique identifier for each device on a network.</li>
+        <li>It enables routing of packets across networks, allowing data to be sent to the correct destination.</li>
+    </ul>
+
+    <h2>14. What is NAT (Network Address Translation)?</h2>
+    <p>NAT is a method used to translate private IP addresses to a public IP address and vice versa. It enables multiple devices on a local network to share a single public IP address when accessing the Internet. NAT provides an additional layer of security by hiding internal IP addresses from external networks.</p>
+
+    <h2>15. Explain the concept of subnets.</h2>
+    <p>A subnet is a logical subdivision of an IP network. Subnetting allows an organization to create smaller, manageable networks within a larger network. It improves network performance and security by reducing broadcast traffic and isolating network segments. Subnets are defined by their subnet mask, which determines the network and host portions of an IP address.</p>
+
+    <h2>16. What is a firewall, and what are its types?</h2>
+    <p>A firewall is a security device that monitors and controls incoming and outgoing network traffic based on predetermined security rules. It acts as a barrier between trusted and untrusted networks.</p>
+    <p>Types of firewalls include:</p>
+    <ul>
+        <li>Packet Filtering Firewall: Inspects packets and allows or denies them based on predefined rules.</li>
+        <li>Stateful Inspection Firewall: Keeps track of the state of active connections and makes decisions based on the context of the traffic.</li>
+        <li>Proxy Firewall: Acts as an intermediary between users and the internet, filtering requests and responses.</li>
+        <li>Next-Generation Firewall: Incorporates advanced features like intrusion detection and prevention, application awareness, and deep packet inspection.</li>
+    </ul>
+
+    <h2>17. What is the difference between symmetric and asymmetric encryption?</h2>
+    <p>Symmetric encryption uses the same key for both encryption and decryption, making it fast and efficient. However, key distribution can be a challenge.</p>
+    <p>Asymmetric encryption uses a pair of keys: a public key for encryption and a private key for decryption. This method is more secure for key exchange but slower than symmetric encryption.</p>
+    <h2>Differentiate the MAC address with the IP address</h2>
+<table>
+    <thead>
+        <tr>
+            <th>MAC Address</th>
+            <th>IP Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Media Access Control Address</td>
+            <td>Internet Protocol Address</td>
+        </tr>
+        <tr>
+            <td>6 or 8-byte hexadecimal number</td>
+            <td>4 (IPv4) or 16 (IPv6) Byte address</td>
+        </tr>
+        <tr>
+            <td>It is embedded with NIC</td>
+            <td>It is obtained from the network</td>
+        </tr>
+        <tr>
+            <td>Physical Address</td>
+            <td>Logical Address</td>
+        </tr>
+        <tr>
+            <td>Operates at Data Link Layer</td>
+            <td>Operates at Network Layer.</td>
+        </tr>
+        <tr>
+            <td>Helps to identify the device</td>
+            <td>Helps to identify the device connectivity on the network.</td>
+        </tr>
+    </tbody>
+</table>
+<h2>18.What is the FTP protocol?</h2>
+    <p>FTP is a File Transfer Protocol. It is an application layer protocol used to transfer files and data reliably and efficiently between hosts. It can also be used to download files from remote servers to your computer. It uses port 27 by default.</p>
+
+</body>
+</html>

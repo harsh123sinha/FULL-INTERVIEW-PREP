@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Introductions Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #2c3e50;
+        }
+        h3 {
+            display: block;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .intro-section {
+            width: 100%;
+            max-width: 600px;
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        button[type="button"]:first-of-type {
+            background-color: #2ecc71;
+            color: #fff;
+        }
+
+        button[type="button"]:nth-of-type(2) {
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        .intro-output {
+            margin-top: 20px;
+            background: #ecf0f1;
+            padding: 7px;
+            border-radius: 8px;
+            max-width: 600px;
+            width: 100%;
+        }
+        header h1 {
+            font-size: 3vw; /* responsive font-size based on viewport width */
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Smaller screens adjustments */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 5vw; /* adjust font-size for smaller screens */
+            }
+        }
+        
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 6vw; /* further reduce font-size for very small screens */
+            }
+        }
+        
+    </style>
+</head>
+<body>
+
+    <h3>Generate Your Introductions</h3>
+
+    <!-- Introduction 1 -->
+    <h2>Introduction 1</h2>
+    <div class="intro-section">
+        <label>Name: <input type="text" id="input-name1" placeholder="Your Name"></label>
+        <label>Platform Count: <input type="text" id="input-platform-count1" placeholder="Number of Problems Solved"></label>
+        <button type="button" onclick="generateIntroduction(1)">Generate Introduction</button>
+        <button type="button" onclick="copyIntroduction(1)">Copy Introduction</button>
+        <div class="intro-output">
+            <h3>Your Introduction 1:</h3>
+            <p id="introduction1">Hello, my name is [Your Name]. I started my journey in data structures and algorithms on platforms like HackerRank, where I initially built a foundation in problem-solving. Since then, I’ve expanded to solving over [X] problems across platforms like LeetCode and Codeforces, focusing on creating optimized and scalable solutions. My consistent practice has strengthened my understanding of various DSA techniques, and I’m excited to bring this expertise to real-world challenges.</p>
+        </div>
+    </div>
+
+    <!-- Introduction 2 -->
+    <h2>Introduction 2</h2>
+    <div class="intro-section">
+        <label>Name: <input type="text" id="input-name2" placeholder="Your Name"></label>
+        <label>University: <input type="text" id="input-university2" placeholder="Your University"></label>
+        <label>Field of Skill: <input type="text" id="input-field2" placeholder="Field or Skill"></label>
+        <button type="button" onclick="generateIntroduction(2)">Generate Introduction</button>
+        <button type="button" onclick="copyIntroduction(2)">Copy Introduction</button>
+        <div class="intro-output">
+            <h3>Your Introduction 2:</h3>
+            <p id="introduction2">Hi, I’m [Your Name]. I developed my DSA skills by actively participating in competitive programming on HackerRank, where I earned [mention any badges, stars, or certifications]. Later, I challenged myself further on sites like CodeChef and GeeksforGeeks, solving a wide variety of problems that required in-depth DSA knowledge. These experiences have equipped me with a strong analytical mindset and a drive to optimize code effectively.</p>
+        </div>
+    </div>
+
+    <!-- Introduction 3 -->
+    <h2>Introduction 3</h2>
+    <div class="intro-section">
+        <label>Name: <input type="text" id="input-name3" placeholder="Your Name"></label>
+        <label>University: <input type="text" id="input-university3" placeholder="Your University"></label>
+        <label>Project Name: <input type="text" id="input-project3" placeholder="Project Name"></label>
+        <label>Experience: <input type="text" id="input-experience3" placeholder="Relevant Experience"></label>
+        <button type="button" onclick="generateIntroduction(3)">Generate Introduction</button>
+        <button type="button" onclick="copyIntroduction(3)">Copy Introduction</button>
+        <div class="intro-output">
+            <h3>Your Introduction 3:</h3>
+            <p id="introduction3">Good [morning/afternoon], my name is [Your Name]. I began my DSA journey on HackerRank, where I tackled numerous foundational problems. To deepen my skills, I moved on to more advanced challenges on LeetCode and HackerEarth, solving over [X] problems and achieving notable rankings. This journey has not only strengthened my grasp of data structures and algorithms but also sharpened my problem-solving skills across diverse topics.</p>
+        </div>
+    </div>
+
+    <!-- Introduction 4 -->
+    <h2>Introduction 4</h2>
+    <div class="intro-section">
+        <label>Name: <input type="text" id="input-name4" placeholder="Your Name"></label>
+        <label>Project Name: <input type="text" id="input-project4" placeholder="Project Name"></label>
+        <button type="button" onclick="generateIntroduction(4)">Generate Introduction</button>
+        <button type="button" onclick="copyIntroduction(4)">Copy Introduction</button>
+        <div class="intro-output">
+            <h3>Your Introduction 4:</h3>
+            <p id="introduction4">Hi, I’m [Your Name]. My interest in data structures and algorithms was sparked through competitive coding on platforms like HackerRank, where I gained hands-on experience solving problems across different DSA topics. I then progressed to platforms like Codeforces and AtCoder, where I’ve completed over [X] problems, refining my skills in writing efficient and optimized code. I’m enthusiastic about bringing this technical proficiency to real-world applications.</p>
+        </div>
+    </div>
+
+    <!-- Introduction 5 -->
+    <h2>Introduction 5</h2>
+    <div class="intro-section">
+        <label>Name: <input type="text" id="input-name5" placeholder="Your Name"></label>
+        <label>Number of Projects: <input type="text" id="input-project-count5" placeholder="Number of Projects"></label>
+        <label>Field of Interest: <input type="text" id="input-field5" placeholder="Field of Interest"></label>
+        <button type="button" onclick="generateIntroduction(5)">Generate Introduction</button>
+        <button type="button" onclick="copyIntroduction(5)">Copy Introduction</button>
+        <div class="intro-output">
+            <h3>Your Introduction 5:</h3>
+            <p id="introduction5">Hello, I’m [Your Name]. My journey in DSA started on HackerRank, where I earned [mention specific badges, stars, or achievements] and gained a solid foundation in programming basics. Since then, I’ve challenged myself with complex problems on platforms like LeetCode and CodeSignal, which has helped me develop an in-depth understanding of data structures and algorithms. With over [X] solved problems, I’m ready to apply my skills to impactful projects in this role." prepare the same for these introduction as well </p>
+        </div>
+    </div>
+
+    <script>
+        function generateIntroduction(introNumber) {
+            let introText = '';
+
+            if (introNumber === 1) {
+                const name = document.getElementById("input-name1").value;
+                const platformCount = document.getElementById("input-platform-count1").value;
+                introText = `Hello, my name is ${name}. I started my journey in data structures and algorithms on platforms like HackerRank, where I initially built a foundation in problem-solving. Since then, I’ve expanded to solving over ${platformCount} problems across platforms like LeetCode and Codeforces, focusing on creating optimized and scalable solutions. My consistent practice has strengthened my understanding of various DSA techniques, and I’m excited to bring this expertise to real-world challenges.`;
+
+            } else if (introNumber === 2) {
+                const name = document.getElementById("input-name2").value;
+                const university = document.getElementById("input-university2").value;
+                const field = document.getElementById("input-field2").value;
+                introText = `Good morning! My name is ${name}, and I’m a final-year student at ${university}. I’m very excited to be here. I have always been driven to create solutions that make a difference, and working on projects like [Project Name] has deepened my interest in ${field}. Through my internships at [Internship Company], I’ve gained valuable experience in ${field}, and I’m eager to bring my enthusiasm and skills to contribute meaningfully to your team.`;
+
+            } else if (introNumber === 3) {
+                const name = document.getElementById("input-name3").value;
+                const university = document.getElementById("input-university3").value;
+                const project = document.getElementById("input-project3").value;
+                const experience = document.getElementById("input-experience3").value;
+                introText = `Hi, I’m ${name}, a final-year student from ${university}. I have a deep passion for problem-solving and recently completed ${project}, which allowed me to improve my skills in ${experience}. This project enhanced my expertise in data structures and algorithms, and I’m eager to bring this knowledge into a professional role.`;
+
+            } else if (introNumber === 4) {
+                const name = document.getElementById("input-name4").value;
+                const project = document.getElementById("input-project4").value;
+                introText = `Hello! I’m ${name}, a passionate software developer. One of my most rewarding projects was ${project}, where I focused on developing an efficient solution to a real-world problem. This experience gave me a strong foundation in critical thinking and a deep understanding of best practices.`;
+
+            } else if (introNumber === 5) {
+                const name = document.getElementById("input-name5").value;
+                const projectCount = document.getElementById("input-project-count5").value;
+                const field = document.getElementById("input-field5").value;
+                introText = `Greetings! I’m ${name}, and I’ve had the privilege of working on ${projectCount} projects, each focusing on different facets of ${field}. My projects have not only refined my technical abilities but have also equipped me with a strong problem-solving mindset, which I’m excited to bring into a new, impactful role.`;
+            }
+
+            document.getElementById(`introduction${introNumber}`).innerText = introText;
+        }
+
+        function copyIntroduction(introNumber) {
+            const introText = document.getElementById(`introduction${introNumber}`).innerText;
+            navigator.clipboard.writeText(introText);
+            alert("Introduction copied to clipboard!");
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA Course Interface</title>
+    
+</head>
+<style>
+    /* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #73ff00;
+}
+
+/* Header Styling */
+header {
+    background-color: #2d2d2d;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Banner Styling */
+.banner {
+    position: relative;
+}
+#my-image {
+    height: 14rem;
+    width: 14rem;
+    margin: auto;
+    margin-top: -16vh;
+  }
+  #my-image img {
+    height: 108%;
+    width: 108%;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+    border: 3px solid rgb(0, 0, 0);
+    margin-top: -135px;
+  }
+/* Container for Sidebar and Content */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 250px;
+    background-color: #333;
+    color: #fff;
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    padding: 0.5rem 1rem;
+}
+
+.sidebar nav ul li a {
+    color: #ccc;
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar nav ul li a:hover {
+    color: #fff;
+    background-color: #e72222;
+    border-radius: 4px;
+}
+
+/* Main Content Styling */
+.content {
+    flex: 1;
+    padding: 3rem;
+    overflow-y: auto;
+    background-color: #2d2d2d
+}
+
+.topic {
+    margin-bottom: 1.5rem;
+}
+
+.topic-header {
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #003c64f5;
+    color: #fff;
+    border: none;
+    padding: 1.2rem;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 4px;
+    outline: none;
+}
+
+.subtopics {
+    margin-top: 0.5rem;
+    padding-left: 1rem;
+    display: none;
+}
+
+.subtopics p {
+    padding: 0.5rem 0;
+    border-left: 2px solid #007acc;
+    margin: 0.3rem 0;
+}
+.subtopics a {
+    color: inherit; /* This makes the link inherit the color from the parent <p> */
+    text-decoration: none; /* This removes the underline */
+}
+
+.subtopics a:hover {
+    text-decoration: underline; /* Optional: Adds an underline on hover for better UX */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        overflow-x: auto;
+    }
+
+    .sidebar nav ul {
+        display: flex;
+    }
+
+    .sidebar nav ul li {
+        padding: 0.5rem;
+        flex: 1;
+        text-align: center;
+    }
+
+    .content {
+        padding: 1rem;
+    }
+}
+@media (min-width: 350px) {
+    header img{
+        height: 192px;
+        width: 331px;
+    }
+   
+    #my-image img {
+        height: 23%;
+        width: 23%;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+        border: 3px solid rgb(0, 0, 0);
+        margin-top: 23px;
+        margin-left: 9px;
+    }
+ }
+@media (min-width: 400px) {
+   header img{
+    height: 226px;
+    width: 365px;
+   }
+  
+#my-image img {
+    height: 28%;
+    width: 28%;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+    border: 3px solid rgb(0, 0, 0);
+    margin-top: 8px;
+    margin-left: 13px;
+}
+
+}
+
+@media (min-width: 550px) {
+    header img{
+     height: 262px;
+     width: 500px;
+    }
+    #my-image img {
+        height: 35%;
+        width: 35%;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+        border: 3px solid rgb(0, 0, 0);
+        margin-top: -18px;
+        margin-left: 11px;
+    }
+ }
+ @media (min-width: 650px) {
+    header img{
+     height: 244px;
+     width: 600px;
+    }
+    #my-image img {
+        height: 34%;
+        width: 34%;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+        border: 3px solid rgb(0, 0, 0);
+        margin-top: -16px;
+        margin-left: 13px;
+    }
+
+ }
+ @media (min-width: 750px) {
+    header img{
+     height: 281px;
+     width: 711px;
+    }
+    
+ }
+ @media (min-width: 950px) {
+    header img{
+     height: 330px;
+     width: 869px;
+    }
+    #my-image img {
+        height: 44%;
+        width: 44%;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+        border: 3px solid rgb(0, 0, 0);
+        margin-top: -52px;
+        margin-left: 13px;
+    }
+ }
+ @media (min-width: 1050px) {
+    header img{
+     height: 387px;
+     width: 968px;
+    }
+    
+ } @media (min-width: 1200px) {
+    header img{
+     height: 453px;
+     width: 1148px;
+    }
+    
+    #my-image img {
+        height: 95%;
+        width: 95%;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+        border: 3px solid rgb(0, 0, 0);
+        margin-top: -191px;
+        margin-left: 22px;
+    }
+ }
+ @media (min-width: 1200px) {
+    header img{
+     height: 600px;
+     width: 100%;
+    }
+
+ }
+ .last{
+    
+    height: 100px;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+ }
+ .last p{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 40px;
+ }
+ @media (max-width: 400px){
+.last p {
+    font-size:15px ;
+}
+ }
+ @media (max-width: 450px){
+    .last p {
+        font-size:20px ;
+    }
+     }
+     img {
+        max-width: 100%;
+        height: auto;
+    }
+    header h1 {
+        font-size: 3vw; /* responsive font-size based on viewport width */
+        font-weight: bold;
+        color: #ffffff;
+        margin-bottom: 0.5rem;
+    }
+    
+    /* Smaller screens adjustments */
+    @media (max-width: 768px) {
+        header h1 {
+            font-size: 5vw; /* adjust font-size for smaller screens */
+        }
+    }
+    
+    @media (max-width: 480px) {
+        header h1 {
+            font-size: 6vw; /* further reduce font-size for very small screens */
+        }
+    }
+    
+    
+ 
+
+
+
+</style>
+<body>
+    <header>
+        <h1>POPULAR SORTING METHOD</h1>
+        <h1>Click on each SORTING METHOD TO KNOW  </h1>
+        
+       
+    </header>
+    <div class="container">
+        <main class="content">
+          
+            <section id="arrays" class="topic">
+                <button class="topic-header">SELECTION SORT ?</button>
+                <div class="subtopics">
+                    <p>
+                        <strong>answer:</strong> Selection Sort is a comparison-based sorting algorithm.<br> It sorts an array by repeatedly selecting the smallest (or largest) element from the unsorted portion and swapping it with the first unsorted element. This process continues until the entire array is sorted.
+                        <br><br>
+                        <img src="selection.jpg" alt="selection sort "height="500px" width="800px">
+                        <br><br><strong>Algorithm Steps:</strong>
+                        <br><br>Start with the first element and assume it’s the minimum.
+                        <br>Compare this element with each subsequent element in the unsorted part of the array.
+                        <br>When a smaller element is found, update the minimum.
+                        <br>Once all comparisons for that pass are complete, swap the minimum element with the first unsorted element.
+                        <br>Repeat this process, moving the boundary between the sorted and unsorted parts of the array until the array is fully sorted.
+                        <br> <br>
+                        <strong>TIME AND SPACE COMPLEXITY</strong>
+                        <br><br><strong>Time Complexity:</strong> Selection Sort has a time complexity of <strong>𝑂(𝑛2)</strong>due to the nested loops.
+                        <br><br><strong>Space Complexity: It’s an in-place algorithm with a space complexity of <strong>O(1 )</strong>as it requires only a constant amount of extra memory for swapping.
+                        <br><br><strong>CODE</strong>
+                        <br><br>#include <iostream>
+                            <br>using namespace std;
+                            
+                            <br>int main() {
+                                <br>vector<int> arr = {64, 25, 12, 22, 11};
+                                <br>int n = arr.size();
+                            
+                                <br>for (int i = 0; i < n - 1; i++) {
+                                    <br>int minIndex = i;
+                                    <br>for (int j = i + 1; j < n; j++) {
+                                        <br>if (arr[j] < arr[minIndex]) {
+                                            <br>minIndex = j;
+                                            <br>}
+                                            <br>}
+                                            <br>swap(arr[i], arr[minIndex]);
+                                            <br>}
+                            
+                                <br>for(int i =0;i <n; i++)
+                                <br>{
+                                    <br>cout<<arr[i];
+                                    <br>}
+                                <br>return 0;
+                                <br>}
+                                <br><br>
+                                <img src="selection_code.png" alt="bubble sort" height="500px" width="800px">
+
+                        
+                    </p>
+        
+                </div>
+            </section>
+            <section id="arrays" class="topic">
+                <button class="topic-header">BUBBLE SORT ?</button>
+                <div class="subtopics">
+                    <p>
+                        <strong>answer:</strong> Bubble sort is a comparison-based sorting algorithm. It compares each pair of adjacent elements and swaps them if they are in the wrong order. This process continues until no more swaps are needed.
+                        <br><br>
+                        <img src="bubble.png" alt="bubble sort" height="500px" width="800px">
+                        <br><br><strong>Algorithm Steps:</strong>
+                        <br><br>Start from the beginning of the array.
+                        <br>Compare each pair of adjacent elements and swap them if they are in the wrong order (i.e., the first is larger than the second).
+                        <br>After each full pass, the largest element will "bubble up" to its correct position at the end of the array.
+                        <br>Repeat the process, reducing the range of comparison by one each time, until no more swaps are needed.
+                        <br><br><strong>TIME AND SPACE COMPLEXITY</strong>
+                        <br><br><strong>Time Complexity:</strong> O(n^2) in the worst and average cases, O(n) if the array is already sorted.
+                        <br><br><strong>Space Complexity:</strong> O(1), as it sorts in-place.
+                        
+                        <br><br><strong>CODE</strong>
+                        <br><br>#include &lt;iostream&gt;
+                        <br>using namespace std;
+                        
+                        <br>int main() {
+                            <br>vector<int> arr = {64, 25, 12, 22, 11};
+                            <br>int n = arr.size();
+                            
+                            <br>for (int i = 0; i < n-1; i++) {
+                                <br>for (int j = 0; j < n-i-1; j++) {
+                                    <br>if (arr[j] > arr[j+1]) {
+                                        <br>swap(arr[j], arr[j+1]);
+                                    <br>}
+                                <br>}
+                            <br>}
+                            
+                            <br>for (int i = 0; i < n; i++) {
+                                <br>cout << arr[i] << " ";
+                            <br>}
+                            
+                            <br>return 0;
+                        <br>}
+                        <br><br>
+                        <img src="bubble_code.png" alt="bubble sort" height="500px" width="800px">
+                    </p>
+                </div>
+            </section>
+            
+            <section id="arrays" class="topic">
+                <button class="topic-header">INSERTION SORT ?</button>
+                <div class="subtopics">
+                    <p>
+                        <strong>Insertion sort:</strong> Insertion sort is a simple sorting algorithm that works by iteratively inserting each element of an unsorted list into its correct position in a sorted portion of the list.
+                        <br><br>
+                        <img src="Insertion.png" alt="insertion sort" height="500px" width="800px">
+                        <br><br><strong>Algorithm Steps:</strong>
+                        <br>Begin with the first element as a sorted subarray of one element.
+                        <br>For each subsequent element, compare it backward with the sorted elements, shifting larger elements one position to the right.
+                        <br>Insert the current element into its correct position in the sorted subarray.
+                        <br>Repeat the process for all elements until the entire array is sorted.
+                        <br><br><strong>TIME AND SPACE COMPLEXITY</strong>
+                        <br><br><strong>Time Complexity:</strong> O(n^2) in the worst and average cases, O(n) if the array is already sorted.
+                        <br><br><strong>Space Complexity:</strong> O(1), as it operates in-place.
+                        
+                        <br><br><strong>CODE</strong>
+                        <br><br>#include &lt;iostream&gt;
+                        <br>using namespace std;
+                        
+                        <br>int main() {
+                            <br>vector<int> arr = {64, 25, 12, 22, 11};
+                            <br>int n = arr.size();
+                            
+                            <br>for (int i = 1; i < n; i++) {
+                                <br>int key = arr[i];
+                                <br>int j = i - 1;
+                                
+                                <br>while (j >= 0 && arr[j] > key) {
+                                    <br>arr[j + 1] = arr[j];
+                                    <br>j--;
+                                <br>}
+                                <br>arr[j + 1] = key;
+                            <br>}
+                            
+                            <br>for (int i = 0; i < n; i++) {
+                                <br>cout << arr[i] << " ";
+                            <br>}
+                            
+                            <br>return 0;
+                        <br>}
+                        <br><br>
+                        <img src="insertion_code.png" alt="bubble sort" height="500px" width="800px">
+                    </p>
+                </div>
+            </section>
+            
+            <section id="sorting" class="topic">
+                <button class="topic-header">MERGE SORT ?</button>
+                <div class="subtopics">
+                    <p>
+                        <strong>Merge Sort:</strong> Merge Sort is a divide-and-conquer algorithm that splits the array into halves, recursively sorts each half, and then merges the sorted halves back together.
+                        <br><br>
+                        <img src="merge.jpg" alt="merge sort" height="500px" width="800px">
+                        <br><br><strong>Algorithm Steps:</strong>
+                        <br>1. Divide the array into two halves.
+                        <br>2. Recursively sort each half.
+                        <br>3. Merge the two sorted halves into a single sorted array.
+                        <br><br><strong>TIME AND SPACE COMPLEXITY</strong>
+                        <br><br><strong>Time Complexity:</strong> O(n log n) in all cases (worst, average, and best).
+                        <br><br><strong>Space Complexity:</strong> O(n), as extra space is required for the temporary arrays during the merge step.
+                        
+                        <br><br><strong>CODE</strong>
+                        <br><br>#include &lt;iostream&gt;
+                        <br>#include &lt;vector&gt;
+                        <br>using namespace std;
+            
+                        <br>void merge(vector<int>& arr, int low, int high, int mid) {
+                            <br>    vector<int> temp;
+                            <br>    int left = low;
+                            <br>    int right = mid + 1;
+            
+                            <br>    while (left <= mid && right <= high) {
+                                <br>        if (arr[left] <= arr[right]) {
+                                    <br>            temp.push_back(arr[left]);
+                                    <br>            left++;
+                                <br>        } else {
+                                    <br>            temp.push_back(arr[right]);
+                                    <br>            right++;
+                                <br>        }
+                            <br>    }
+            
+                            <br>    while (left <= mid) {
+                                <br>        temp.push_back(arr[left]);
+                                <br>        left++;
+                            <br>    }
+            
+                            <br>    while (right <= high) {
+                                <br>        temp.push_back(arr[right]);
+                                <br>        right++;
+                            <br>    }
+            
+                            <br>    for (int i = low; i <= high; i++) {
+                                <br>        arr[i] = temp[i - low];
+                            <br>    }
+                        <br>}
+            
+                        <br>void mergesort(vector<int>& arr, int low, int high) {
+                            <br>    if (low < high) {
+                                <br>        int mid = (low + high) / 2;
+                                <br>        mergesort(arr, low, mid);
+                                <br>        mergesort(arr, mid + 1, high);
+                                <br>        merge(arr, low, high, mid);
+                            <br>    }
+                        <br>}
+            
+                        <br>int main() {
+                            <br>    vector<int> arr = {2, 5, 4, 3, 6, 7};
+                            <br>    int n = arr.size();
+            
+                            <br>    cout << "Original array: ";
+                            <br>    for (int i = 0; i < n; i++) {
+                                <br>        cout << arr[i] << " ";
+                            <br>    }
+            
+                            <br>    cout << endl << endl;
+                            <br>    mergesort(arr, 0, n - 1);
+            
+                            <br>    cout << "Array after sorted: ";
+                            <br>    for (int i = 0; i < n; i++) {
+                                <br>        cout << arr[i] << " ";
+                            <br>    }
+            
+                            <br>    return 0;
+                        <br>}
+                        <br><br>
+                        <img src="mergesortcode.png" alt="quick sort" height="500px" width="800px">
+                    </p>
+                </div>
+            </section>
+            
+            
+            <section id="sorting" class="topic">
+                <button class="topic-header">QUICK SORT ?</button>
+                <div class="subtopics">
+                    <p>
+                        <strong>Quick Sort:</strong> Quick Sort is a divide-and-conquer algorithm that selects a 'pivot' element and partitions the array around the pivot, ensuring that elements on the left of the pivot are smaller and those on the right are larger.
+                        <br><br>
+                        <img src="Quick_sort.png" alt="quick sort" height="500px" width="800px">
+                        <br><br><strong>Algorithm Steps:</strong>
+                        <br>1. Choose a pivot element.
+                        <br>2. Partition the array such that elements less than the pivot are on the left, and elements greater than the pivot are on the right.
+                        <br>3. Recursively sort the sub-arrays to the left and right of the pivot.
+                        <br><br><strong>TIME AND SPACE COMPLEXITY</strong>
+                        <br><br><strong>Time Complexity:</strong> Average - O(n log n), Worst - O(n^2).
+                        <br><br><strong>Space Complexity:</strong> O(log n) due to recursion.
+            
+                        <br><br><strong>CODE</strong>
+                        <br><br>#include &lt;iostream&gt;
+                        <br>#include &lt;vector&gt;
+                        <br>using namespace std;
+            
+                        <br>int partition(vector<int>& arr, int low, int high) {
+                            <br>    int pivot = arr[low];
+                            <br>    int i = low;
+                            <br>    int j = high;
+            
+                            <br>    while (i < j) {
+                                <br>        while (arr[i] <= pivot && i <= high - 1) {
+                                    <br>            i++;
+                                <br>        }
+            
+                                <br>        while (arr[j] > pivot && j >= low + 1) {
+                                    <br>            j--;
+                                <br>        }
+            
+                                <br>        if (i < j) {
+                                    <br>            swap(arr[i], arr[j]); // Swap elements greater or smaller than the pivot
+                                <br>        }
+                            <br>    }
+            
+                            <br>    swap(arr[low], arr[j]);
+                            <br>    return j;
+                        <br>}
+            
+                        <br>void quicksort(vector<int>& arr, int low, int high) {
+                            <br>    if (low < high) {
+                                <br>        int partitionIndex = partition(arr, low, high);
+                                <br>        quicksort(arr, low, partitionIndex - 1);
+                                <br>        quicksort(arr, partitionIndex + 1, high);
+                            <br>    }
+                        <br>}
+            
+                        <br>int main() {
+                            <br>    vector<int> arr = {2, 5, 4, 3, 6, 7};
+                            <br>    int n = arr.size();
+            
+                            <br>    cout << "Original array: ";
+                            <br>    for (int i = 0; i < n; i++) {
+                                <br>        cout << arr[i] << " ";
+                            <br>    }
+            
+                            <br>    cout << endl << endl;
+                            <br>    quicksort(arr, 0, n - 1);
+            
+                            <br>    cout << "Array after sorted: ";
+                            <br>    for (int i = 0; i < n; i++) {
+                                <br>        cout << arr[i] << " ";
+                            <br>    }
+            
+                            <br>    return 0;
+                        <br>}
+                        <br><br>
+                        <img src="quicksortcode.png" alt="max heap" height="500px" width="800px">
+                    </p>
+                </div>
+            </section>
+            
+            <section id="sorting" class="topic">
+                <button class="topic-header">HEAP SORT (MAX) ?</button>
+                <div class="subtopics">
+                    <p>
+                        <strong>Max Heap Sort:</strong> Max Heap Sort is a comparison-based sorting algorithm that uses a binary heap data structure. A max-heap is a complete binary tree where the value of the parent is greater than or equal to the values of its children. The heap property ensures that the largest element is always at the root.
+                        <br><br>
+                        <img src="maxheap.png" alt="max heap" height="500px" width="800px">
+                        <br><br><strong>Algorithm Steps:</strong>
+                        <br>1. Build a max heap from the input data.
+                        <br>2. The root of the max heap will be the largest element. Swap the root with the last element of the heap.
+                        <br>3. Remove the last element (which is now the largest) from the heap and heapify the root.
+                        <br>4. Repeat steps 2 and 3 for the remaining heap until all elements are sorted.
+                        <br><br><strong>TIME AND SPACE COMPLEXITY</strong>
+                        <br><br><strong>Time Complexity:</strong> O(n log n) for both the building of the heap and sorting.
+                        <br><br><strong>Space Complexity:</strong> O(1), as the algorithm sorts the elements in place.
+                        
+                        <br><br><strong>CODE</strong>
+                        <br><br>#include &lt;iostream&gt;
+                        <br>#include &lt;vector&gt;
+                        <br>using namespace std;
+            
+                        <br>void heapify(vector<int>& arr, int n, int i) {
+                            <br>int largest = i;
+                            <br>int left = 2 * i + 1;
+                            <br>int right = 2 * i + 2;
+            
+                            <br>if (left < n && arr[left] > arr[largest])
+                                <br>largest = left;
+                            
+                            <br>if (right < n && arr[right] > arr[largest])
+                                <br>largest = right;
+            
+                            <br>if (largest != i) {
+                                <br>swap(arr[i], arr[largest]);
+                                <br>heapify(arr, n, largest);
+                            <br>}
+                        <br>}
+            
+                        <br>void heapSort(vector<int>& arr) {
+                            <br>int n = arr.size();
+            
+                            <br>for (int i = n / 2 - 1; i >= 0; i--) {
+                                <br>heapify(arr, n, i);
+                            <br>}
+            
+                            <br>for (int i = n - 1; i >= 1; i--) {
+                                <br>swap(arr[0], arr[i]);
+                                <br>heapify(arr, i, 0);
+                            <br>}
+                        <br>}
+            
+                        <br>int main() {
+                            <br>vector<int> arr = {4, 10, 3, 5, 1};
+                            
+                            <br>heapSort(arr);
+            
+                            <br>cout << "Sorted array: ";
+                            <br>for (int i = 0; i < arr.size(); i++) {
+                                <br>cout << arr[i] << " ";
+                            <br>}
+                            <br>return 0;
+                        <br>}
+                    </p>
+                </div>
+            </section>
+            
+            
+    
+            
+            <div class="last"><p>KEEP GOING!! JUST ONE LAST STEP..</p></div>
+           
+            <!-- Add more topics as needed -->
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

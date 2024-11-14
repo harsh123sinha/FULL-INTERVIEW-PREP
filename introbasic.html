@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Introductions Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #2c3e50;
+        }
+        h3{
+            display:block;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .intro-section {
+            width: 100%;
+            max-width: 600px;
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+       
+
+        button[type="button"]:first-of-type {
+            background-color: #2ecc71;
+            color: #fff;
+        }
+
+        button[type="button"]:nth-of-type(2) {
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        .intro-output {
+            margin-top: 20px;
+            background: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 600px;
+            width: 100%;
+        }
+        header h1 {
+            font-size: 3vw; /* responsive font-size based on viewport width */
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Smaller screens adjustments */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 5vw; /* adjust font-size for smaller screens */
+            }
+        }
+        
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 6vw; /* further reduce font-size for very small screens */
+            }
+        }
+        
+    </style>
+</head>
+<body>
+
+    <!-- First Introduction -->
+    
+     <h3>Go through all the introductions,Select the one which suits you and genrate the introduction and then copy.</h3>
+    <h2>Introduction 1</h2>
+    <div class="intro-section">
+        <label>Time of Day: <input type="text" id="input-time-of-day1" placeholder="e.g., morning"></label>
+        <label>Name: <input type="text" id="input-name1" placeholder="Your Name"></label>
+        <label>Degree: <input type="text" id="input-degree1" placeholder="e.g., B.Tech"></label>
+        <label>Stream: <input type="text" id="input-stream1" placeholder="Your Stream"></label>
+        <label>University: <input type="text" id="input-university1" placeholder="Your University"></label>
+        <label>Project Name: <input type="text" id="input-project1" placeholder="Project Name"></label>
+        <label>Internship Company: <input type="text" id="input-internship-company1" placeholder="Internship Company"></label>
+        <button type="button" onclick="generateIntroduction(1)">Generate Introduction</button>
+        <button type="button" onclick="copyIntroduction(1)">Copy Introduction</button>
+        <div class="intro-output">
+            <h3>Your Introduction 1:</h3>
+            <p id="introduction1">Good (morning/afternoon/evening), sir/mam. Thank you for this opportunity; I’m grateful to be part of this interview. My name is [your name], and I’m currently pursuing [B.Tech/M.Tech/etc.] in [your stream] at [your university/college name]. I come from a [joint/nuclear] family based in [your city name].I completed my matriculation at [your school name] and my intermediate studies at [your school/college name]. Over the years, I’ve undertaken [number of projects] projects. My first project, [project name], involves [brief project description], and similarly, [next project name] focuses on [description]. I also interned at [internship place], where I [learned/implemented] [specifics].In my free time, I enjoy [your hobbies].</p>
+        </div>
+    </div>
+
+    <!-- Second Introduction -->
+    <h2>Introduction 2</h2>
+    
+    <div class="intro-section">
+        <label>Name: <input type="text" id="input-name2" placeholder="Your Name"></label>
+        <label>University: <input type="text" id="input-university2" placeholder="Your University"></label>
+        <label>Project Name: <input type="text" id="input-project2" placeholder="Project Name"></label>
+        <label>Field/Skill: <input type="text" id="input-field2" placeholder="Field or Skill"></label>
+        <label>Internship Company: <input type="text" id="input-internship-company2" placeholder="Internship Company"></label>
+        <label>Relevant Skill: <input type="text" id="input-relevant-skill2" placeholder="Relevant Skill"></label>
+        <button type="button" onclick="generateIntroduction(2)">Generate Introduction</button>
+        <button type="button" onclick="copyIntroduction(2)">Copy Introduction</button>
+        <div class="intro-output">
+            <h3>Your Introduction 2:</h3>
+            <p id="introduction2">"Good morning! My name is [Your Name], and I’m a final-year student at [University Name]. I’m very excited to be here. I have always been driven to create solutions that make a difference, and working on projects like [Project Name] has deepened my interest in [Field/Skill]. Through my internships at [Internship Company], I’ve gained valuable experience in [Relevant Skill], and I’m eager to bring my enthusiasm and skills to contribute meaningfully to your team."</p>
+        </div>
+    </div>
+
+    <!-- Third Introduction -->
+    <h2>Introduction 3</h2>
+    <div class="intro-section">
+        <label>Name: <input type="text" id="input-name3" placeholder="Your Name"></label>
+        <label>University: <input type="text" id="input-university3" placeholder="Your University"></label>
+        <label>Project Name: <input type="text" id="input-project3" placeholder="Project Name"></label>
+        <label>Internship Company: <input type="text" id="input-internship-company3" placeholder="Internship Company"></label>
+        <button type="button" onclick="generateIntroduction(3)">Generate Introduction</button>
+        <button type="button" onclick="copyIntroduction(3)">Copy Introduction</button>
+        <div class="intro-output">
+            <h3>Your Introduction 3:</h3>
+            <p id="introduction3">"Hello, I’m [Your Name], currently completing my B.Tech at [University Name]. I’ve always believed in applying what I learn to real-world problems, which led me to work on projects like [Project Name]. My internships at [Internship Company] taught me the importance of attention to detail and adapting quickly, and I’m genuinely excited about the opportunity to bring my blend of technical and practical experience to your company."
+            </p>
+        </div>
+    </div>
+
+    <!-- Fourth Introduction -->
+    <h2>Introduction 4</h2>
+    <div class="intro-section">
+        <label>Name: <input type="text" id="input-name4" placeholder="Your Name"></label>
+        <label>University: <input type="text" id="input-university4" placeholder="Your University"></label>
+        <label>Project Name: <input type="text" id="input-project4" placeholder="Project Name"></label>
+        <label>Internship Company: <input type="text" id="input-internship-company4" placeholder="Internship Company"></label>
+        <label>Specific Skill/Tool: <input type="text" id="input-specific-skill4" placeholder="Specific Skill or Tool"></label>
+        <button type="button" onclick="generateIntroduction(4)">Generate Introduction</button>
+        <button type="button" onclick="copyIntroduction(4)">Copy Introduction</button>
+        <div class="intro-output">
+            <h3>Your Introduction 4:</h3>
+            <p id="introduction4">"Good afternoon! My name is [Your Name], and I’m a student at [University Name]. Thank you for this opportunity! I’m passionate about developing user-focused applications, which inspired projects like [Project Name]. My experiences interning with [Internship Company] strengthened my understanding of [Specific Skill/Tool], and I look forward to contributing my skills and positive energy to your team."</p>
+        </div>
+    </div>
+
+    <!-- Fifth Introduction -->
+    <h2>Introduction 5</h2>
+    <div class="intro-section">
+        <label>Name: <input type="text" id="input-name5" placeholder="Your Name"></label>
+        <label>University: <input type="text" id="input-university5" placeholder="Your University"></label>
+        <label>Project Name: <input type="text" id="input-project5" placeholder="Project Name"></label>
+        <label>Internship Company: <input type="text" id="input-internship-company5" placeholder="Internship Company"></label>
+        <label>Relevant Skill/Tool: <input type="text" id="input-relevant-skill5" placeholder="Relevant Skill or Tool"></label>
+        <button type="button" onclick="generateIntroduction(5)">Generate Introduction</button>
+        <button type="button" onclick="copyIntroduction(5)">Copy Introduction</button>
+        <div class="intro-output">
+            <h3>Your Introduction 5:</h3>
+            <p id="introduction5">"Hello, I’m [Your Name] from [University Name]. It’s a pleasure to meet you! My background combines both academic knowledge and hands-on projects like [Project Name], where I focused on [Related Skill/Field]. Interning at [Internship Company] gave me practical insights into the field, helping me grow as a professional. I’m excited about the chance to bring this experience and passion to your organization."</p>
+        </div>
+    </div>
+
+    <script>
+        function generateIntroduction(introNumber) {
+            let introText = '';
+
+            if (introNumber === 1) {
+                const name = document.getElementById("input-name1").value;
+                const degree = document.getElementById("input-degree1").value;
+                const stream = document.getElementById("input-stream1").value;
+                const university = document.getElementById("input-university1").value;
+                const project = document.getElementById("input-project1").value;
+                const internshipCompany = document.getElementById("input-internship-company1").value;
+                introText = `Good morning! My name is ${name}, and I’m a ${degree} student at ${university} in the field of ${stream}. I’ve worked on projects like ${project}. Through my internships at ${internshipCompany}, I’ve gained valuable experience.`;
+
+            } else if (introNumber === 2) {
+                const name = document.getElementById("input-name2").value;
+                const university = document.getElementById("input-university2").value;
+                const project = document.getElementById("input-project2").value;
+                const field = document.getElementById("input-field2").value;
+                const internshipCompany = document.getElementById("input-internship-company2").value;
+                const relevantSkill = document.getElementById("input-relevant-skill2").value;
+                introText = `Hello! My name is ${name}, a student from ${university}. I have developed ${project} and acquired skills in ${field} during my internship at ${internshipCompany}, focusing on ${relevantSkill}.`;
+
+            } else if (introNumber === 3) {
+                const name = document.getElementById("input-name3").value;
+                const university = document.getElementById("input-university3").value;
+                const project = document.getElementById("input-project3").value;
+                const internshipCompany = document.getElementById("input-internship-company3").value;
+                introText = `Hello, I'm ${name} from ${university}. During my projects, like ${project}, and my internship at ${internshipCompany}, I've gained substantial knowledge in this field.`;
+
+            } else if (introNumber === 4) {
+                const name = document.getElementById("input-name4").value;
+                const university = document.getElementById("input-university4").value;
+                const project = document.getElementById("input-project4").value;
+                const internshipCompany = document.getElementById("input-internship-company4").value;
+                const specificSkill = document.getElementById("input-specific-skill4").value;
+                introText = `Hi, I'm ${name} from ${university}. I developed the ${project} project and improved my skills in ${specificSkill} during my internship at ${internshipCompany}.`;
+
+            } else if (introNumber === 5) {
+                const name = document.getElementById("input-name5").value;
+                const university = document.getElementById("input-university5").value;
+                const project = document.getElementById("input-project5").value;
+                const internshipCompany = document.getElementById("input-internship-company5").value;
+                const relevantSkill = document.getElementById("input-relevant-skill5").value;
+                introText = `Hi, I'm ${name} from ${university}. I created the ${project} project and applied my skills in ${relevantSkill} during my internship at ${internshipCompany}.`;
+            }
+
+            document.getElementById(`introduction${introNumber}`).innerText = introText;
+        }
+
+        function copyIntroduction(introNumber) {
+            const introText = document.getElementById(`introduction${introNumber}`).innerText;
+            navigator.clipboard.writeText(introText).then(() => {
+                alert(`Introduction ${introNumber} copied to clipboard!`);
+            }).catch(err => {
+                console.error("Failed to copy text: ", err);
+            });
+        }
+    </script>
+
+</body>
+</html>

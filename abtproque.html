@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA Course Interface</title>
+    
+</head>
+<style>
+    /* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #73ff00;
+}
+
+/* Header Styling */
+header {
+    background-color: #2d2d2d;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Banner Styling */
+.banner {
+    position: relative;
+}
+#my-image {
+    height: 14rem;
+    width: 14rem;
+    margin: auto;
+    margin-top: -16vh;
+  }
+  #my-image img {
+    height: 108%;
+    width: 108%;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+    border: 3px solid rgb(0, 0, 0);
+    margin-top: -135px;
+  }
+/* Container for Sidebar and Content */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 250px;
+    background-color: #333;
+    color: #fff;
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    padding: 0.5rem 1rem;
+}
+
+.sidebar nav ul li a {
+    color: #ccc;
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar nav ul li a:hover {
+    color: #fff;
+    background-color: #e72222;
+    border-radius: 4px;
+}
+
+/* Main Content Styling */
+.content {
+    flex: 1;
+    padding: 3rem;
+    overflow-y: auto;
+    background-color: #2d2d2d
+}
+
+.topic {
+    margin-bottom: 1.5rem;
+}
+
+.topic-header {
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #003c64f5;
+    color: #fff;
+    border: none;
+    padding: 1.2rem;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 4px;
+    outline: none;
+}
+
+.subtopics {
+    margin-top: 0.5rem;
+    padding-left: 1rem;
+    display: none;
+}
+
+.subtopics p {
+    padding: 0.5rem 0;
+    border-left: 2px solid #007acc;
+    margin: 0.3rem 0;
+}
+.subtopics a {
+    color: inherit; /* This makes the link inherit the color from the parent <p> */
+    text-decoration: none; /* This removes the underline */
+}
+
+.subtopics a:hover {
+    text-decoration: underline; /* Optional: Adds an underline on hover for better UX */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        overflow-x: auto;
+    }
+
+    .sidebar nav ul {
+        display: flex;
+    }
+
+    .sidebar nav ul li {
+        padding: 0.5rem;
+        flex: 1;
+        text-align: center;
+    }
+
+    .content {
+        padding: 1rem;
+    }
+}
+@media (min-width: 350px) {
+    header img{
+        height: 192px;
+        width: 331px;
+    }
+   
+    #my-image img {
+        height: 23%;
+        width: 23%;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+        border: 3px solid rgb(0, 0, 0);
+        margin-top: 23px;
+        margin-left: 9px;
+    }
+ }
+@media (min-width: 400px) {
+   header img{
+    height: 226px;
+    width: 365px;
+   }
+  
+#my-image img {
+    height: 28%;
+    width: 28%;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+    border: 3px solid rgb(0, 0, 0);
+    margin-top: 8px;
+    margin-left: 13px;
+}
+
+}
+
+@media (min-width: 550px) {
+    header img{
+     height: 262px;
+     width: 500px;
+    }
+    #my-image img {
+        height: 35%;
+        width: 35%;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+        border: 3px solid rgb(0, 0, 0);
+        margin-top: -18px;
+        margin-left: 11px;
+    }
+ }
+ @media (min-width: 650px) {
+    header img{
+     height: 244px;
+     width: 600px;
+    }
+    #my-image img {
+        height: 34%;
+        width: 34%;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+        border: 3px solid rgb(0, 0, 0);
+        margin-top: -16px;
+        margin-left: 13px;
+    }
+
+ }
+ @media (min-width: 750px) {
+    header img{
+     height: 281px;
+     width: 711px;
+    }
+    
+ }
+ @media (min-width: 950px) {
+    header img{
+     height: 330px;
+     width: 869px;
+    }
+    #my-image img {
+        height: 44%;
+        width: 44%;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+        border: 3px solid rgb(0, 0, 0);
+        margin-top: -52px;
+        margin-left: 13px;
+    }
+ }
+ @media (min-width: 1050px) {
+    header img{
+     height: 387px;
+     width: 968px;
+    }
+    
+ } @media (min-width: 1200px) {
+    header img{
+     height: 453px;
+     width: 1148px;
+    }
+    
+    #my-image img {
+        height: 95%;
+        width: 95%;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+        border: 3px solid rgb(0, 0, 0);
+        margin-top: -191px;
+        margin-left: 22px;
+    }
+ }
+ @media (min-width: 1200px) {
+    header img{
+     height: 600px;
+     width: 100%;
+    }
+
+ }
+ .last{
+    
+    height: 100px;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+ }
+ .last p{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 40px;
+ }
+ @media (max-width: 400px){
+.last p {
+    font-size:15px ;
+}
+ }
+ @media (max-width: 450px){
+    .last p {
+        font-size:20px ;
+    }
+     }
+     header h1 {
+        font-size: 3vw; /* responsive font-size based on viewport width */
+        font-weight: bold;
+        color: #ffffff;
+        margin-bottom: 0.5rem;
+    }
+    
+    /* Smaller screens adjustments */
+    @media (max-width: 768px) {
+        header h1 {
+            font-size: 5vw; /* adjust font-size for smaller screens */
+        }
+    }
+    
+    @media (max-width: 480px) {
+        header h1 {
+            font-size: 6vw; /* further reduce font-size for very small screens */
+        }
+    }
+    
+    
+ 
+
+
+
+</style>
+<body>
+    <header>
+        <h1>Questions on project sections </h1>
+        <h1>Click on each question to know how to prepare the answer </h1>
+        
+       
+    </header>
+    <div class="container">
+        <main class="content">
+          
+            <section id="arrays" class="topic">
+                <button class="topic-header">Can you describe your project and its main objectives?</button>
+                <div class="subtopics">
+                    <p>
+                        <strong>How to answer:</strong> Start with a brief overview of the project, including its name and purpose. Explain the problem it aims to solve and the main goals you set out to achieve. Keep it concise but informative.
+                    </p>
+        
+                </div>
+            </section>
+            <section id="arrays" class="topic">
+                <button class="topic-header">What technologies did you use to build this project, and why did you choose them?
+
+                   
+                    </button>
+                <div class="subtopics">
+                    <p>
+                        <strong>How to answer:</strong> List the technologies (languages, frameworks, databases, etc.) used in your project. Discuss why you selected each technology based on factors like suitability, scalability, performance, and personal familiarity.
+                    </p>
+        
+                </div>
+            </section>
+            <section id="arrays" class="topic">
+                <button class="topic-header">What was your role in the project? Did you work alone or as part of a team?</button>
+                <div class="subtopics">
+                    <p>
+                        <strong>How to answer:</strong> Clearly define your responsibilities in the project. If it was a team project, specify what parts you were in charge of and how you collaborated with others. Highlight any leadership roles or initiative you took.
+                    </p>
+        
+                </div>
+            </section>
+            <section id="arrays" class="topic">
+                <button class="topic-header">What challenges did you face during the development of this project, and how did you overcome them?</button>
+                <div class="subtopics">
+                    <p>
+                        <strong>How to answer:</strong> Mention specific challenges (technical, team dynamics, time management, etc.) you encountered. Explain the steps you took to address these challenges, demonstrating your problem-solving skills and resilience.
+                    </p>
+        
+                </div>
+            </section>
+            <section id="arrays" class="topic">
+                <button class="topic-header">How did you ensure the project was user-friendly?</button>
+                <div class="subtopics">
+                    <p>
+                        <strong>How to answer:</strong> Discuss any user research, usability testing, or design principles you applied. Mention feedback you gathered from users and how it influenced design decisions. Highlight the importance of user experience in your project.
+                    </p>
+        
+                </div>
+            </section>
+            <section id="arrays" class="topic">
+                <button class="topic-header">Can you explain the architecture or design pattern you used in your project?</button>
+                <div class="subtopics">
+                    <p>
+                        <strong>How to answer:</strong>Describe the architectural style (e.g., MVC, microservices) or design patterns (e.g., singleton, factory) you used. Explain why you chose this structure and how it benefited the project in terms of scalability, maintenance, or performance.
+                    </p>
+        
+                </div>
+            </section>
+            <section id="arrays" class="topic">
+                <button class="topic-header">Draw the block diagram of your project?</button>
+                <div class="subtopics">
+                    <p>
+                        <strong>How to answer:</strong>Simply draw diffrent blocks [square] write each tech stack like html, react, css ,javascript then move toward backend like php ,node etc then the database.
+                    </p>
+        
+                </div>
+            </section>
+            <section id="arrays" class="topic">
+                <button class="topic-header">What are the key features of your project?</button>
+                <div class="subtopics">
+                    <p>
+                        <strong>How to answer:</strong> List and describe the most important features. Explain how each feature contributes to the project’s goals and enhances user experience. Use examples or scenarios to illustrate their functionality.
+                    </p>
+        
+                </div>
+            </section>
+            <section id="arrays" class="topic">
+                <button class="topic-header">How did you test the project for bugs or usability issues?</button>
+                <div class="subtopics">
+                    <p>
+                        <strong>How to answer:</strong> Talk about your testing methodologies, such as unit testing, integration testing, or user acceptance testing. Explain any tools you used for testing and how you addressed issues found during testing.
+                    </p>
+        
+                </div>
+            </section>
+            <section id="arrays" class="topic">
+                <button class="topic-header">What feedback did you receive on your project, and how did you incorporate it?</button>
+                <div class="subtopics">
+                    <p>
+                        <strong>How to answer:</strong>  Share specific feedback from users, peers, or mentors. Discuss how you took this feedback into account to make improvements or iterate on the project, showcasing your willingness to learn and adapt.
+                    </p>
+        
+                </div>
+            </section>
+            <section id="arrays" class="topic">
+                <button class="topic-header">If you had more time, what additional features or improvements would you have made</button>
+                <div class="subtopics">
+                    <p>
+                        <strong>How to answer:</strong> Reflect on areas of the project you would like to enhance or expand upon. This can include new features, optimizations, or user interface improvements. Highlight your vision for the project’s future.
+                    </p>
+        
+                </div>
+            </section>
+            <section id="arrays" class="topic">
+                <button class="topic-header">How did you ensure the security of the application</button>
+                <div class="subtopics">
+                    <p>
+                        <strong>How to answer:</strong> Describe any security measures you implemented (e.g., input validation, authentication, encryption). Discuss how you kept user data safe and any best practices you followed to mitigate vulnerabilities.
+                    </p>
+        
+                </div>
+            </section>
+            <section id="arrays" class="topic">
+                <button class="topic-header">How did you manage your time and resources while working on the project?</button>
+                <div class="subtopics">
+                    <p>
+                        <strong>How to answer:</strong> Describe your time management strategies, such as setting milestones, prioritizing tasks, and using project management tools. Highlight your ability to balance multiple responsibilities and meet deadlines.
+                    </p>
+        
+                </div>
+            </section>
+            <section id="arrays" class="topic">
+                <button class="topic-header">What did you learn from working on this project that you can apply to future projects?</button>
+                <div class="subtopics">
+                    <p>
+                        <strong>How to answer:</strong> Reflect on skills gained or lessons learned during the project (technical skills, teamwork, problem-solving, etc.). Discuss how these insights will influence your approach to future projects and your professional growth.
+                    </p>
+        
+                </div>
+            </section>
+            
+    
+            
+            <div class="last"><p>KEEP GOING!! JUST ONE LAST STEP..</p></div>
+           
+            <!-- Add more topics as needed -->
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

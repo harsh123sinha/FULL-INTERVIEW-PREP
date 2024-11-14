@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA Course Interface</title>
+    
+</head>
+<style>
+    /* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #73ff00;
+}
+
+/* Header Styling */
+header {
+    background-color: #2d2d2d;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Banner Styling */
+.banner {
+    position: relative;
+}
+#my-image {
+    height: 14rem;
+    width: 14rem;
+    margin: auto;
+    margin-top: -16vh;
+  }
+  #my-image img {
+    height: 108%;
+    width: 108%;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+    border: 3px solid rgb(0, 0, 0);
+    margin-top: -135px;
+  }
+/* Container for Sidebar and Content */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 250px;
+    background-color: #333;
+    color: #fff;
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    padding: 0.5rem 1rem;
+}
+
+.sidebar nav ul li a {
+    color: #ccc;
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar nav ul li a:hover {
+    color: #fff;
+    background-color: #e72222;
+    border-radius: 4px;
+}
+
+/* Main Content Styling */
+.content {
+    flex: 1;
+    padding: 3rem;
+    overflow-y: auto;
+    background-color: #2d2d2d
+}
+
+.topic {
+    margin-bottom: 1.5rem;
+}
+
+.topic-header {
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #003c64f5;
+    color: #fff;
+    border: none;
+    padding: 1.2rem;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 4px;
+    outline: none;
+}
+
+.subtopics {
+    margin-top: 0.5rem;
+    padding-left: 1rem;
+    display: none;
+}
+
+.subtopics p {
+    padding: 0.5rem 0;
+    border-left: 2px solid #007acc;
+    margin: 0.3rem 0;
+}
+.subtopics a {
+    color: inherit; /* This makes the link inherit the color from the parent <p> */
+    text-decoration: none; /* This removes the underline */
+}
+
+.subtopics a:hover {
+    text-decoration: underline; /* Optional: Adds an underline on hover for better UX */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        overflow-x: auto;
+    }
+
+    .sidebar nav ul {
+        display: flex;
+    }
+
+    .sidebar nav ul li {
+        padding: 0.5rem;
+        flex: 1;
+        text-align: center;
+    }
+
+    .content {
+        padding: 1rem;
+    }
+}
+@media (min-width: 350px) {
+    header img{
+        height: 192px;
+        width: 331px;
+    }
+   
+    #my-image img {
+        height: 23%;
+        width: 23%;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+        border: 3px solid rgb(0, 0, 0);
+        margin-top: 23px;
+        margin-left: 9px;
+    }
+ }
+@media (min-width: 400px) {
+   header img{
+    height: 226px;
+    width: 365px;
+   }
+  
+#my-image img {
+    height: 28%;
+    width: 28%;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+    border: 3px solid rgb(0, 0, 0);
+    margin-top: 8px;
+    margin-left: 13px;
+}
+
+}
+
+@media (min-width: 550px) {
+    header img{
+     height: 262px;
+     width: 500px;
+    }
+    #my-image img {
+        height: 35%;
+        width: 35%;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+        border: 3px solid rgb(0, 0, 0);
+        margin-top: -18px;
+        margin-left: 11px;
+    }
+ }
+ @media (min-width: 650px) {
+    header img{
+     height: 244px;
+     width: 600px;
+    }
+    #my-image img {
+        height: 34%;
+        width: 34%;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+        border: 3px solid rgb(0, 0, 0);
+        margin-top: -16px;
+        margin-left: 13px;
+    }
+
+ }
+ @media (min-width: 750px) {
+    header img{
+     height: 281px;
+     width: 711px;
+    }
+    
+ }
+ @media (min-width: 950px) {
+    header img{
+     height: 330px;
+     width: 869px;
+    }
+    #my-image img {
+        height: 44%;
+        width: 44%;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+        border: 3px solid rgb(0, 0, 0);
+        margin-top: -52px;
+        margin-left: 13px;
+    }
+ }
+ @media (min-width: 1050px) {
+    header img{
+     height: 387px;
+     width: 968px;
+    }
+    
+ } @media (min-width: 1200px) {
+    header img{
+     height: 453px;
+     width: 1148px;
+    }
+    
+    #my-image img {
+        height: 95%;
+        width: 95%;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+        border: 3px solid rgb(0, 0, 0);
+        margin-top: -191px;
+        margin-left: 22px;
+    }
+ }
+ @media (min-width: 1200px) {
+    header img{
+     height: 600px;
+     width: 100%;
+    }
+
+ }
+ .last{
+    
+    height: 100px;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+ }
+ .last p{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 40px;
+ }
+ @media (max-width: 400px){
+.last p {
+    font-size:15px ;
+}
+ }
+ @media (max-width: 450px){
+    .last p {
+        font-size:20px ;
+    }
+     }
+     header h1 {
+        font-size: 3vw; /* responsive font-size based on viewport width */
+        font-weight: bold;
+        color: #ffffff;
+        margin-bottom: 0.5rem;
+    }
+    
+    /* Smaller screens adjustments */
+    @media (max-width: 768px) {
+        header h1 {
+            font-size: 5vw; /* adjust font-size for smaller screens */
+        }
+    }
+    
+    @media (max-width: 480px) {
+        header h1 {
+            font-size: 6vw; /* further reduce font-size for very small screens */
+        }
+    }
+    
+    
+ 
+
+
+
+</style>
+<body>
+    <header>
+        <h1>FUNDAMENTAL OF OOPs</h1>
+        <h1>Click on each question to know how to prepare the answer </h1>
+        
+       
+    </header>
+    <div class="container">
+        <main class="content">
+          
+            <section id="arrays" class="topic">
+                <button class="topic-header">what is oops and what is its need?</button>
+                <div class="subtopics">
+                    <p>
+                        <strong>answer:</strong> Object-Oriented Programming (OOP) is a programming paradigm which revolves around the concept of "objects," which can contain data (in the form of attributes or properties) and code (in the form of methods or functions). OOP helps to structure programs so that properties and behaviors are bundled into individual objects.
+                        <br><br><strong>It is needed because :</strong><br>1. Modularity: Code is organized into reusable classes, making it easier to maintain and update.
+                        <br>2. Reusability: Inheritance and polymorphism allow classes to be reused in new applications without re-implementing common functionalities.
+                        <br>3. Maintainability: Encapsulation and modular design make it easier to debug, modify, and extend code.
+                        <br>4. Data Security: Encapsulation protects sensitive data by controlling access to an object’s internal state.
+                        <br>5. Real-World Modeling: OOP helps mimic real-world systems more naturally, making it easier to solve complex problems.
+                        <br><strong>Example</strong>For instance, in a car simulation program, Car can be a class with properties like color, speed, and methods like accelerate() or brake(). Each car instance (object) created from this class will have its own color, speed, etc., but share the behaviors defined in the class.
+                    </p>
+        
+                </div>
+            </section>
+            <section id="arrays" class="topic">
+                <button class="topic-header">What are the main features/pillars of OOPs? (WITH LIVE EXAMPLE)
+
+                   
+                    </button>
+                <div class="subtopics">
+                    <p>
+                        <strong>Answer:</strong>four main pillars of Object-Oriented Programming (OOP) are :
+                        <br>1. Encapsulation
+                        <br>2. Inheritance
+                        <br>3. Polymorphism
+                        <br>4. Abstraction.
+                        <br><br><u>Encapsulation</u> :-
+                        <br><br><u>Definition</u>: Encapsulation is the practice of bundling the data (attributes) and methods (functions) that operate on that data within a single unit, usually a class, and restricting access to some components.
+                        <br><br><u>Purpose</u>:To protect an object's state from unauthorized access or modification. Only specific, controlled methods (getters/setters) allow interaction with the data.
+                        <br><br><u>Example</u>: In a BankAccount class, sensitive information like the balance could be private, accessible only through public methods like deposit() or withdraw(), preventing direct modification.
+                        <br><br><u>Inheritance</u> :-
+                        <br><br><u>Definition</u>: Inheritance is a mechanism that allows a new class (subclass/derived class) to inherit attributes and methods from an existing class (superclass/base class).
+                        <br><br><u>Purpose</u>: To promote code reuse and establish a hierarchical relationship between classes.
+                        <br><br><u>Example:</u> A Vehicle class may have attributes like speed and methods like move(). A Car class can inherit from Vehicle, gaining these attributes and methods, and add specific features like airConditioning().
+                        <br><br><u>Polymorphism </u>:-
+                        <br><br><u>Definition:</u> "poly means "many " and "morph" means "forms" .Polymorphism allows methods to have multiple implementations. In simple terms, the same function can operate differently based on the object calling it.
+                        <br><br><u>Purpose:</u> To enable flexibility and scalability in code, as different objects can respond to the same method call in their unique ways.
+                        <br><br>TYpes:-
+                        <br><br><strong>Compile-Time (Static) Polymorphism:</strong> Static Polymorphism is commonly known as the Compile time polymorphism. Static polymorphism is the feature by which an object is linked with the respective function or operator based on the values during the compile time. Static or Compile time Polymorphism can be achieved through Method overloading or operator overloading.
+                        <br><br><strong>Run-Time (Dynamic) Polymorphism:</strong> Dynamic Polymorphism or Runtime polymorphism refers to the type of Polymorphism in OOPs, by which the actual implementation of the function is decided during the runtime or execution. The dynamic or runtime polymorphism can be achieved with the help of method overriding.
+                        <br><br><u>Example:</u> A Shape class with a draw() method can have subclasses like Circle, Square, etc., each overriding draw() to render the shape accordingly.
+                        <br><br><u>Abstraction :-</u>
+                        <br><br><u>Definition: </u> Abstraction is the concept of hiding complex details and showing only essential features, making the code simpler and focused.
+                        <br><br><u>Purpose:</u>To simplify interactions with objects, focusing on relevant details while hiding unnecessary implementation.
+                        <br><br><u>Example:</u> A CoffeeMachine class may provide a simple method brewCoffee() without exposing the complex inner workings of grinding beans, heating water, etc.
+
+                    </p>
+        
+                </div>
+            </section>
+            <section id="arrays" class="topic">
+                <button class="topic-header">What are access specifiers and what is their significance?</button>
+                <div class="subtopics">
+                    <p>
+                        <strong>Answer:</strong><br><br>Access specifiers, as the name suggests, are a special type of keywords, which are used to control or specify the accessibility of entities like classes, methods, etc. Some of the access specifiers or access modifiers include “private”, “public”, etc. These access specifiers also play a very vital role in achieving Encapsulation - one of the major features of OOPs.
+                        <br>There are three access specifiers that are:-
+                        <br><br><u>Public:</u> Used for class members that need to be accessible from any part of the program.
+                        <br><u>Private:</u> Used for class members that should be accessible only within the class itself.
+                        <br><u>Protected:</u> Used for class members that should be accessible within the class and its subclasses (inherited classes).
+                    </p>
+        
+                </div>
+            </section>
+            <section id="arrays" class="topic">
+                <button class="topic-header">What is the diffrence betwwen overloading and Overriding?</button>
+                <div class="subtopics">
+                    <p>
+                        <strong>Answer:</strong> Mention specific challenges (technical, team dynamics, time management, etc.) you encountered. Explain the steps you took to address these challenges, demonstrating your problem-solving skills and resilience.
+                        <br><br><strong><u>Overloading:</u></strong> Occurs when two or more methods in the same class have the same name but different parameters (method signature). It allows methods to perform similar functions with different inputs.
+                        <br><br>function overloading code :-
+                        <br><br>class Print {
+                           <br> public:
+                           <br>  void print(int i) {
+                            <br>  cout << "Printing int: " << i << endl;
+                            <br>  }
+                        
+                            <br> void print(double d) {
+                                <br>   cout << "Printing double: " << d << endl;
+                                <br>  }
+                                <br> 
+                                <br> void print(string s) {
+                                    <br>    cout << "Printing string: " << s << endl;
+                                    <br>  }
+                        }; <br> 
+                        <br><br><strong><u>Overriding::</u></strong> Occurs when a subclass provides a specific implementation of a method already defined in its superclass. The method in the subclass has the same name, return type, and parameters as the method in the superclass.
+                        <br><br>function Overriding code :-
+                        <br>class Animal {
+                            <br>public:
+                            <br> virtual void sound() {
+                                <br> cout << "Animal sound" << endl;
+                                <br>}
+                                <br>};
+                        
+                                <br>class Dog : public Animal {
+                                    <br>public:
+                                    <br>void sound() override { // Overrides the superclass method
+                                        <br>  cout << "Bark" << endl;
+                                        <br>}
+                                        <br>};
+
+                    </p>
+        
+                </div>
+            </section>
+            <section id="arrays" class="topic">
+                <button class="topic-header">What is construtor and its type?</button>
+                <div class="subtopics">
+                    <p>
+                        <strong>Answer:</strong>A constructor in C++ is a special member function that is automatically called when an object of a class is created. Its primary purpose is to initialize the object's attributes or allocate resources. Constructors have the same name as the class and do not have a return type, not even void. They can take parameters, allowing for different initialization strategies, and can be overloaded, meaning a class can have multiple constructors with different signatures.
+                        <br><br>Key Characteristics of Constructors:-<br>
+                        <br>Name: A constructor must have the same name as the class.
+                        <br>No Return Type: Constructors do not return a value and do not have a return type specified.
+                        <br>Automatic Invocation: They are called automatically when an object of the class is created.
+                        <br>Overloading: Multiple constructors can be defined within a class, allowing for different ways to initialize an object.
+                        <br>Default Constructor: If no constructor is defined, the compiler provides a default constructor that initializes member variables with default values.
+                        <br><br>code to implement:-<br>
+                        <br>class Rectangle {
+                           <br> private:
+                           <br> int width;
+                           <br> int height;
+                            
+                           <br> public:
+                          
+                           <br>  Rectangle() {
+                            <br>    width = 1; // Default width
+                            <br> height = 1; // Default height
+                            <br> }
+                            
+                            <br> // Parameterized constructor
+                                <br> Rectangle(int w, int h) {
+                                    <br>     width = w; // Initialize width
+                                    <br>     height = h; // Initialize height
+                                    <br> }
+                            
+                                    <br> // Method to calculate area
+                                    <br> int area() {
+                                        <br>    return width * height;
+                                        <br> return width * height;
+                                        <br> return width * height;
+                                        <br>  return width * height;
+                                        <br> }
+                                        <br> };
+                                        <br><br><strong>3 types of constructors :-</strong>
+                                        <br>
+                                        <br>Default Constructor:-
+                                        <br>Automatically called when an object is created without any specific initialization.A constructor that does not take any parameters and initializes object members with default values.
+                                        <br><br>Example:
+                                        <br><br>
+                                        <br>class Example {
+                                            <br>public:
+                                            <br>Example() { // Default constructor
+                                                <br> 
+                                                <br> }
+                                                <br>};
+                                                <br>
+                                                <br> Parameterized Constructor:-
+                                                <br> A constructor that takes parameters to allow the initialization of object members with specific values. Useful for creating objects with different states based on input values.
+                                                <br>example
+                                                <br><br>class Example {
+                                                <br>public:
+                                                   <br> Example(int x) { // Parameterized constructor
+                                                      <br>  // Initialization code using x
+                                                    <br>}
+                                                <br>};
+                                                <br>
+                                                <br>Copy Constructor:-
+                                                <br>A constructor that initializes an object using another object of the same class.Enables the creation of a new object as a copy of an existing object, facilitating deep copy operations.
+                                                <br><br>Example:
+                                                <br><br>
+                                                <br>class Example {
+                                                    <br>public:
+                                                    <br>  Example(const Example &obj) { // Copy constructor
+                                                        <br>    // Copy initialization code
+                                                        <br>}
+                                                        <br> };
+                                                    </p>
+        
+                </div>
+            </section>
+            <section id="arrays" class="topic">
+                <button class="topic-header">What is Destructor and its type?</button>
+                <div class="subtopics">
+                    <p>
+                        <strong>Answer:</strong>A destructor is a special member function in object-oriented programming that is invoked when an object goes out of scope or is deleted, responsible for releasing and cleaning up resources that were allocated or created by the constructor.
+                        <br><br>Key Features of Destructors:<br>
+                        <br>Name: The name of a destructor is the same as the class name, preceded by a tilde (~).
+                        <br>No Parameters: Destructors do not take any parameters and cannot be overloaded (i.e., there can only be one destructor per class).
+                        <br>Automatic Call: They are invoked automatically when the object is destroyed.
+                        <br><br>Types of Destructors:While destructors themselves do not have distinct types like constructors, they can be categorized based on their usage and behavior:
+                        
+                        <br><br><strong>Default Destructor :-</strong>
+                        
+                        <br><Strong>Definition:</Strong> This is the implicit destructor provided by the compiler if no user-defined destructor is specified. It performs the default cleanup for the object.
+                        <br><strong>Usage:</strong> Used when no specific cleanup is required beyond what the compiler provides.
+                        <br>Code :-
+                        <br>class Example {
+                            <br>public:
+                                <br>// Default destructor
+                               <br> ~Example() { 
+                                 <br>   // Default cleanup code
+                               <br> }
+                           <br> };
+                           <br><br><strong>User-defined Destructor :-</strong>
+                        
+                           <br><Strong>Definition:</Strong> A destructor that is explicitly defined by the programmer to handle specific cleanup tasks.
+                           <br><strong>Usage:</strong>Used when the class manages resources that require custom cleanup logic (e.g., dynamic memory allocation).
+
+                           <br>Code :-
+                          <br> class Example {
+                            <br>private:
+                            <br>  int* data; // Pointer to dynamically allocated memory
+                            <br> public:
+                            <br>   Example() {
+                                <br>     data = new int[10]; // Dynamic allocation
+                                <br>}
+                                <br>~Example() { 
+                                    <br>   delete[] data; // Custom cleanup
+                                    <br> }
+                                    <br> };
+                    </p>
+        
+                </div>
+            </section>
+            <section id="arrays" class="topic">
+                <button class="topic-header">What is virtual function?</button>
+                <div class="subtopics">
+                    <p>
+                        <strong>Answer:</strong>A virtual function is a member function in a base class that you expect to override in derived classes. When you use a virtual function, you enable dynamic polymorphism, which allows the program to decide at runtime which function to invoke based on the type of the object pointed to, rather than the type of the pointer.
+                        <br><br>Key Features of Destructors:<br>
+                        <br>Defined in Base Class: Virtual functions are declared in the base class using the keyword virtual.
+                        <br>Overridden in Derived Class: Derived classes can provide their own implementation of the virtual function.
+                        <br>Dynamic Binding: The decision about which function to call is made at runtime, based on the type of the object being pointed to, rather than the type of the pointer.
+                        <br>TBase Class Pointer/Reference: Virtual functions are often used when you want to call derived class methods through a base class pointer or reference.
+                        <br><br>Code :-
+                        <br>class Base {
+                            <br> public:
+                            <br> virtual void show() {
+                                <br>     std::cout << "Base class show function." << std::endl;
+                                <br> }
+                                <br> virtual ~Base() {} // Virtual destructor
+                                <br> };
+                            
+                                <br> class Derived : public Base {
+                                    <br> public:
+                                    <br> void show() override { // Overrides Base class function
+                                        <br> std::cout << "Derived class show function." << std::endl;
+                                        <br> }
+                                        <br>  };
+                    </p>
+        
+                </div>
+            </section>
+            <section id="arrays" class="topic">
+                <button class="topic-header">What is a pure virtual function?</button>
+                <div class="subtopics">
+                    <p>
+                        <strong>Answer:</strong> A pure virtual function is a type of virtual function that is declared in a base class but has no implementation. It serves as a placeholder that forces derived classes to provide their own implementation of the function. Pure virtual functions are used to define abstract classes, which cannot be instantiated directly. Instead, these abstract classes are meant to be subclassed, and their derived classes must implement the pure virtual functions.
+                        <br><br>syntax:-
+                        <br>A pure virtual function is declared by using the = 0 syntax in its declaration. Here’s how it looks:
+                        <br><br>class Base {
+                            <br>public:
+                                <br>virtual void show() = 0; // Pure virtual function
+                           <br> };
+                    </p>
+        
+                </div>
+            </section>
+            <section id="arrays" class="topic">
+                <button class="topic-header">What is an abstruct class and how data abstraction is acchieved?</button>
+                <div class="subtopics">
+                    <p>
+                        <strong>Answer:</strong> Data abstraction is accomplished with the help of abstract methods or abstract classes.
+                        <br>What is an abstract class?
+                        <br>An abstract class is a special class containing abstract methods. The significance of abstract class is that the abstract methods inside it are not implemented and only declared. So as a result, when a subclass inherits the abstract class and needs to use its abstract methods, they need to define and implement them.
+                        <br>Note:- Any class that have a pure virtual function is an Abstract class.
+                        <br><br>code:- 
+                        <br>class Animal {
+                            <br> public:
+                            <br>  // Pure virtual function
+                            <br> virtual void sound() = 0;
+                            <br> };
+                            
+                            <br> // Derived class Dog
+                            <br>class Dog : public Animal {
+                                <br>public:
+                                <br> void sound() override {
+                                    <br>   cout << "Dog barks" << endl;
+                                    <br>}
+                                    <br>};
+                            
+                                    <br>// Derived class Cat
+                                    <br>class Cat : public Animal {
+                                        <br>public:
+                                        <br> void sound() override {
+                                            <br> cout << "Cat meows" << endl;
+                                            <br> }
+                                            <br>};
+                    </p>
+        
+                </div>
+            </section>
+
+            <section id="arrays" class="topic">
+                <button class="topic-header">What is a friend function ?Explain with example.</button>
+                <div class="subtopics">
+                    <p>
+                        <strong>Answer:</strong> A friend function is a function declared with the friend keyword inside a class.
+                        <br>
+                        <br>It can access private and protected members of the class it is declared in, even though it is not a member of the class.
+                        <br>
+                        <br>Friend functions are helpful when an external function needs controlled access to the class’s private data.
+                        <br><br>They are defined outside the class, like regular functions.
+                        <br>
+                        <br>Exapmle:-
+                         <br>
+                         <br>#include<iostream>
+                            <br>using namespace std;
+                            
+                            <br>class Box {
+                                <br>private:
+                                <br> int length;
+                            
+                                <br>public:
+                                <br> Box() : length(0) {}
+                            
+                      
+                                <br>friend void setLength(Box &b, int len);
+                                <br>};
+                            
+                    
+                            <br>void setLength(Box &b, int len) {
+                                <br> b.length = len;  // Accessing private member of Box
+                                <br>}
+                                <br>
+                            
+                    </p>
+        
+                </div>
+            </section>
+
+
+            <section id="arrays" class="topic">
+                <button class="topic-header">Some key Questions</button>
+                <div class="subtopics">
+                    <p>
+                        <strong>what is interface?</strong> 
+                        <br><br>An interface refers to a special type of class, which contains methods, but not their definition. Only the declaration of methods is allowed inside an interface. To use an interface, you cannot create objects. Instead, you need to implement that interface and define the methods for their implementation. 
+                        <br><br> <strong>How much memory does a class occupy?</strong> 
+                        <br><br>Classes do not consume any memory. They are just a blueprint based on which objects are created. Now when objects are created, they actually initialize the class members and methods and therefore consume memory.
+                        <br><br> <strong> Is it always necessary to create objects from class?</strong> 
+                        <br><br>No. An object is necessary to be created if the base class has non-static methods. But if the class has static methods, then objects don’t need to be created. You can call the class method directly in this case, using the class name.
+                        <br><br> <strong> which language is fully based on OOPs?</strong> 
+                        <br><br> Smalltalk is often considered the only fully object-oriented programming language because it adheres strictly to object-oriented principles: everything in Smalltalk is an object, including numbers, classes, and control structures.
+                        <br><br> <strong> What is the limitation of OOPs?</strong> 
+                        <br><br> Object-Oriented Programming (OOP) has limitations, especially in complexity, memory usage, and performance. OOP structures can add unnecessary overhead, making programs slower and more memory-intensive. Designing effective class hierarchies requires careful planning, and inheritance can sometimes lead to rigid structures that are difficult to modify. Additionally, OOP is often not ideal for all types of problems, such as simple data processing, where procedural or functional programming may be more efficient and straightforward. These factors can make OOP less suitable for small programs or performance-critical applications.
+                        <br><br> <strong>What is Ambiguity?</strong> 
+                        <br><br> Ambiguity in programming, especially in Object-Oriented Programming (OOP), occurs when the compiler or interpreter cannot clearly resolve which method, variable, or operation to execute due to multiple possible interpretations.
+
+                        For example, ambiguity often arises in inheritance when a derived class inherits the same method or variable from multiple base classes (like in multiple inheritance). This leads to confusion, as the compiler cannot determine which version of the method or variable to use. To manage ambiguity, languages like C++ use techniques like the virtual inheritance to clarify the inheritance path, whereas languages like Java avoid multiple inheritance for classes altogether to reduce such conflicts.
+                    </p>
+                   </div> 
+                   </section>
+        
+    
+            
+            <div class="last"><p>KEEP GOING!! JUST ONE LAST STEP..</p></div>
+           
+            <!-- Add more topics as needed -->
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

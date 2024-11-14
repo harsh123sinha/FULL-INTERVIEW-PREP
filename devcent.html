@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Introductions Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #2c3e50;
+        }
+
+        .intro-section {
+            width: 100%;
+            max-width: 600px;
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button[type="button"]:first-of-type {
+            background-color: #2ecc71;
+            color: #fff;
+        }
+
+        button[type="button"]:nth-of-type(2) {
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        .intro-output {
+            margin-top: 20px;
+            background: #ecf0f1;
+            padding: 7px;
+            border-radius: 8px;
+            max-width: 600px;
+            width: 100%;
+        }
+        header h1 {
+            font-size: 3vw; /* responsive font-size based on viewport width */
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Smaller screens adjustments */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 5vw; /* adjust font-size for smaller screens */
+            }
+        }
+        
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 6vw; /* further reduce font-size for very small screens */
+            }
+        }
+        
+    </style>
+</head>
+<body>
+
+    <h2>Generate Your Introductions</h2>
+
+    <!-- Introduction 1 -->
+    <div class="intro-section">
+        <label>Name: <input type="text" id="input-name1" placeholder="Your Name"></label>
+        <label>University: <input type="text" id="input-university1" placeholder="Your University"></label>
+        <label>Projects Worked On: <input type="text" id="input-projects1" placeholder="Number of Projects"></label>
+        <button type="button" onclick="generateIntroduction(1)">Generate Introduction</button>
+        <button type="button" onclick="copyIntroduction(1)">Copy Introduction</button>
+        <div class="intro-output">
+            <h3>Your Introduction 1:</h3>
+            <p id="introduction1">Hello, I’m [Your Name], a final-year B.Tech student with a keen interest in software development. Over the course of my studies, I have worked on several projects, including [Project 1], where I developed [specific feature or functionality]. This project not only sharpened my coding skills but also taught me the importance of user experience. I also enjoyed tackling challenges in [Project 2], where I implemented [specific technology or method], further enhancing my understanding of [related technology or concept]. I am excited about the opportunity to apply these skills in a real-world setting.</p>
+        </div>
+    </div>
+
+    <!-- Introduction 2 -->
+    <div class="intro-section">
+        <label>Name: <input type="text" id="input-name2" placeholder="Your Name"></label>
+        <label>Project Focus Area: <input type="text" id="input-focus-area2" placeholder="Project Focus Area"></label>
+        <button type="button" onclick="generateIntroduction(2)">Generate Introduction</button>
+        <button type="button" onclick="copyIntroduction(2)">Copy Introduction</button>
+        <div class="intro-output">
+            <h3>Your Introduction 2:</h3>
+            <p id="introduction2">Hi, I’m [Your Name]. As a final-year B.Tech student, I have a strong foundation in software development, bolstered by my hands-on experience with projects like [Project 1]. In this project, I focused on [specific technology or aspect], which allowed me to explore [related skill or area]. Additionally, my work on [Project 2] involved [describe what you did], providing me with valuable insights into [related topic]. I am eager to bring my passion for coding and problem-solving to a dynamic development team.</p>
+        </div>
+    </div>
+
+    <!-- Introduction 3 -->
+    <div class="intro-section">
+        <label>Name: <input type="text" id="input-name3" placeholder="Your Name"></label>
+        <label>Field of Specialization: <input type="text" id="input-specialization3" placeholder="Your Field of Specialization"></label>
+        <button type="button" onclick="generateIntroduction(3)">Generate Introduction</button>
+        <button type="button" onclick="copyIntroduction(3)">Copy Introduction</button>
+        <div class="intro-output">
+            <h3>Your Introduction 3:</h3>
+            <p id="introduction3">Greetings! I’m [Your Name], a B.Tech student in my final year, dedicated to honing my skills in software development. One of my key projects, [Project 1], revolved around [specific goal or feature], where I utilized [specific technologies or frameworks]. This experience taught me the significance of agile development and collaboration. Moreover, through [Project 2], I gained practical knowledge in [specific technology or approach], which has prepared me for real-world challenges. I look forward to leveraging my background in software development in a professional environment.</p>
+        </div>
+    </div>
+
+    <!-- Introduction 4 -->
+    <div class="intro-section">
+        <label>Name: <input type="text" id="input-name4" placeholder="Your Name"></label>
+        <label>Project Type: <input type="text" id="input-project-type4" placeholder="Type of Project"></label>
+        <label>Skills Used: <input type="text" id="input-skills4" placeholder="Key Skills Used"></label>
+        <button type="button" onclick="generateIntroduction(4)">Generate Introduction</button>
+        <button type="button" onclick="copyIntroduction(4)">Copy Introduction</button>
+        <div class="intro-output">
+            <h3>Your Introduction 4:</h3>
+            <p id="introduction4">Hello, I’m [Your Name]. I am currently pursuing my B.Tech and have developed a strong interest in software development through my project work. My project, [Project 1], involved creating [describe what you built], which helped me understand [specific concepts or technologies]. Additionally, I worked on [Project 2], where I tackled [describe the challenge], further enhancing my analytical skills. I am excited about the opportunity to contribute my skills and enthusiasm for technology to a forward-thinking organization.</p>
+        </div>
+    </div>
+
+    <!-- Introduction 5 -->
+    <div class="intro-section">
+        <label>Name: <input type="text" id="input-name5" placeholder="Your Name"></label>
+        <label>Key Projects Completed: <input type="text" id="input-project-count5" placeholder="Number of Key Projects"></label>
+        <label>Field of Interest: <input type="text" id="input-field5" placeholder="Field of Interest"></label>
+        <button type="button" onclick="generateIntroduction(5)">Generate Introduction</button>
+        <button type="button" onclick="copyIntroduction(5)">Copy Introduction</button>
+        <div class="intro-output">
+            <h3>Your Introduction 5:</h3>
+            <p id="introduction5">Hi there! I’m [Your Name], a final-year B.Tech student with a passion for software development and problem-solving. My journey in tech has been marked by significant projects like [Project 1], where I focused on [describe your role and the outcome]. This project enhanced my technical skills and taught me how to effectively work in a team. Additionally, my experience with [Project 2], where I implemented [specific feature or technology], has prepared me to tackle real-world software challenges. I am eager to apply my knowledge and skills in a collaborative environment.</p>
+        </div>
+    </div>
+
+    <script>
+        function generateIntroduction(introNumber) {
+            let introText = '';
+
+            if (introNumber === 1) {
+                const name = document.getElementById("input-name1").value;
+                const university = document.getElementById("input-university1").value;
+                const projects = document.getElementById("input-projects1").value;
+                introText = `Hello, my name is ${name}. I’m a final-year student at ${university} with hands-on experience in ${projects} projects that allowed me to strengthen my technical capabilities. I’m eager to translate this academic experience into impactful professional work.`;
+
+            } else if (introNumber === 2) {
+                const name = document.getElementById("input-name2").value;
+                const focusArea = document.getElementById("input-focus-area2").value;
+                introText = `Hello, I’m ${name}. My experience in projects centered around ${focusArea} has driven my passion for development in this area, and I’m excited to bring my skills and determination to new challenges.`;
+
+            } else if (introNumber === 3) {
+                const name = document.getElementById("input-name3").value;
+                const specialization = document.getElementById("input-specialization3").value;
+                introText = `Good morning, my name is ${name}. Specializing in ${specialization}, I’ve built a portfolio of projects that underscore my analytical and problem-solving strengths, and I’m enthusiastic about taking on more complex development challenges.`;
+
+            } else if (introNumber === 4) {
+                const name = document.getElementById("input-name4").value;
+                const projectType = document.getElementById("input-project-type4").value;
+                const skills = document.getElementById("input-skills4").value;
+                introText = `Hi, I’m ${name}. My experience developing ${projectType} projects has sharpened my skills in ${skills}, and I’m committed to leveraging these skills to create efficient, impactful solutions.`;
+
+            } else if (introNumber === 5) {
+                const name = document.getElementById("input-name5").value;
+                const projectCount = document.getElementById("input-project-count5").value;
+                const field = document.getElementById("input-field5").value;
+                introText = `Hello, I’m ${name}. Working on ${projectCount} key projects in ${field} has refined my technical and collaborative skills, preparing me to bring value and insight to professional settings.`;
+            }
+
+            document.getElementById(`introduction${introNumber}`).innerText = introText;
+        }
+
+        function copyIntroduction(introNumber) {
+            const introText = document.getElementById(`introduction${introNumber}`).innerText;
+            navigator.clipboard.writeText(introText);
+            alert("Introduction copied to clipboard!");
+        }
+    </script>
+
+</body>
+</html>

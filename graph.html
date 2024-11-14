@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graph Traversal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        h2 {
+            color: #0056b3;
+        }
+        p {
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Graph Traversal in Data Structures</h1>
+        
+        <p>
+            Graph traversal is a process used in data structures to visit and process each node in a graph systematically. Graphs can be represented as collections of nodes (or vertices) connected by edges, and there are two primary methods of traversal: Depth-First Search (DFS) and Breadth-First Search (BFS). Each of these traversal techniques serves different purposes and is used depending on the type of graph structure and the requirements of the algorithm.
+        </p>
+
+        <h2>Depth-First Search (DFS)</h2>
+        <p>
+            Depth-First Search (DFS) is a traversal technique that explores as far along each branch as possible before backtracking. DFS is implemented using a stack, either implicitly through recursion or explicitly by using a stack data structure. DFS is useful in scenarios where the solution involves exploring deeply nested paths, such as in maze-solving algorithms.
+        </p>
+        <p>
+            <strong>Steps for Depth-First Search:</strong>
+        </p>
+        <ul>
+            <li>Start at the root (or any arbitrary node in case of disconnected graphs).</li>
+            <li>Mark the starting node as visited.</li>
+            <li>Recursively visit each unvisited neighboring node, moving deeper into the graph until no further unvisited nodes are left.</li>
+            <li>Backtrack to the previous node and repeat the process until all nodes are visited.</li>
+        </ul>
+        <p>
+            DFS is often used in applications such as finding connected components, solving puzzles, and checking for cycles in a graph. Because of its depth-focused nature, it can quickly find a path to a solution in tree-like structures.
+        </p>
+
+        <h2>Breadth-First Search (BFS)</h2>
+        <p>
+            Breadth-First Search (BFS) is a traversal method that explores all neighboring nodes at the current depth level before moving on to nodes at the next depth level. BFS is implemented using a queue, which ensures that nodes are visited in layers or levels. BFS is especially useful for finding the shortest path in unweighted graphs.
+        </p>
+        <p>
+            <strong>Steps for Breadth-First Search:</strong>
+        </p>
+        <ul>
+            <li>Start at the root (or any arbitrary node in case of disconnected graphs).</li>
+            <li>Enqueue the starting node and mark it as visited.</li>
+            <li>Dequeue a node from the queue and visit each of its unvisited neighboring nodes.</li>
+            <li>Mark each neighboring node as visited and enqueue it.</li>
+            <li>Repeat the process until the queue is empty and all nodes have been visited.</li>
+        </ul>
+        <p>
+            BFS is frequently used in applications where the shortest path or minimum moves are required, such as in GPS navigation, finding the shortest path in a maze, or in social network analysis.
+        </p>
+        <br><br><img src="dfsbfs.jpeg">
+        <br>
+
+        <h2>Summary</h2>
+        <p>
+            Both DFS and BFS have unique advantages based on the needs of the traversal. DFS is depth-focused and suited for deep exploration and problems where backtracking is required, while BFS is layer-focused and ideal for finding the shortest paths in unweighted graphs. Understanding these traversal techniques is essential for effectively working with graphs and designing efficient algorithms.
+        </p>
+    </div>
+</body>
+</html>

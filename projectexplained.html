@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Explanation Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 2em;
+    text-align: center;
+}
+
+/* Main container to center-align the blocks */
+.project-explanation {
+    width: 90%;
+    max-width: 800px; /* Maximum width for better readability */
+}
+
+/* Block style for each paragraph */
+.project-explanation .block {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex; /* Enable flexbox */
+    margin-bottom: 20px; /* Consistent margin between blocks */
+}
+
+/* Label style to ensure uniform starting level */
+.project-explanation .label {
+    font-weight: bold;
+    color: #2c3e50;
+    width: 150px; /* Fixed width for labels */
+}
+
+/* Content style */
+.project-explanation .content {
+    flex: 1; /* Allow the content to take the remaining space */
+    text-align: left; /* Align text to the left */
+    line-height: 1.6; /* Increased line height for better readability */
+}
+        h2 {
+            color: #2c3e50;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 2em;
+            text-align: center;
+        }
+        
+        /* Main container to center-align the blocks */
+        .project-explanation {
+            width: 90%;
+            max-width: 800px; /* Maximum width for better readability */
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* Consistent gap between blocks */
+        }
+        
+        /* Block style for each paragraph */
+        .project-explanation p {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+             justify-content: center;
+        }
+        
+        /* Hover effect for each block */
+        .project-explanation p:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Style for the section headings inside paragraphs */
+        .project-explanation p strong {
+            font-size: 1.1em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        .explanation-section {
+            width: 100%;
+            max-width: 800px;
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .explanation-output {
+            margin-top: 20px;
+            background: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 800px;
+            width: 100%;
+            white-space: pre-wrap;
+        }
+        header h1 {
+            font-size: 3vw; /* responsive font-size based on viewport width */
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Smaller screens adjustments */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 5vw; /* adjust font-size for smaller screens */
+            }
+        }
+        
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 6vw; /* further reduce font-size for very small screens */
+            }
+        }
+        
+        
+    </style>
+</head>
+<body>
+
+    <h2>HOW TO EXPLAIN YOUR PROJECT (FOLLOW THE BELOW TIPS)</h2>
+   
+
+   
+    <p><strong>Project Name:</strong> Begin by clearly stating the name of your project. Providing a specific name gives the project identity and context for the discussion.          </p>
+
+    <p><strong>Project Field:</strong> Specify the domain or field your project is related to (e.g., Web Development, Data Science, Machine Learning, Embedded Systems).               </p>
+
+    <p><strong>Objective:</strong> Mention the main purpose or problem your project aims to solve. This can include key goals or the motivation behind the project.                    </p>
+
+    <p><strong>Key Features:</strong> Highlight the primary features of your project. These should be functionalities or unique aspects that make your project stand out.              </p>
+    
+    <p><strong>Technology Stack:</strong> Specify the tools, programming languages, frameworks, and technologies used in the project. Mention why you chose them if relevant.          </p>
+    
+    
+  
+    <h2>Fill the below correctly and generate the EXPLANATION for your PROJECT</h2>
+
+    <div class="explanation-section">
+        <label>Project Name: <input type="text" id="input-project-name" placeholder="Enter Project Name"></label>
+        <label>Project Field: <input type="text" id="input-project-field" placeholder="Enter Project Field"></label>
+        <label>Application Type: <input type="text" id="input-application-type" placeholder="Enter Application Type"></label>
+        <label>Project Objective: <input type="text" id="input-objective" placeholder="Enter Project Objective"></label>
+        <label>Number of Modules: <input type="text" id="input-number-modules" placeholder="Enter Number of Modules"></label>
+        <label>Main Features: <input type="text" id="input-main-features" placeholder="Enter Main Features"></label>
+        <label>Technology Stack: <input type="text" id="input-tech-stack" placeholder="Enter Technology Stack"></label>
+        <label>Frontend Technologies: <input type="text" id="input-frontend-tech" placeholder="Enter Frontend Technologies"></label>
+        <label>Backend Technology: <input type="text" id="input-backend-tech" placeholder="Enter Backend Technology"></label>
+        <label>Database: <input type="text" id="input-database" placeholder="Enter Database"></label>
+        <label>Project Scope: <input type="text" id="input-project-scope" placeholder="Enter Project Scope"></label>
+       
+        
+        <button type="button" id="generate-button">Generate Explanation</button>
+        <button type="button" id="copy-button" style="display:none;">Copy Text</button>
+    </div>
+
+    <div class="explanation-output" id="output-explanation"><p>I have developed a [project_field] [application_type] called [project_name]. The main objective of my project is to [project_objective]. The project has [number_of_modules] modules. The main features that the project demonstrates are [main_features]. For developing this project, the tech stack that I have used includes [tech_stack]. For making the UI, I have used [frontend_technologies], and for the backend, I have used [backend_technology], and it is powered by a [database] database. This project has a very great scope, which is to [project_scope]. In the end, this project gives me hands-on experience over my skills.</p></div>
+
+    <script>
+        document.getElementById('generate-button').addEventListener('click', function() {
+            const projectName = document.getElementById('input-project-name').value;
+            const projectField = document.getElementById('input-project-field').value;
+            const applicationType = document.getElementById('input-application-type').value;
+            const objective = document.getElementById('input-objective').value;
+            const numberOfModules = document.getElementById('input-number-modules').value;
+            const mainFeatures = document.getElementById('input-main-features').value;
+            const techStack = document.getElementById('input-tech-stack').value;
+            const frontendTech = document.getElementById('input-frontend-tech').value;
+            const backendTech = document.getElementById('input-backend-tech').value;
+            const database = document.getElementById('input-database').value;
+            const projectScope = document.getElementById('input-project-scope').value;
+           
+
+            const explanation = `I have developed a ${projectField} ${applicationType} called ${projectName}. The main objective of my project is to ${objective}. The project has ${numberOfModules} modules. The main features that the project demonstrates are ${mainFeatures}. For developing this project, the tech stack that I have used includes ${techStack}. For making the UI, I have used ${frontendTech}, and for the backend, I have used ${backendTech}, and it is powered by a ${database} database. This project has a very great scope, which is to ${projectScope}. In the end, this project gives me hands-on experience with my skills in ${skills}.`;
+
+            document.getElementById('output-explanation').textContent = explanation;
+            document.getElementById('copy-button').style.display = 'inline-block';
+        });
+
+        document.getElementById('copy-button').addEventListener('click', function() {
+            const explanationText = document.getElementById('output-explanation').textContent;
+            navigator.clipboard.writeText(explanationText).then(() => {
+                alert('Explanation copied to clipboard!');
+            });
+        });
+    </script>
+
+</body>
+</html>

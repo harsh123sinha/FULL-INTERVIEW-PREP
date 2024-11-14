@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA Course Interface</title>
+    
+</head>
+<style>
+    /* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #73ff00;
+}
+
+/* Header Styling */
+header {
+    background-color: #2d2d2d;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Banner Styling */
+.banner {
+    position: relative;
+}
+#my-image {
+    height: 14rem;
+    width: 14rem;
+    margin: auto;
+    margin-top: -16vh;
+  }
+  #my-image img {
+    height: 108%;
+    width: 108%;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+    border: 3px solid rgb(0, 0, 0);
+    margin-top: -135px;
+  }
+/* Container for Sidebar and Content */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 250px;
+    background-color: #333;
+    color: #fff;
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    padding: 0.5rem 1rem;
+}
+
+.sidebar nav ul li a {
+    color: #ccc;
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar nav ul li a:hover {
+    color: #fff;
+    background-color: #e72222;
+    border-radius: 4px;
+}
+
+/* Main Content Styling */
+.content {
+    flex: 1;
+    padding: 3rem;
+    overflow-y: auto;
+    background-color: #2d2d2d
+}
+
+.topic {
+    margin-bottom: 1.5rem;
+}
+
+.topic-header {
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #003c64f5;
+    color: #fff;
+    border: none;
+    padding: 1.2rem;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 4px;
+    outline: none;
+}
+
+.subtopics {
+    margin-top: 0.5rem;
+    padding-left: 1rem;
+    display: none;
+}
+
+.subtopics p {
+    padding: 0.5rem 0;
+    border-left: 2px solid #007acc;
+    margin: 0.3rem 0;
+}
+.subtopics a {
+    color: inherit; /* This makes the link inherit the color from the parent <p> */
+    text-decoration: none; /* This removes the underline */
+}
+
+.subtopics a:hover {
+    text-decoration: underline; /* Optional: Adds an underline on hover for better UX */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        overflow-x: auto;
+    }
+
+    .sidebar nav ul {
+        display: flex;
+    }
+
+    .sidebar nav ul li {
+        padding: 0.5rem;
+        flex: 1;
+        text-align: center;
+    }
+
+    .content {
+        padding: 1rem;
+    }
+}
+@media (min-width: 350px) {
+    header img{
+        height: 192px;
+        width: 331px;
+    }
+   
+    #my-image img {
+        height: 23%;
+        width: 23%;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+        border: 3px solid rgb(0, 0, 0);
+        margin-top: 23px;
+        margin-left: 9px;
+    }
+ }
+@media (min-width: 400px) {
+   header img{
+    height: 226px;
+    width: 365px;
+   }
+  
+#my-image img {
+    height: 28%;
+    width: 28%;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+    border: 3px solid rgb(0, 0, 0);
+    margin-top: 8px;
+    margin-left: 13px;
+}
+
+}
+
+@media (min-width: 550px) {
+    header img{
+     height: 262px;
+     width: 500px;
+    }
+    #my-image img {
+        height: 35%;
+        width: 35%;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+        border: 3px solid rgb(0, 0, 0);
+        margin-top: -18px;
+        margin-left: 11px;
+    }
+ }
+ @media (min-width: 650px) {
+    header img{
+     height: 244px;
+     width: 600px;
+    }
+    #my-image img {
+        height: 34%;
+        width: 34%;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+        border: 3px solid rgb(0, 0, 0);
+        margin-top: -16px;
+        margin-left: 13px;
+    }
+
+ }
+ @media (min-width: 750px) {
+    header img{
+     height: 281px;
+     width: 711px;
+    }
+    
+ }
+ @media (min-width: 950px) {
+    header img{
+     height: 330px;
+     width: 869px;
+    }
+    #my-image img {
+        height: 44%;
+        width: 44%;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+        border: 3px solid rgb(0, 0, 0);
+        margin-top: -52px;
+        margin-left: 13px;
+    }
+ }
+ @media (min-width: 1050px) {
+    header img{
+     height: 387px;
+     width: 968px;
+    }
+    
+ } @media (min-width: 1200px) {
+    header img{
+     height: 453px;
+     width: 1148px;
+    }
+    
+    #my-image img {
+        height: 95%;
+        width: 95%;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+        border: 3px solid rgb(0, 0, 0);
+        margin-top: -191px;
+        margin-left: 22px;
+    }
+ }
+ @media (min-width: 1200px) {
+    header img{
+     height: 600px;
+     width: 100%;
+    }
+
+ }
+ .last{
+    
+    height: 100px;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+ }
+ .last p{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 40px;
+ }
+ @media (max-width: 400px){
+.last p {
+    font-size:15px ;
+}
+ }
+ @media (max-width: 450px){
+    .last p {
+        font-size:20px ;
+    }
+     }
+     img {
+        max-width: 100%;
+        height: auto;
+    }
+    header h1 {
+        font-size: 3vw; /* responsive font-size based on viewport width */
+        font-weight: bold;
+        color: #ffffff;
+        margin-bottom: 0.5rem;
+    }
+    
+    /* Smaller screens adjustments */
+    @media (max-width: 768px) {
+        header h1 {
+            font-size: 5vw; /* adjust font-size for smaller screens */
+        }
+    }
+    
+    @media (max-width: 480px) {
+        header h1 {
+            font-size: 6vw; /* further reduce font-size for very small screens */
+        }
+    }
+    
+    
+ 
+
+
+
+</style>
+<body>
+    <header>
+        <h1>FUNDAMENTAL OF STRUCTURE QUERY LANGUAGE</h1>
+        <h1>Click on each question to know how to prepare the answer </h1>
+        
+       
+    </header>
+    <div class="container">
+        <main class="content">
+          
+            <section id="arrays" class="topic">
+                <button class="topic-header">What is SQL and what is CRUD Operation? SQL AND MYSQL</button>
+                <div class="subtopics">
+              <strong>answer:</strong>SQL is Structured Query Language - used to store, manipulate and retrieve data from RDBMS.
+<br><br>(It is not a database, it is a language used to interact with database)
+<br><br>We use SQL for CRUD Operations :
+<br><br>● CREATE - To create databases, tables, insert tuples in tables etc
+<br><br>● READ - To read data present in the database.
+<br><br>● UPDATE - Modify already inserted data.
+<br><br>● DELETE - Delete database, table or specific data point/tuple/row or multiple rows.
+<br><br>*Note - SQL keywords are NOT case sensitive. Eg: select is the same as SELECT in SQL.
+<br><br><br>SQL AND MYSQL?
+<br><br><strong>SQL</strong> is a standardized language used for managing and querying relational databases.
+<br><br><strong>MYSQL</strong>s an open-source RDBMS that uses SQL to manage and manipulate relational data.
+
+
+
+
+
+
+
+                        
+                    </p>
+        
+                </div>
+            </section>
+            <section id="arrays" class="topic">
+                <button class="topic-header">What is difference between database , RDMS AND DBMS ?
+
+                   
+                    </button>
+                <div class="subtopics">
+                    <p>
+                        <strong>Answer:</strong>A database is a structured collection of data, organized for easy access, retrieval, and management. It enables efficient storage and secure handling of large volumes of information.
+                        <br><br><strong>DBMS :-<strong>A DBMS is a software that allows users to store, manage, and retrieve data in a database. It organizes data in files without enforcing relationships between data elements. DBMS is suitable for smaller, simpler applications with less complex data needs.
+                            <br><br><strong>RDBMS :-<strong>An RDBMS is a type of DBMS that stores data in a structured format using tables, rows, and columns. It supports relationships between tables through foreign keys, ensuring data integrity and consistency. RDBMS is ideal for large-scale, complex applications that require sophisticated data management and querying.
+                       
+                    </p>
+        
+                </div>
+            </section>
+            <section id="arrays" class="topic">
+                <button class="topic-header">SQL AND MYSQL AND NOSQL?</button>
+                <div class="subtopics">
+                    <p>
+                        <strong>Answer:</strong><br><br><strong>(MySQL): </strong> 
+                       <br><br> Structure: SQL databases are relational and use structured data stored in tables (rows and columns). They rely on a predefined schema.
+                       <br><br> Query Language: SQL (Structured Query Language) is used for defining and managing data in relational databases.
+                       <br><br>Data Integrity: Supports strong data integrity, with ACID (Atomicity, Consistency, Isolation, Durability) properties ensuring reliable transactions.
+                       <br><br>Examples: MySQL, PostgreSQL, Oracle, Microsoft SQL Server.
+                       <br><br>Use Case: Ideal for applications with complex queries, data consistency needs, and relationships between tables (e.g., banking systems, enterprise applications).
+                       <br><br>
+                       <br><br>
+                       <strong>NoSQL: </strong>
+                       <br><br>Structure: NoSQL databases are non-relational and can store data in various formats, such as key-value pairs, documents, column-family stores, or graphs.
+                       <br><br>Query Language: There is no standard query language; each NoSQL database has its own query method (e.g., MongoDB uses BSON queries).
+                       <br><br>Data Integrity: NoSQL databases typically offer eventual consistency instead of ACID, favoring availability and scalability over strict consistency.
+                       <br><br>Examples: MongoDB, Cassandra, CouchDB, Redis.
+                       <br><br>Use Case: Ideal for applications with large amounts of unstructured data, horizontal scalability, and high-speed read/write operations (e.g., social media platforms, big data applications).
+                       <br><br><img src="sqll.png" alt="sql">
+                    </p>
+        
+                </div>
+            </section>
+            <section id="arrays" class="topic">
+                <button class="topic-header">Languages or Subsets of SQL?</button>
+                <div class="subtopics">
+                    <p>Different types of SQL commands or sub-languages used within SQL:
+
+                        <br><br>DDL (Data Definition Language): Used to define and manage database structures (tables, schemas).
+                        
+                        <br>Example commands: CREATE, ALTER, DROP, TRUNCATE.
+                        <br><br>DML (Data Manipulation Language): Used to manipulate and manage data within the database.
+                        
+                        <br> Example commands: SELECT, INSERT, UPDATE, DELETE.
+                        <br><br>DCL (Data Control Language): Used to define access controls and permissions for database users.
+                        
+                        <br>Example commands: GRANT, REVOKE.
+                        <br><br>TCL (Transaction Control Language): Used to manage database transactions and ensure data integrity.
+                        
+                        <br>Example commands: COMMIT, ROLLBACK, SAVEPOINT.
+                        <br><br>These sub-languages together provide the full range of capabilities needed for interacting with relational databases in SQL.
+                       
+
+                    </p>
+        
+                </div>
+            </section>
+            <section id="arrays" class="topic">
+                <button class="topic-header">DDL (Data Definition Language): What is CREATE, ALTER, DROP, TRUNCATE ?</button>
+                <div class="subtopics">
+                    <p><strong>● CREATE TABLE:</strong>
+                        <br>○ Used to create a new table in the database.
+                        <br>○ Specifies the table name, column names, data types, constraints, and more.
+                        <br>○ Example:<br>  CREATE TABLE employees (id INT PRIMARY KEY, <br> name VARCHAR(50), <br>
+                        salary DECIMAL(10, 2)); <br> <br>
+                        
+                       <strong> ● ALTER TABLE:</strong>
+                       <br> ○ Used to modify the structure of an existing table.
+                       <br>○ You can add, modify, or drop columns, constraints, and more.
+                       <br>○ Example:   ALTER TABLE employees ADD COLUMN email VARCHAR(100);
+                        
+                       <br> <br> <strong>● DROP TABLE:</strong>
+                        <br>○ Used to delete an existing table along with its data and structure.
+                        <br> ○ Example:   DROP TABLE employees;
+                        <br> <br><strong>● TRUNCATE TABLE:</strong>
+                        <br>○ Used to delete the data inside a table, but not the table itself.
+                        <br> ○ Syntax –   TRUNCATE TABLE table_name
+                      </p>
+        
+                </div>
+            </section>
+            <section id="arrays" class="topic">
+                <button class="topic-header">DML (DATA MANIPULATION LANGUAGE): What is INSERT, UPDATE, DELETE ?</button>
+                <div class="subtopics">
+                    <p>
+                        <strong>● INSERT:</strong>
+<br>The INSERT statement adds new records to a table.
+<br>Syntax: INSERT INTO table_name (column1, column2, ...) VALUES (value1, value2,
+...);
+<br><br>Example: INSERT INTO employees (first_name, last_name, salary) VALUES ('John',
+'Doe', 50000);
+
+<br><br><strong>● UPDATE:</strong>
+<br>The UPDATE statement modifies existing records in a table.
+<br>Syntax: UPDATE table_name SET column1 = value1, column2 = value2, ... WHERE
+condition;
+<br><br> Example: UPDATE employees SET salary = 55000 WHERE first_name = 'John';
+<br><br><strong>● DELETE:</strong>
+<br>The DELETE statement removes records from a table.
+<br>Syntax: DELETE FROM table_name WHERE condition;
+<br><br>Example: DELETE FROM employees WHERE last_name = 'Doe';
+                    </p>
+                    Data Control Language focuses on the management of access rights, permissions, and
+                    security-related aspects of a database system.
+                    DCL commands are used to control who can access the data, modify the data, or perform
+                    administrative tasks within a database.
+                    DCL is an important aspect of database security, ensuring that data remains protected and
+                    only authorised users have the necessary privileges.
+                </div>
+            </section>  
+            <section id="arrays" class="topic">
+                <button class="topic-header">DCL (DATA Control LANGUAGE): What is Grant and Invoke ?</button>
+                <div class="subtopics">
+                    <p>
+                    Data Control Language focuses on the management of access rights, permissions, and
+                    security-related aspects of a database system.
+                    <br><br>DCL commands are used to control who can access the data, modify the data, or perform
+                    administrative tasks within a database.
+                    <br><br>DCL is an important aspect of database security, ensuring that data remains protected and
+                    only authorised users have the necessary privileges.
+                        <br><br><strong>There are two main DCL commands in SQL: GRANT and REVOKE.</strong>
+<br>
+<br><strong>1. GRANT: </strong>
+<br><br>The GRANT command is used to provide specific privileges or permissions to users or roles.
+<br><br>Privileges can include the ability to perform various actions on tables, views, procedures,
+and other database objects.
+<br><br>Syntax:
+<br>GRANT privilege_type
+<br>ON object_name
+<br>TO user_or_role;
+<br><br>In this syntax:
+<br><br>● privilege_type refers to the specific privilege or permission being granted (e.g.,
+SELECT, INSERT, UPDATE, DELETE).
+<br><br>● object_name is the name of the database object (e.g., table, view) to which the
+privilege is being granted.
+<br><br>● user_or_role is the name of the user or role that is being granted the privilege.
+<br><br>Example: Granting SELECT privilege on a table named "Employees" to a user named
+"Analyst":
+<br><br>GRANT SELECT ON Employees TO Analyst;
+<br><br><strong>2. REVOKE:</strong>
+<br><br>The REVOKE command is used to remove or revoke specific privileges or permissions that
+have been previously granted to users or roles.
+<br><br>Syntax:
+<br>REVOKE privilege_type
+<br>ON object_name
+<br>FROM user_or_role;
+<br><br>In this syntax:
+<br>● privilege_type is the privilege or permission being revoked.
+<br>● object_name is the name of the database object from which the privilege is being
+revoked.
+<br>● user_or_role is the name of the user or role from which the privilege is being
+revoked.
+<br><br>Example: Revoking the SELECT privilege on the "Employees" table from the "Analyst" user:
+<br><br>REVOKE SELECT ON Employees FROM Analyst;
+<br><br>.DCL and Database Security:
+<br><br>DCL plays a crucial role in ensuring the security and integrity of a database system.
+By controlling access and permissions, DCL helps prevent unauthorised users from
+tampering with or accessing sensitive data. 
+<br><br>Proper use of GRANT and REVOKE commands
+ensures that only users who require specific privileges can perform certain actions on
+database objects.</p>   </div>
+</section>
+
+            <section id="arrays" class="topic">
+                <button class="topic-header">What is Select Command and how Where, AND, OR, NOT, Like, In, Between, Is Null. DISTINCT and AS is connected ?</button>
+                <div class="subtopics">
+                    <p>
+                        <strong>Answer:</strong>The SELECT statement is used to select data from a database.
+                        <br><br>Syntax: SELECT column1, column2, ... FROM table_name;
+                        <br><br>Here, column1, column2, ... are the field names of the table.
+                        <br><br>If you want to select all the fields available in the table, use the following syntax:
+                        <br><br>SELECT * FROM table_name;
+                        <br><br>Ex: SELECT CustomerName, City FROM Customers;
+                        <br>/////////////////////////////////////////////////////////////////////////// EE NN DD ///////////////////////////////////////////////////////////
+                        <br><br><strong>● WHERE:</strong>
+                        <br><br>The WHERE clause is used to filter records.
+                        <br><br>Syntax: SELECT column1, column2, ... FROM table_name WHERE condition;
+                        <br><br>Ex: SELECT * FROM Customers WHERE Country='Mexico';
+                        <br><br>Operators used in WHERE are:
+                        <br>= : Equal
+                        <br>> : Greater than
+                        <br>< : Less than
+                        <br>>= : Greater than or equal
+                        <br><= : Less than or equal
+                        <br><> : Not equal.
+                        <br><br>Note: In some versions of SQL this operator may be written as !=
+                        <br>/////////////////////////////////////////////////////////////////////////// EE NN DD ///////////////////////////////////////////////////////////
+                        <br><br><strong>● AND, OR, NOT</strong>
+                        <br><br>TThe WHERE clause can be combined with AND, OR, and NOT operators.
+                        <br><br> - The AND and OR operators are used to filter records based on more than one
+                        condition:
+                        <br><br> - The AND operator displays a record if all the conditions separated by AND are TRUE.
+                        <br><br>- The OR operator displays a record if any of the conditions separated by OR is TRUE.
+                        <br><br>- The NOT operator displays a record if the condition(s) is NOT TRUE.
+                        <br><br><strong>Syntax:</strong>
+
+                        <br><br>SELECT column1, column2, ... FROM table_name WHERE condition1 AND condition2 AND condition3 ...;
+                        <br><br>SELECT column1, column2, ... FROM table_name WHERE condition1 OR condition2 OR condition3 ...;
+                        <br><br>SELECT column1, column2, ... FROM table_name WHERE NOT condition;
+                        <br><br>Example:
+                        <br><br>SELECT * FROM Customers WHERE Country=’India’ AND City=’Japan’;
+                        <br><br>SELECT * FROM Customers WHERE Country=’America’ AND (City=’India’ OR City=’Korea’);
+                        <br>/////////////////////////////////////////////////////////////////////////// EE NN DD ///////////////////////////////////////////////////////////
+                        
+                        <br><br><strong>● LIKE:</strong>
+                        <br><br>The LIKE operator is used in a WHERE clause to search for a specified pattern in a column.
+                        <br><br> There are two wildcards often used in conjunction with the LIKE operator:
+                        <br><br>- The percent sign (%) represents zero, one, or multiple characters
+                        <br><br>- The underscore sign (_) represents one, single character
+                        
+                        <br><br>Example: SELECT * FROM employees WHERE first_name LIKE 'J%';
+                        <br><br>WHERE CustomerName LIKE 'a%'
+                        <br>- Finds any values that start with "a"
+                        <br><br>WHERE CustomerName LIKE '%a'
+                        <br> - Finds any values that end with "a"
+                        <br><br> WHERE CustomerName LIKE '%or%'
+                        <br>- Finds any values that have "or" in any position
+                        <br><br>WHERE CustomerName LIKE '_r%'
+                        <br>- Finds any values that have "r" in the second position
+                        
+                        <br><br>WHERE CustomerName LIKE 'a_%'
+                        <br>- Finds any values that start with "a" and are at least 2 characters in length
+                        <br><br>WHERE CustomerName LIKE 'a__%'
+                        <br>- Finds any values that start with "a" and are at least 3 characters in length
+                        <br><br>WHERE ContactName LIKE 'a%o'
+                        <br>- Finds any values that start with "a" and ends with "o"
+                        <br>/////////////////////////////////////////////////////////////////////////// EE NN DD ///////////////////////////////////////////////////////////
+                        <br><br><strong>● IN:</strong>
+<br><br>Filters results based on a list of values in the WHERE clause.
+<br><br>Example: SELECT * FROM products WHERE category_id IN (1, 2, 3);
+<br>/////////////////////////////////////////////////////////////////////////// EE NN DD ///////////////////////////////////////////////////////////
+<br><br><strong>● BETWEEN: </strong>
+<br><br>Filters results within a specified range in the WHERE clause.
+<br><br>Example: SELECT * FROM orders WHERE order_date BETWEEN '2023-01-01' AND
+'2023-06-30';
+<br>/////////////////////////////////////////////////////////////////////////// EE NN DD ///////////////////////////////////////////////////////////
+<br><br><strong>● IS NULL: </strong>
+<br><br>Checks for NULL values in the WHERE clause.
+<br><br>Example: SELECT * FROM customers WHERE email IS NULL;
+<br>/////////////////////////////////////////////////////////////////////////// EE NN DD ///////////////////////////////////////////////////////////
+
+<br><br><strong>● AS:</strong>
+<br><br>Renames columns or expressions in query results.
+<br><br>Example: SELECT first_name AS "First Name", last_name AS "Last Name" FROM
+employees;
+<br>/////////////////////////////////////////////////////////////////////////// EE NN DD ///////////////////////////////////////////////////////////
+
+<br><br><strong>● AS:</strong>
+<br><br><strong>● DISTINCT:</strong>
+<br><br>Removes duplicate rows from query results.
+<br><br>Syntax: SELECT DISTINCT column1, column2 FROM table_name;
+                    </p>
+        
+                </div>
+            </section>
+            <section id="arrays" class="topic">
+                <button class="topic-header">What is ORDER BY and GROUP BY command and HAVING CLAUSE?</button>
+                <div class="subtopics">
+                    <p>
+                        <strong><u>● ORDER BY</u></strong>
+                        <br><br>The ORDER BY clause allows you to sort the result set of a query based on one or more columns.
+                        <br><br>Basic Syntax:
+                        <br><br>- The ORDER BY clause is used after the SELECT statement to sort query results.
+                        
+                        <br><br>- Syntax: SELECT column1, column2 FROM table_name ORDER BY column1
+                        [ASC|DESC];
+                        <br><br>Ascending and Descending Order:
+                        <br><br>- By default, the ORDER BY clause sorts in ascending order (smallest to largest).
+                        <br><br>- You can explicitly specify descending order using the DESC keyword.
+                        <br><br>- Example: SELECT product_name, price FROM products ORDER BY price DESC;
+                        <br><br><strong><u> ● GROUP BY</u></strong>
+                       
+                        <br><br>The GROUP BY clause in SQL is used to group rows from a table based on one or more columns.
+                        <br><br>Syntax:
+
+                        <br><br>- The GROUP BY clause follows the SELECT statement and is used to group rows based on specified columns.
+                        <br><br>- Syntax: SELECT column1, aggregate_function(column2) FROM table_name
+                        >GROUP BY column1;
+                        <br><br><STRONG><u> Aggregation Functions:</u></STRONG>
+                        <br><br>○ Aggregation functions (e.g., COUNT, SUM, AVG, MAX, MIN) are often used
+                        <br><br>with GROUP BY to calculate values for each group.
+                        <br><br>○ Example: SELECT department, AVG(salary) FROM employees GROUP BY department;
+
+                        <br><br>- Grouping by Multiple Columns:
+                        <br><br>○ You can group by multiple columns by listing them in the GROUP BY clause.
+                        <br><br>○ This creates a hierarchical grouping based on the specified columns.
+                        <br><br>○ Example: SELECT department, gender, AVG(salary) FROM employees
+                        GROUP BY department, gender;
+
+<br><br><strong><u>● HAVING Clause:</u></strong>
+<br><br>○ The HAVING clause is used with GROUP BY to filter groups based on
+<br><br>aggregate function results.
+<br><br>○ It's similar to the WHERE clause but operates on grouped data.
+<br><br>○ Example: SELECT department, AVG(salary) FROM employees GROUP BY department HAVING AVG(salary) > 50000;
+<br><br><strong>Combining GROUP BY and ORDER BY:</strong>
+<br><br>○ You can use both GROUP BY and ORDER BY in the same query to control the order of grouped results.
+<br><br>○ Example: SELECT department, COUNT(*) FROM employees GROUP BY department ORDER BY COUNT(*) DESC;
+                      
+                    </p>
+        
+                </div>
+            </section>
+            <section id="arrays" class="topic">
+                <button class="topic-header">PRIMARY KEY AND FOREIGN KEY WITH EXAMPLE </button>
+                <div class="subtopics">
+                    <p>
+                        <STRONG><U>1. Primary Key</U></STRONG>
+                        <br>A primary key is a unique identifier for each record in a table.
+                        <br>It ensures that no duplicate or NULL values are allowed in the column(s) defined as the primary key.
+                        <br>Primary keys are often used to enforce data integrity within a single table.
+                        <br><br>Example:
+                        <br><br>Let's say we have a Customers table, where each customer has a unique CustomerID.
+
+
+                        <br><br>CREATE TABLE Customers (
+                            <br> CustomerID INT PRIMARY KEY,
+                            <br> Name VARCHAR(100),
+                            <br>Email VARCHAR(100)
+                            <br>);
+                            <br><br>Here, CustomerID is the primary key, ensuring each customer record is unique.
+
+                            <br><br><strong><u>2. Foreign Key</u></strong>
+                            <br><br>A foreign key is a field (or collection of fields) in one table that uniquely identifies a row in another table.
+                            <br>The foreign key establishes a relationship between two tables, enforcing referential integrity.
+                            <br>It ensures that values in the foreign key column(s) must exist in the referenced primary key column(s) in another table.
+                            <br><br>Example:- 
+                            <br><br><img src="primary.png" alt="primary">
+                            <br><br>Here's a SQL example based on the image you've shared. We have two tables: users and orders. In this setup:
+                            <br>The users table has a primary key column user_id, ensuring each user is unique.
+                            <br>The orders table has a user_id column that acts as a foreign key, referencing the user_id in the users table to ensure that each order is associated with a valid user.
+                            <br><br>CREATE TABLE orders (
+                                <br>order_no INT PRIMARY KEY,
+                                <br>user_id INT,
+                                <br>product_sku INT,
+                                <br>FOREIGN KEY (user_id) REFERENCES users(user_id)
+                                <br>);
+                    </p>
+        
+                </div>
+            </section>
+
+
+            <section id="arrays" class="topic">
+                <button class="topic-header">What are all aggrigate function ?</button>
+                <div class="subtopics">
+                    <p>
+                        <strong>● AGGREGATE FUNCTIONS</strong>
+                        <br><br>These are used to perform calculations on groups of rows or entire result sets. They provide insights into data by summarising and processing information.
+                        <br><br>Common Aggregate Functions:
+                        <br><br><strong>- COUNT():</strong>
+                        <br>Counts the number of rows in a group or result set.
+                        
+                        <br>Calculates the sum of numeric values in a group or result set.
+                        <br><br><strong>- AVG():</strong>
+                        
+                        <br>Computes the average of numeric values in a group or result set.
+                        <br><br><strong>- MAX():</strong>
+                        <br>Finds the maximum value in a group or result set.
+                        <br><br><strong>- MIN():</strong>
+                       <br><br> Retrieves the minimum value in a group or result set.
+                    </p>
+        
+                </div>
+            </section>
+
+
+
+            <section id="arrays" class="topic">
+                <button class="topic-header">JOINS IN SQL?</button>
+                <div class="subtopics">
+                    <p>
+                        Here’s a rundown of the primary types of joins in SQL:
+
+                        <br><br><strong>INNER JOIN:</strong> Returns only the rows with matching values in both tables.
+                        
+                        <br><br>SELECT table1.column1, table2.column2
+                        <br>FROM table1
+                        <br>INNER JOIN table2 ON table1.common_column = table2.common_column;
+
+                        <br><br><strong>LEFT JOIN (or LEFT OUTER JOIN):</strong> Returns all rows from the left table, and the matching rows from the right table. If there’s no match, NULL values fill in for the right table’s columns.
+                        <br><br>SELECT table1.column1, table2.column2
+                        <br>FROM table1
+                        <br>LEFT JOIN table2 ON table1.common_column = table2.common_column;
+                        
+                       <br><br><strong> RIGHT JOIN (or RIGHT OUTER JOIN):</strong> Returns all rows from the right table, and the matching rows from the left table. If there’s no match, NULL values fill in for the left table’s columns.
+                       <br><br>SELECT table1.column1, table2.column2
+                       <br>FROM table1
+                       <br>RIGHT JOIN table2 ON table1.common_column = table2.common_column;
+                        
+                        <br><br><strong>FULL OUTER JOIN:</strong> Returns all rows when there is a match in either left or right table. If there is no match, NULL values will appear for columns from the table without a match.
+                        <br><br> SELECT table1.column1, table2.column2
+                        <br> FROM table1
+                        <br>FULL OUTER JOIN table2 ON table1.common_column = table2.common_column;
+                        
+                        <br><br><strong>CROSS JOIN:</strong>  Returns the Cartesian product of the two tables (all possible combinations of rows from the two tables).
+                        <br><br>SELECT table1.column1, table2.column2
+                        <br>FROM table1
+                        <br>CROSS JOIN table2;
+                        
+                       <br><br><strong> SELF JOIN:</strong>  Joins a table with itself, useful when a row needs to be compared with other rows in the same table.
+                       <br><br>SELECT A.column1, B.column2
+                       <br>FROM table A, table B
+                       <br>WHERE A.common_column = B.common_column;
+                       <br><br><img src="join.png" alt="join">
+                    </p>
+        
+                </div>
+            </section>
+            <section id="arrays" class="topic">
+                <button class="topic-header">What are  ● UNION ● INTERSECT ● EXCEPT (or MINUS) ● UNION ALL?</button>
+                <div class="subtopics">
+                    <p>
+                        <strong>1. UNION</strong>
+                       <br><br>Combines the result sets of two queries and removes duplicate rows.
+                       <br><br>Columns in both queries must have the same number and compatible data types.
+                       <br><br>SELECT column1, column2 FROM table1
+                       <br>UNION
+                       <br> SELECT column1, column2 FROM table2;
+                       <br><br><strong> 2. INTERSECT</strong>
+                       <br><br>Returns only the rows that are common between the result sets of two queries.
+                       <br><br>Like UNION, the queries must return the same number and type of columns.
+                       <br><br>SELECT column1, column2 FROM table1
+                       <br>INTERSECT
+                       <br>SELECT column1, column2 FROM table2;
+                       <br><br><strong> 3. EXCEPT (or MINUS in some databases)</strong>
+                       <br><br>Returns rows from the first query that do not appear in the second query's result set.
+                       <br><br>Used when you want records unique to the first query.
+                       <br><br>SELECT column1, column2 FROM table1
+                       <br>EXCEPT
+                       <br>SELECT column1, column2 FROM table2;
+                       <br><br><strong>   4. UNION ALL  </strong>
+                       <br><br>Combines the result sets of two queries without removing duplicates, meaning it will include all rows, even if they are duplicated.
+                       <br><br>SELECT column1, column2 FROM table1
+                       <br>UNION ALL
+                       <br>SELECT column1, column2 FROM table2;
+                       <br><br><img src="union.jpg" alt="union">
+                    </p>
+        
+                </div>
+            </section>
+            <section id="arrays" class="topic">
+                <button class="topic-header">IMPORTANT SQL CODING QUESTION ?</button>
+                <div class="subtopics">
+                    <p>
+                        <br><br><img src="1Q.png" alt="union">
+                        <br><br><img src="2Q.png" alt="union">
+                        <br><br><img src="3Q.png" alt="union">
+                        <br><br><img src="4Q.png" alt="union">
+                        <br><br><img src="5Q.png" alt="union">
+                    </p>
+        
+                </div>
+            </section>
+         
+        
+    
+            
+            <div class="last"><p> DEED LOVK MISSINgKEEP GOING!! JUST ONE LAST STEP..</p></div>
+           
+            <!-- Add more topics as needed -->
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

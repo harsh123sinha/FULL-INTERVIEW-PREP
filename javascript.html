@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA Course Interface</title>
+    
+</head>
+<style>
+    /* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #73ff00;
+}
+
+/* Header Styling */
+header {
+    background-color: #2d2d2d;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Banner Styling */
+.banner {
+    position: relative;
+}
+#my-image {
+    height: 14rem;
+    width: 14rem;
+    margin: auto;
+    margin-top: -16vh;
+  }
+  #my-image img {
+    height: 108%;
+    width: 108%;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+    border: 3px solid rgb(0, 0, 0);
+    margin-top: -135px;
+  }
+/* Container for Sidebar and Content */
+.container {
+    display: flex;
+    height: 100vh;
+}
+/* General h1 styling */
+header h1 {
+    font-size: 3vw; /* responsive font-size based on viewport width */
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+/* Smaller screens adjustments */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 5vw; /* adjust font-size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 6vw; /* further reduce font-size for very small screens */
+    }
+}
+
+
+/* Sidebar Styling */
+.sidebar {
+    width: 250px;
+    background-color: #333;
+    color: #fff;
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    padding: 0.5rem 1rem;
+}
+
+.sidebar nav ul li a {
+    color: #ccc;
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar nav ul li a:hover {
+    color: #fff;
+    background-color: #e72222;
+    border-radius: 4px;
+}
+
+/* Main Content Styling */
+.content {
+    flex: 1;
+    padding: 3rem;
+    overflow-y: auto;
+    background-color: #2d2d2d
+}
+
+.topic {
+    margin-bottom: 1.5rem;
+}
+
+.topic-header {
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #003c64f5;
+    color: #fff;
+    border: none;
+    padding: 1.2rem;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 4px;
+    outline: none;
+}
+
+.subtopics {
+    margin-top: 0.5rem;
+    padding-left: 1rem;
+    display: none;
+}
+
+.subtopics p {
+    padding: 0.5rem 0;
+    border-left: 2px solid #007acc;
+    margin: 0.3rem 0;
+}
+.subtopics a {
+    color: inherit; /* This makes the link inherit the color from the parent <p> */
+    text-decoration: none; /* This removes the underline */
+}
+
+.subtopics a:hover {
+    text-decoration: underline; /* Optional: Adds an underline on hover for better UX */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        overflow-x: auto;
+    }
+
+    .sidebar nav ul {
+        display: flex;
+    }
+
+    .sidebar nav ul li {
+        padding: 0.5rem;
+        flex: 1;
+        text-align: center;
+    }
+
+    .content {
+        padding: 1rem;
+    }
+}
+@media (min-width: 350px) {
+    header img{
+        height: 192px;
+        width: 331px;
+    }
+   
+    #my-image img {
+        height: 23%;
+        width: 23%;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+        border: 3px solid rgb(0, 0, 0);
+        margin-top: 23px;
+        margin-left: 9px;
+    }
+ }
+@media (min-width: 400px) {
+   header img{
+    height: 226px;
+    width: 365px;
+   }
+  
+#my-image img {
+    height: 28%;
+    width: 28%;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+    border: 3px solid rgb(0, 0, 0);
+    margin-top: 8px;
+    margin-left: 13px;
+}
+
+}
+
+@media (min-width: 550px) {
+    header img{
+     height: 262px;
+     width: 500px;
+    }
+    #my-image img {
+        height: 35%;
+        width: 35%;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+        border: 3px solid rgb(0, 0, 0);
+        margin-top: -18px;
+        margin-left: 11px;
+    }
+ }
+ @media (min-width: 650px) {
+    header img{
+     height: 244px;
+     width: 600px;
+    }
+    #my-image img {
+        height: 34%;
+        width: 34%;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+        border: 3px solid rgb(0, 0, 0);
+        margin-top: -16px;
+        margin-left: 13px;
+    }
+
+ }
+ @media (min-width: 750px) {
+    header img{
+     height: 281px;
+     width: 711px;
+    }
+    
+ }
+ @media (min-width: 950px) {
+    header img{
+     height: 330px;
+     width: 869px;
+    }
+    #my-image img {
+        height: 44%;
+        width: 44%;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+        border: 3px solid rgb(0, 0, 0);
+        margin-top: -52px;
+        margin-left: 13px;
+    }
+ }
+ @media (min-width: 1050px) {
+    header img{
+     height: 387px;
+     width: 968px;
+    }
+    
+ } @media (min-width: 1200px) {
+    header img{
+     height: 453px;
+     width: 1148px;
+    }
+    
+    #my-image img {
+        height: 95%;
+        width: 95%;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+        border: 3px solid rgb(0, 0, 0);
+        margin-top: -191px;
+        margin-left: 22px;
+    }
+ }
+ @media (min-width: 1200px) {
+    header img{
+     height: 600px;
+     width: 100%;
+    }
+
+ }
+ .last{
+    
+    height: 100px;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+ }
+ .last p{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 40px;
+ }
+ @media (max-width: 400px){
+.last p {
+    font-size:15px ;
+}
+ }
+ @media (max-width: 450px){
+    .last p {
+        font-size:20px ;
+    }
+    .h1{
+        font-size: 70px;
+    }
+     }
+     img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    
+ 
+
+
+
+</style>
+<body>
+    <header>
+        <h1>FUNDAMENTAL OF JAVASCRIPT (EACH QUESTION IS VERY IMPORTANT)</h1>
+        <h1>Click on each question to know how to prepare the answer </h1>
+        
+       
+    </header>
+    <div class="container">
+        <main class="content">
+          
+            <section id="javascript-info" class="topic">
+                <button class="topic-header">WHAT IS JAVASCRIPT?</button>
+                <div class="subtopics">
+                    <p>
+                        <strong>JavaScript:</strong> JavaScript is a versatile, client-side scripting language designed to create dynamic and interactive web pages, enhancing the user experience on websites.
+                        <br><br>
+                        JavaScript allows developers to implement complex features on web pages, such as displaying timely content updates, interactive forms, animations, and much more. Unlike server-side languages, JavaScript is primarily executed in the browser, allowing it to respond to user actions instantly.
+                        <br><br>
+                        <strong>Scripts in JavaScript:</strong> A script is a JavaScript program that can be added directly to the HTML of any web page. When the page loads, the script is executed automatically, bringing life to the web page elements without requiring a page reload.
+                    </p>
+                </div>
+            </section>
+            
+            <section id="javascript-datatypes" class="topic">
+                <button class="topic-header">WHAT ARE ALL THE DIFFERENT DATA TYPES IN JAVASCRIPT?</button>
+                <div class="subtopics">
+                    <p>
+                        <strong>Data Types in JavaScript:</strong> JavaScript supports several fundamental data types that can be divided into two main categories: <em>Primitive</em> and <em>Non-Primitive</em> (or <em>Reference</em>) types.
+                        <br><br>
+                        <strong>1. Primitive Data Types:</strong>
+                        <ul>
+                            <li><strong>Number:</strong> Represents both integer and floating-point numbers. Example: <code>42</code>, <code>3.14</code>.</li>
+                            <li><strong>String:</strong> A sequence of characters, used to represent text. Example: <code>"Hello, World!"</code>.</li>
+                            <li><strong>Boolean:</strong> Represents a logical entity and can have only two values: <code>true</code> or <code>false</code>.</li>
+                            <li><strong>Undefined:</strong> A variable that has been declared but not assigned a value is <code>undefined</code>.</li>
+                            <li><strong>Null:</strong> Represents the intentional absence of any object value. It’s often used to signify “no value” or “empty.”</li>
+                            <li><strong>Symbol:</strong> Represents a unique identifier and is used for creating unique keys in objects.</li>
+                            <li><strong>BigInt:</strong> Used for very large integers, beyond the safe limit for the <code>Number</code> type. Example: <code>123456789012345678901234567890n</code>.</li>
+                        </ul>
+                        <br>
+                        <strong>2. Non-Primitive (Reference) Data Types:</strong>
+                        <ul>
+                            <li><strong>Object:</strong> Used to store collections of data or more complex entities. Objects can contain key-value pairs, making them essential for structuring data. Example: <code>{ name: "Alice", age: 25 }</code>.</li>
+                            <li><strong>Array:</strong> A special type of object that holds an ordered list of values. Example: <code>[1, 2, 3, 4]</code>.</li>
+                            <li><strong>Function:</strong> A block of code designed to perform a specific task, also considered a type of object in JavaScript.</li>
+                        </ul>
+                        <br>
+                        JavaScript is a loosely typed language, meaning variables are not bound to a specific data type and can change types dynamically. Understanding these data types is fundamental to managing data and building efficient programs.
+                    </p>
+                </div>
+            </section>
+            
+            <section id="let-var-const" class="topic">
+                <button class="topic-header">LET, VAR, AND CONST IN JAVASCRIPT</button>
+                <div class="subtopics">
+                    <p>
+                        JavaScript has three main ways to declare variables: <code>let</code>, <code>var</code>, and <code>const</code>. Each has distinct characteristics that determine how the variable behaves in terms of scope, re-assignment, and initialization.
+                    </p>
+                    
+                    <h3>Overview of <code>let</code>, <code>var</code>, and <code>const</code></h3>
+                    <br><br>FIRST LEARN WHAT IS BLOCK SCOPE AND FUNCTIONAL SCOPE
+                    <br><br><img src="function&block.png" alt="Function and block scope">
+                    <ul>
+                        <li><strong>var:</strong> The traditional way to declare variables. It has function scope, meaning it's accessible throughout the function in which it's defined. Variables declared with <code>var</code> can be re-assigned and re-declared within the same scope.</li>
+                        <br><br><img src="var.png" alt="Function and block scope">
+                        <li><strong>let:</strong> Introduced in ES6, <code>let</code> allows block-scoped variable declarations. Variables declared with <code>let</code> can be re-assigned but not re-declared within the same scope.</li>
+                        <br><br><img src="let.png" alt="Function and block scope">
+                        <li><strong>const:</strong> Also introduced in ES6, <code>const</code> is used for variables that should not be re-assigned. It’s block-scoped and must be initialized at the time of declaration.</li>
+                        <br><br><img src="const.png" alt="Function and block scope">
+                    </ul>
+                        <br><br>difference
+                        <br><br>   <br><br><img src="let_var_const.png" alt="Difference">          
+                    <br><br>
+                    
+                    
+                </div>
+            </section>
+            
+            <section id="arrays" class="topic">
+                <button class="topic-header">what is hoisting AND Difference betwwen "==" and "==="?</button>
+                <div class="subtopics">
+                    <p>Hoisting is the default behaviour of javascript where all the variable and function declarations are moved on top.
+                        <br>This means that irrespective of where the variables and functions are declared, they are moved on top of the scope. The scope can be both local and global.
+
+                          <br><br><img src="hoisting.png" alt="Difference">  
+                        <br><br>Difference betwwen "==" and "==="?
+                        <br><br><img src="==and===.png" alt="Difference"> 
+                    </p>
+        
+                </div>
+            </section>
+            <section id="this-keyword" class="topic">
+                <button class="topic-header">THE <code>this</code> KEYWORD IN JAVASCRIPT</button>
+                <div class="subtopics">
+                    <p>
+                        The <code>this</code> keyword in JavaScript is a special identifier that refers to the context in which a function or expression is executed. Its value changes depending on how and where the function is called. Understanding <code>this</code> is crucial for managing function context and object behavior.
+                    </p>
+                    
+                    <h3>Different Uses of <code>this</code></h3>
+                    
+                    <ul>
+                        <li><strong>Global Context (Global Scope):</strong> In the global context or outside any function, <code>this</code> refers to the global object (<code>window</code> in browsers).</li>
+                        
+                        <li><strong>Function Context (Simple Function Call):</strong> Inside a regular function, <code>this</code> refers to the global object (<code>window</code> in browsers) unless in <code>strict mode</code>, where it becomes <code>undefined</code>.</li>
+                        
+                        <li><strong>Method Context (Method Call):</strong> When <code>this</code> is used in an object’s method, it refers to the object that owns the method. This is common in object-oriented JavaScript.</li>
+                        
+                        <li><strong>Event Handlers:</strong> In event handler functions, <code>this</code> refers to the HTML element that received the event.</li>
+                        
+                        <li><strong>Arrow Functions:</strong> In arrow functions, <code>this</code> doesn’t refer to the function’s local context. Instead, it inherits <code>this</code> from the enclosing lexical context, making arrow functions useful in scenarios where you want to preserve <code>this</code> from an outer scope.</li>
+                    </ul>
+                    
+                    <h3>Examples of <code>this</code> in Different Contexts</h3>
+                    
+                    <p><strong>1. Global Context:</strong></p>
+                    <pre><code>console.log(this); // Refers to the window object in a browser</code></pre>
+                    
+                    <p><strong>2. Function Context:</strong></p>
+                    <pre><code>
+            function showThis() {
+                console.log(this);
+            }
+            showThis(); // Refers to window object in non-strict mode; undefined in strict mode
+                    </code></pre>
+                    
+                    <p><strong>3. Method Context:</strong></p>
+                    <pre><code>
+            const person = {
+                name: 'Alice',
+                greet: function() {
+                    console.log(this.name); // Refers to the person object
+                }
+            };
+            person.greet(); // Outputs: Alice
+                    </code></pre>
+                    
+                    <p><strong>4. Event Handler:</strong></p>
+                    <pre><code>
+            document.getElementById('myButton').addEventListener('click', function() {
+                console.log(this); // Refers to the element with id 'myButton'
+            });
+                    </code></pre>
+                    
+                    <p><strong>5. Arrow Function:</strong></p>
+                    <pre><code>
+            const person = {
+                name: 'Alice',
+                greet: () => {
+                    console.log(this); // Refers to the global context, not the person object
+                }
+            };
+            person.greet(); // Outputs: window object in browsers
+                    </code></pre>
+
+                        <br><br><img src="this.png" alt="this">  
+                    
+                    <p>
+                        To use <code>this</code> effectively, it’s essential to recognize the context in which a function is executed and the intended binding. JavaScript provides several ways, like <code>call</code>, <code>apply</code>, and <code>bind</code>, to control the value of <code>this</code> explicitly.
+                    </p>
+                </div>
+            </section>
+            
+            <section id="arrays" class="topic">
+                <button class="topic-header">HOW JAVASCRIPT WORK (EXCUTE) AND CALLSTACK (IMPORTANT) ?</button>
+                <div class="subtopics">
+                    <p>JAVASCRIPT excutes our code :-
+                        <br><br>Step1 :- <strong>Global Execution or (Global Environment)
+                            <br>FIRST ("This") Locate the Global Execution context;
+                            <br><br>Step2 :- <strong>Memory Creation Phase :- </strong>Where for each variable memory is assigned and initially it is <strong>UNDEFINED</strong>
+                            <br><br>Step3 :-<strong>Execution Phase</strong> Where the value is assigned to each variable .
+                            <br><br><img src="JS1.png" alt="js execution">
+                            <br>   <img src="JS2.png" alt="js execution">  
+                            <br><br><strong>CALL STACK :- </strong> In JavaScript, the call stack is like a to-do list for functions in your program. It follows the rule of "Last In, First Out," meaning the last thing added is the first to be done. A call stack is like a script's roadmap for a JavaScript Engine.
+                            <br>   <img src="JS3.png" alt="js execution">   
+                                    
+                      </p>
+        
+                </div>
+            </section>
+            <section id="dom" class="topic">
+                <button class="topic-header">DOCUMENT OBJECT MODEL (DOM) IN JAVASCRIPT</button>
+                <div class="subtopics">
+                    <p>
+                        The <strong>Document Object Model (DOM)</strong> is a programming interface for web documents. It represents the structure of a document as a tree of objects, allowing JavaScript to access, manipulate, and modify HTML and XML documents dynamically.
+                    </p>
+                    
+                    <h3>Understanding the DOM Structure</h3>
+                    <p>
+                        The DOM represents a webpage as a tree of nodes, where each element in the HTML document is represented by a node in the DOM tree. Nodes can be elements, text, comments, or attributes.
+                    </p>
+                    
+                    <h3>Common DOM Methods</h3>
+                    <p>JavaScript provides several methods to interact with the DOM:</p>
+                    <ul>
+                        <li><strong><code>document.getElementById(id)</code></strong> - Selects an element by its <code>id</code>.</li>
+                        <li><strong><code>document.getElementsByClassName(className)</code></strong> - Selects all elements with a given class name.</li>
+                        <li><strong><code>document.getElementsByTagName(tagName)</code></strong> - Selects all elements with a given tag name.</li>
+                        <li><strong><code>document.querySelector(selector)</code></strong> - Selects the first element that matches a CSS selector.</li>
+                        <li><strong><code>document.querySelectorAll(selector)</code></strong> - Selects all elements that match a CSS selector.</li>
+                    </ul>
+                    
+                    <h3>Manipulating the DOM</h3>
+                    <p>
+                        Once an element is selected, JavaScript can manipulate it in various ways, such as changing its content, attributes, or styles.
+                    </p>
+                    <ul>
+                        <li><strong>Changing Content:</strong> <code>element.innerHTML</code> or <code>element.textContent</code> modifies the HTML or text inside an element.</li>
+                        <li><strong>Changing Attributes:</strong> <code>element.setAttribute(attribute, value)</code> sets a new attribute or changes an existing attribute's value.</li>
+                        <li><strong>Changing Styles:</strong> <code>element.style.property = value</code> modifies the CSS styles of an element.</li>
+                    </ul>
+                <br><br><img src="dom.png" alt="dom">
+                
+                    
+                    <p>
+                        The DOM, combined with JavaScript, allows for creating dynamic and interactive web pages by modifying the structure, content, and styles of elements on the fly, reacting to user input and events.
+                    </p>
+                </div>
+            </section>
+            
+            <section id="dom-manipulation" class="topic">
+                <button class="topic-header">INSERTION, DELETION, AND MANIPULATION IN THE DOM</button>
+                <div class="subtopics">
+                    
+                    <h3>Inserting Elements into the DOM</h3>
+                    <p>
+                        Inserting elements allows us to dynamically add new HTML elements to the page. JavaScript provides various methods to add new nodes to the DOM.
+                    </p>
+                    
+                    <ul>
+                        <li><strong><code>element.appendChild(newElement)</code></strong> - Adds a new element as the last child of a specified parent element.</li>
+                        <li><strong><code>element.insertBefore(newElement, referenceElement)</code></strong> - Inserts a new element before a reference element.</li>
+                        <li><strong><code>element.innerHTML += "new content"</code></strong> - Adds new content directly inside an element.</li>
+                    </ul>
+          
+   
+                 <h3>Deleting Elements from the DOM</h3>
+                    <p>
+                        Deleting elements involves removing unwanted nodes from the DOM tree. JavaScript provides methods to remove elements easily.
+                    </p>
+                    
+                    <ul>
+                        <li><strong><code>element.remove()</code></strong> - Removes the specified element from the DOM.</li>
+                        <li><strong><code>parentElement.removeChild(childElement)</code></strong> - Removes a specified child element from its parent.</li>
+                    </ul>
+                    
+                  
+           
+                    <h3>Manipulating Elements in the DOM</h3>
+                    <p>
+                        Manipulation refers to modifying elements, such as changing their attributes, content, or styles.
+                    </p>
+                    
+                    <ul>
+                        <li><strong>Changing Content:</strong> Use <code>element.innerHTML</code> or <code>element.textContent</code> to modify the content inside an element.</li>
+                        <li><strong>Changing Attributes:</strong> Use <code>element.setAttribute(attribute, value)</code> to set or change an attribute.</li>
+                        <li><strong>Changing Styles:</strong> Use <code>element.style.property = value</code> to modify an element's inline CSS styles.</li>
+                    </ul>
+                    <br>HTML CODE
+                    <br><br><img src="htmljavascript.png" height="500px" width="800px" alt="htmlcode">
+                    <br>JAVASCRIPT CODE
+                    <br><br><img src="addandremove.png" height="500px" width="800px" alt="htmlcode">
+                    <br><br><img src="initial.png" height="300px" width="600px" alt="htmlcode">
+                    <br><br><img src="addition.png" height="300px" width="600px" alt="htmlcode">
+                    <br><br><img src="remove.png" height="300px" width="600px" alt="htmlcode">
+
+                    
+                  
+                   
+                </div>
+            </section>
+            
+            <section id="dom-manipulation" class="topic">
+                <button class="topic-header">async and await ? how javascript handle asynchronous calls?</button>
+                <div class="subtopics">
+                    
+                <h2>Understanding <code>async</code> and <code>await</code> in JavaScript</h2>
+                
+                <p>In JavaScript, <code>async</code> and <code>await</code> are used to handle asynchronous operations more efficiently, making code easier to read and maintain. These keywords allow us to write asynchronous code that looks and behaves like synchronous code, improving readability without changing the fundamental asynchronous nature.</p>
+                
+                <h3>How <code>async</code> and <code>await</code> Work</h3>
+                
+                <ol>
+                  <li><strong><code>async</code> Function</strong>:
+                    <ul>
+                      <li>The <code>async</code> keyword is added before a function to tell JavaScript that the function will perform asynchronous operations.</li>
+                      <li>An <code>async</code> function always returns a Promise. If the function has a return value, JavaScript automatically wraps it in a resolved Promise.</li>
+                    </ul>
+                  </li>
+                  <li><strong><code>await</code> Keyword</strong>:
+                    <ul>
+                      <li>The <code>await</code> keyword pauses the execution of the <code>async</code> function until the Promise following <code>await</code> is resolved or rejected.</li>
+                      <li>It only works within <code>async</code> functions, and it allows JavaScript to handle the result of a Promise without using <code>.then()</code> or <code>.catch()</code> chaining.</li>
+                    </ul>
+                  </li>
+                </ol>
+                
+                <h3>Flow Explanation</h3>
+                
+                <p>Let's break down the flow with a code example:</p>
+                
+                <pre>
+              <code>
+              async function fetchData() {
+                try {
+                  console.log("Fetching data...");
+                  
+                  // Simulate a network request with a promise-based function
+                  let response = await new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                      resolve("Data received");
+                    }, 2000);
+                  });
+              
+                  console.log(response); // Logs after 2 seconds
+                  return "Process complete";
+                  
+                } catch (error) {
+                  console.error("Error fetching data:", error);
+                }
+              }
+              
+              fetchData().then((message) => console.log(message)); // Logs "Process complete"
+              </code>
+                </pre>
+                
+                <h3>Flow of Execution</h3>
+                
+                <ul>
+                  <li>The <code>fetchData()</code> function is defined as <code>async</code>, so it returns a Promise.</li>
+                  <li>The <code>console.log("Fetching data...");</code> line executes immediately.</li>
+                  <li>The <code>await</code> keyword pauses execution at the line <code>let response = await ...</code> until the Promise resolves.</li>
+                  <li>After 2 seconds, the Promise resolves, and <code>console.log(response);</code> logs <code>"Data received"</code>.</li>
+                  <li>Finally, the function returns <code>"Process complete"</code>, which is logged in the <code>.then()</code> handler outside the function.</li>
+                </ul>
+                
+                <section>
+                    <h2>Understanding the JavaScript Event Loop with <code>async</code> and <code>await</code></h2>
+                    
+                    <p>This section explains how JavaScript handles asynchronous operations through the call stack, Web APIs, promises, and the event loop.</p>
+                    <br><br><img src="Async.png" alt="javascript async">
+                  
+                    <h3>JavaScript Engine</h3>
+                    <p>The JavaScript engine has a <strong>call stack</strong> that executes functions one at a time and a <strong>memory heap</strong> to store data.</p>
+                  
+                    <h3>Web APIs</h3>
+                    <p>Web APIs handle asynchronous tasks, like <code>setTimeout</code>, <code>fetch</code>, and DOM events, outside the main thread. When these tasks are complete, their callbacks are sent to the <strong>task queue</strong>.</p>
+                  
+                    <h3>Promises (Microtask Queue)</h3>
+                    <p>Promises are added to the <strong>microtask queue</strong>, which has higher priority than the task queue. Promise callbacks, such as <code>.then()</code>, are handled before the task queue.</p>
+                  
+                    <h3>Event Loop</h3>
+                    <p>The event loop continuously checks if the call stack is empty. If it is, it pushes tasks from the microtask queue first, and then from the task queue, to the call stack.</p>
+                  
+                    <h3>Code Example</h3>
+                    <pre>
+                  <code>
+                  console.log("Start");
+                  
+                  setTimeout(() => {
+                    console.log("Timeout Callback"); // Task queue
+                  }, 0);
+                  
+                  Promise.resolve("Promise Result").then((result) => {
+                    console.log(result); // Microtask queue
+                  });
+                  
+                  console.log("End");
+                  </code>
+                    </pre>
+                  
+                    <h3>Flow of Execution</h3>
+                    <ul>
+                      <li><strong>Start</strong> and <strong>End</strong> log immediately because they’re synchronous.</li>
+                      <li><code>Promise Result</code> logs next because the microtask queue is prioritized.</li>
+                      <li><code>Timeout Callback</code> logs last because it’s in the task queue.</li>
+                    </ul>
+                  </section>
+                  
+              </section>
+              
+
+              <section id="dom-manipulation" class="topic">
+                <button class="topic-header">What is Filter, Map and Reduce and Higher Order Function?</button>
+                <div class="subtopics">
+                    <h2>Higher-Order Functions in JavaScript</h2>
+                     <p>A <strong>higher-order function</strong> is a function that takes another function as an argument, returns a function, or both. Common higher-order functions in JavaScript include:</p>
+                     <br>Filter , Map and Reduce are Higher Order Function
+                     <br><br>
+            
+                    <h2>Understanding <code>filter</code>, <code>map</code>, and <code>reduce</code> in JavaScript</h2>
+                    
+                    <p>In JavaScript, <code>filter</code>, <code>map</code>, and <code>reduce</code> are higher-order functions that operate on arrays to transform or retrieve specific data. Here's how each function works:</p>
+                  
+                    <h3><code>filter</code></h3>
+                    <p>The <code>filter</code> function creates a new array with all elements that pass a test implemented by a provided function.</p>
+                    <pre>
+                  <code>
+                  // Example: Filter out numbers less than 10
+                  const numbers = [5, 10, 15, 20];
+                  const filteredNumbers = numbers.filter(num => num >= 10);
+                  console.log(filteredNumbers); // Output: [10, 15, 20]
+                  </code>
+                    </pre>
+                  
+                    <h3><code>map</code></h3>
+                    <p>The <code>map</code> function creates a new array by applying a function to each element in the original array.</p>
+                    <pre>
+                  <code>
+                  // Example: Double each number
+                  const numbers = [5, 10, 15, 20];
+                  const doubledNumbers = numbers.map(num => num * 2);
+                  console.log(doubledNumbers); // Output: [10, 20, 30, 40]
+                  </code>
+                    </pre>
+                  
+                    <h3><code>reduce</code></h3>
+                    <p>The <code>reduce</code> function executes a reducer function on each element of the array, resulting in a single output value.</p>
+                    <pre>
+                  <code>
+                  // Example: Sum all numbers
+                  const numbers = [5, 10, 15, 20];
+                  const sum = numbers.reduce((accumulator, current) => accumulator + current, 0);
+                  console.log(sum); // Output: 50
+                  </code>
+                    </pre>
+                  
+                    <h3>Summary</h3>
+                    <ul>
+                      <li><strong><code>filter</code></strong> – Used to filter elements based on a condition.</li>
+                      <li><strong><code>map</code></strong> – Used to transform elements by applying a function to each.</li>
+                      <li><strong><code>reduce</code></strong> – Used to accumulate values into a single result.</li>
+                    </ul>
+                  </section>
+                  <section id="dom-manipulation" class="topic">
+                <button class="topic-header">What is PROMISE and FETCH ?</button>
+                <div class="subtopics">
+                  
+                    <h2>Understanding <code>Promises</code> and <code>fetch</code> in JavaScript</h2>
+                    
+                    <p>In JavaScript, <code>Promises</code> are used to handle asynchronous operations. The <code>fetch</code> API is built on top of Promises and allows you to make network requests to retrieve resources. Here's an overview of how they work:</p>
+                  
+                    <h3><code>Promises</code></h3>
+                    <p>A <code>Promise</code> represents a value that may be available now, or in the future, or never. It has three possible states:</p>
+                    <ul>
+                      <li><strong>Pending</strong> – Initial state, neither fulfilled nor rejected.</li>
+                      <li><strong>Fulfilled</strong> – Operation completed successfully.</li>
+                      <li><strong>Rejected</strong> – Operation failed.</li>
+                    </ul>
+                    <p>You can use <code>.then()</code> to handle a successful promise and <code>.catch()</code> for errors.</p>
+                    <pre>
+                  <code>
+                  // Example: Simple Promise
+                  const promise = new Promise((resolve, reject) => {
+                    let success = true;
+                    if (success) {
+                      resolve("Operation succeeded!");
+                    } else {
+                      reject("Operation failed.");
+                    }
+                  });
+                  
+                  promise
+                    .then(result => console.log(result)) // Output: "Operation succeeded!"
+                    .catch(error => console.error(error));
+                  </code>
+                    </pre>
+                  
+                    <h3><code>fetch</code> API</h3>
+                    <p>The <code>fetch</code> API is used to make HTTP requests and returns a <code>Promise</code> that resolves to a <code>Response</code> object. You can use it to request data from a server and handle the response asynchronously.</p>
+                    <pre>
+                  <code>
+                  // Example: Using fetch to make a GET request
+                  fetch("https://jsonplaceholder.typicode.com/posts/1")
+                    .then(response => {
+                      if (!response.ok) {
+                        throw new Error("Network response was not ok");
+                      }
+                      return response.json(); // Parse JSON data
+                    })
+                    .then(data => console.log(data)) // Output: Fetched data
+                    .catch(error => console.error("Fetch error:", error));
+                  </code>
+                    </pre>
+                  
+                    <h3>Summary</h3>
+                    <ul>
+                      <li><strong><code>Promises</code></strong> – Represent asynchronous operations that may succeed or fail.</li>
+                      <li><strong><code>fetch</code></strong> – A modern way to make network requests, returning a Promise that resolves with a response object.</li>
+                    </ul>
+                  </section>
+                  <section id="dom-manipulation" class="topic">
+                    <button class="topic-header">What is Immediately Invoked and Self-Invoking Functions in JavaScript?</button>
+                    <div class="subtopics">
+                    <h2>Immediately Invoked and Self-Invoking Functions in JavaScript</h2>
+                  
+                    <h3>Immediately Invoked Function Expression (IIFE)</h3>
+                    <p>An IIFE is a function that runs as soon as it is defined. It helps create a local scope and avoid polluting the global scope.</p>
+                    <pre>
+                  <code>
+                  // Example of IIFE
+                  (function() {
+                    console.log("This function runs immediately!");
+                  })();
+                  </code>
+                    </pre>
+                  
+                    <h3>Self-Invoking Function</h3>
+                    <p>Self-invoking functions are functions that automatically execute once defined, typically for setup or initialization tasks.</p>
+                    <pre>
+                  <code>
+                  // Example of Self-Invoking Function
+                  (function() {
+                    let count = 0;
+                    count += 1;
+                    console.log("Count:", count); // Output: Count: 1
+                  })();
+                  </code>
+                    </pre>
+                  
+                    <h3>Summary</h3>
+                    <ul>
+                      <li><strong>IIFE</strong> – Creates a local scope, avoids polluting the global scope.</li>
+                      <li><strong>Self-Invoking Function</strong> – Executes immediately and is commonly used for setup tasks.</li>
+                    </ul>
+                    </div>
+                  </section>
+                  <section id="dom-manipulation" class="topic">
+                    <button class="topic-header">What is Closures and Temporal Dead Zone (TDZ) in JavaScript</button>
+                    <div class="subtopics">
+                    <div>
+                    <h2>Closures and Temporal Dead Zone (TDZ) in JavaScript</h2>
+                  
+                    <h3>Closure</h3>
+                    <p>A <strong>closure</strong> is a function that remembers its lexical scope, even when the function is executed outside of that scope. Closures allow functions to access variables from their containing (outer) scope, even after that scope has finished execution.</p>
+                    <br>AS the inside function and the outside function Uses the same memory thats why then can share variable outside the scope of a function.
+                    <pre>
+                  <code>
+                  // Example of Closure
+                  function createCounter() {
+                    let count = 0;
+                    return function() {
+                      count++;
+                      return count;
+                    };
+                  }
+                  const counter = createCounter();
+                  console.log(counter()); // Output: 1
+                  console.log(counter()); // Output: 2
+                  </code>
+                    </pre>
+                    <br><img src="closure.png" alt="Closure">
+                  
+                    <h3>Temporal Dead Zone (TDZ)</h3>
+                    <p>The <strong>Temporal Dead Zone (TDZ)</strong> is the period between entering a block and the point where a variable is declared using <code>let</code> or <code>const</code>. Accessing a variable in the TDZ results in a <code>ReferenceError</code>.</p>
+                    <pre>
+                  <code>
+                  // Example of TDZ
+                  console.log(x); // ReferenceError: x is in TDZ
+                  let x = 5;
+                  </code>
+                    </pre>
+                    <br><img src="temporal.png" alt="Closure">
+                  
+                    <h3>Summary</h3>
+                    <ul>
+                      <li><strong>Closures</strong> – Functions retain access to their outer scope variables even after that scope ends.</li>
+                      <li><strong>TDZ</strong> – Variables declared with <code>let</code> or <code>const</code> cannot be accessed before they are declared, causing a <code>ReferenceError</code>.</li>
+                    </ul>
+                    </div>
+                  </section>
+                  <section id="dom-manipulation" class="topic">
+                    <button class="topic-header">what is String ,Array and Object in javascript</button>
+                    <div class="subtopics">
+                  
+                    <h2>Strings, Arrays, and Objects in JavaScript</h2>
+                  
+                    <h3>Strings</h3>
+                    <p>Strings represent text in JavaScript and are a sequence of characters. They have various methods for manipulation.</p>
+                    <pre>
+                  <code>
+                  // Example of String methods
+                  let text = "Hello, World!";
+                  console.log(text.length);          // Output: 13
+                  console.log(text.toUpperCase());   // Output: "HELLO, WORLD!"
+                  console.log(text.includes("World")); // Output: true
+                  </code>
+                    </pre>
+                  
+                    <h3>Arrays</h3>
+                    <p>Arrays are ordered collections of elements, typically used to store lists of data. They come with many helpful methods for manipulation.</p>
+                    <pre>
+                  <code>
+                  // Example of Array methods
+                  let numbers = [1, 2, 3, 4];
+                  numbers.push(5);                   // Adds 5 to the end
+                  console.log(numbers);              // Output: [1, 2, 3, 4, 5]
+                  console.log(numbers.slice(1, 3));  // Output: [2, 3]
+                  console.log(numbers.includes(3));  // Output: true
+                  </code>
+                    </pre>
+                  
+                    <h3>Objects</h3>
+                    <p>Objects are collections of key-value pairs, allowing you to group related data and functionality.</p>
+                    <pre>
+                  <code>
+                  // Example of Object usage
+                  let person = {
+                    name: "Alice",
+                    age: 25,
+                    greet: function() {
+                      return "Hello, " + this.name;
+                    }
+                  };
+                  console.log(person.name);          // Output: "Alice"
+                  console.log(person.greet());       // Output: "Hello, Alice"
+                  </code>
+                    </pre>
+                  
+                    <h3>Summary</h3>
+                    <ul>
+                      <li><strong>Strings</strong> – Text data with methods like <code>length</code>, <code>toUpperCase</code>, and <code>includes</code>.</li>
+                      <li><strong>Arrays</strong> – Ordered collections with methods like <code>push</code>, <code>slice</code>, and <code>includes</code>.</li>
+                      <li><strong>Objects</strong> – Key-value pair collections with properties and methods for organizing data.</li>
+                    </ul>
+                    </div>
+                  </section>
+
+                  <section id="dom-manipulation" class="topic">
+                    <button class="topic-header">What is JSON and V8 Engine ?</button>
+                    <div class="subtopics">
+                  
+                    <h2>JSON and V8 Engine in JavaScript</h2>
+                  
+                    <h3>JSON (JavaScript Object Notation)</h3>
+                    <p><strong>JSON</strong> is a lightweight data-interchange format that is easy for humans to read and write and easy for machines to parse and generate. JSON is commonly used for transmitting data in web applications.</p>
+                    <pre>
+                  <code>
+                  // JSON Example
+                  const jsonString = '{"name": "Alice", "age": 25}';
+                  const jsonObject = JSON.parse(jsonString);   // Converts JSON string to object
+                  console.log(jsonObject.name);               // Output: "Alice"
+                  
+                  const newJsonString = JSON.stringify(jsonObject); // Converts object to JSON string
+                  console.log(newJsonString);                 // Output: '{"name":"Alice","age":25}'
+                  </code>
+                    </pre>
+                  
+                    <h3>V8 Engine</h3>
+                    <p>The <strong>V8 Engine</strong> is Google's open-source JavaScript engine that compiles JavaScript code to machine code, making it fast and efficient. V8 powers Chrome, Node.js, and other platforms, allowing JavaScript to run both on the client and server side.</p>
+                  
+                    <h4>Key Features of V8:</h4>
+                    <ul>
+                      <li>Compiles JavaScript to native machine code for high performance.</li>
+                      <li>Uses Just-In-Time (JIT) compilation for optimized execution.</li>
+                      <li>Supports memory management and garbage collection for efficient resource handling.</li>
+                    </ul>
+                  
+                    <h3>Summary</h3>
+                    <ul>
+                      <li><strong>JSON</strong> – A format for data exchange, easily parsed with <code>JSON.parse</code> and converted with <code>JSON.stringify</code>.</li>
+                      <li><strong>V8 Engine</strong> – Google’s high-performance JavaScript engine that compiles JavaScript to machine code, powering Chrome and Node.js.</li>
+                    </ul>
+                    </div>
+                  </section>
+                  <section id="dom-manipulation" class="topic">
+                    <button class="topic-header">What is CALLBACK ?</button>
+                    <div class="subtopics">
+                    <h2>Callbacks in JavaScript</h2>
+                  
+                    <p>A <strong>callback</strong> is a function passed into another function as an argument, which is then executed inside the outer function to complete a certain action. Callbacks are commonly used for handling asynchronous operations like data fetching or handling user actions.</p>
+                  
+                    <h3>Example of a Callback Function</h3>
+                    <pre>
+                  <code>
+                  // Function with a callback
+                  function greet(name, callback) {
+                    console.log("Hello, " + name);
+                    callback();
+                  }
+                  
+                  // Callback function
+                  function displayMessage() {
+                    console.log("Welcome to JavaScript!");
+                  }
+                  
+                  // Passing displayMessage as a callback to greet
+                  greet("Alice", displayMessage);
+                  // Output:
+                  // Hello, Alice
+                  // Welcome to JavaScript!
+                  </code>
+                    </pre>
+                  
+                    <h3>Common Uses of Callbacks</h3>
+                    <ul>
+                      <li><strong>Event handling:</strong> Handling user actions (e.g., clicks, keypresses).</li>
+                      <li><strong>Data fetching:</strong> Managing asynchronous data requests.</li>
+                      <li><strong>Timers:</strong> Running code after a delay (e.g., with <code>setTimeout</code>).</li>
+                    </ul>
+                  
+                    <h3>Summary</h3>
+                    <ul>
+                      <li>Callbacks enable functions to be executed after a specific action or asynchronous task.</li>
+                      <li>Commonly used for handling asynchronous operations and event-driven programming.</li>
+                    </ul>
+                    </div>
+                  </section>
+                  <div class="last"><p>KEEP GOING!! JUST ONE LAST STEP..</p></div>
+           
+            <!-- Add more topics as needed -->
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

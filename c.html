@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Interview Questions</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #73ff00;
+            background-color: #2d2d2d;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #2d2d2d;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        /* Container for Sidebar and Content */
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Header Font Styling */
+        header h1 {
+            font-size: 3vw;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Sidebar Styling */
+        .sidebar {
+            width: 250px;
+            background-color: #333;
+            color: #fff;
+            padding-top: 1rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Main Content Styling */
+        .content {
+            flex: 1;
+            padding: 3rem;
+            overflow-y: auto;
+        }
+
+        /* Topic Section Styling */
+        .topic {
+            margin-bottom: 1.5rem;
+        }
+
+        .topic-header {
+            font-size: 1.2rem;
+            font-weight: bold;
+            background-color: #003c64f5;
+            color: #fff;
+            border: none;
+            padding: 1.2rem;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        .subtopics {
+            margin-top: 0.5rem;
+            padding-left: 1rem;
+            display: none;
+        }
+
+        .subtopics p {
+            padding: 0.5rem 0;
+            border-left: 2px solid #007acc;
+            margin: 0.3rem 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .content {
+                padding: 1rem;
+            }
+        }
+
+        /* Image Style */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CSS Interview Questions</h1>
+        <h1>Click on each question to know how to prepare the answer</h1>
+    </header>
+    
+    <section id="css-class-id" class="topic">
+        <button class="topic-header">What is the difference between class selectors and id selectors in CSS?</button>
+        <div class="subtopics">
+            <p>
+                <strong>Class selectors:</strong> Defined with a dot (`.`), such as `.example`. They can be applied to multiple elements on a page, allowing for shared styles across multiple elements.
+                <br><br>
+                <strong>ID selectors:</strong> Defined with a hash (`#`), such as `#example`. IDs should be unique to each element and provide a higher specificity, overriding class selectors when both are applied to the same element.
+            </p>
+        </div>
+    </section>
+   
+    <section id="css-box-model" class="topic">
+        <button class="topic-header">What is the CSS box model, and what are its components?</button>
+        <div class="subtopics">
+            <p>
+                The CSS box model is a structure that represents the layout of HTML elements. It consists of:
+                <ul>
+                    <li><strong>Content:</strong> The area where text and images appear.</li>
+                    <li><strong>Padding:</strong> Space between content and the border, making the content appear larger.</li>
+                    <li><strong>Border:</strong> Surrounds padding and content, giving an outline to the element.</li>
+                    <li><strong>Margin:</strong> The outermost space that separates the element from other elements.</li>
+                </ul>
+            </p>
+        </div>
+    </section>
+   
+    <section id="css-position" class="topic">
+        <button class="topic-header">How does the position property work in CSS, and what are its values?</button>
+        <div class="subtopics">
+            <p>
+                The `position` property determines how an element is positioned on a page. The values include:
+                <ul>
+                    <li><strong>static:</strong> Default; elements are positioned according to the normal document flow.</li>
+                    <li><strong>relative:</strong> Positioned relative to its normal position.</li>
+                    <li><strong>absolute:</strong> Positioned relative to its nearest positioned ancestor.</li>
+                    <li><strong>fixed:</strong> Positioned relative to the viewport, staying in place when scrolling.</li>
+                    <li><strong>sticky:</strong> Acts like relative until it reaches a specified scroll position, then becomes fixed.</li>
+                </ul>
+            </p>
+        </div>
+    </section>
+   
+    <section id="css-margin-padding" class="topic">
+        <button class="topic-header">What is the difference between margin and padding?</button>
+        <div class="subtopics">
+            <p>
+                <strong>Margin:</strong> The space outside the element’s border, creating separation between elements.
+                <br><br>
+                <strong>Padding:</strong> The space inside the element’s border, adding space between content and the border.
+            </p>
+        </div>
+    </section>
+   
+    <section id="css-display" class="topic">
+        <button class="topic-header">Explain the CSS display property and its values.</button>
+        <div class="subtopics">
+            <p>
+                The `display` property defines how an element is displayed. Common values include:
+                <ul>
+                    <li><strong>block:</strong> Displays as a block-level element, taking up the full width.</li>
+                    <li><strong>inline:</strong> Displays inline with no line break and only takes up as much width as needed.</li>
+                    <li><strong>inline-block:</strong> Like `inline`, but allows setting width and height.</li>
+                    <li><strong>flex:</strong> Displays as a flex container for creating flexible layouts.</li>
+                    <li><strong>none:</strong> Hides the element.</li>
+                </ul>
+            </p>
+        </div>
+    </section>
+    
+    <section id="css-flexbox" class="topic">
+        <button class="topic-header">What is Flexbox, and when would you use it?</button>
+        <div class="subtopics">
+            <p>
+                Flexbox is a layout model in CSS that allows for creating flexible and responsive layouts. It is ideal for centering items, creating equal-width columns, and distributing space evenly in one-dimensional layouts. Common properties include `justify-content`, `align-items`, and `flex-direction`.
+            </p>
+        </div>
+    </section>
+   
+    <section id="css-z-index" class="topic">
+        <button class="topic-header">How does the z-index property work, and when is it used?</button>
+        <div class="subtopics">
+            <p>
+                The `z-index` property controls the stacking order of positioned elements (with `position: relative`, `absolute`, or `fixed`). Higher `z-index` values appear above elements with lower values. It is useful when elements overlap and specific elements need to be visible on top.
+            </p>
+        </div>
+    </section>
+  
+    <section id="css-media-queries" class="topic">
+        <button class="topic-header">What is the purpose of media queries in CSS?</button>
+        <div class="subtopics">
+            <p>
+                Media queries allow for responsive design by applying different styles based on screen size, orientation, or resolution. They enable creating layouts that adjust for desktops, tablets, and mobile devices. Example: `@media (max-width: 600px) { ... }`.
+            </p>
+        </div>
+    </section>
+   
+    <section id="css-specificity" class="topic">
+        <button class="topic-header">How does CSS specificity work?</button>
+        <div class="subtopics">
+            <p>
+                CSS specificity determines which styles are applied when multiple rules target the same element. It follows a hierarchy:
+                <ul>
+                    <li>Inline styles (highest specificity).</li>
+                    <li>ID selectors.</li>
+                    <li>Class selectors and pseudo-classes.</li>
+                    <li>Element and pseudo-element selectors (lowest specificity).</li>
+                </ul>
+                The rule with the highest specificity is applied.
+            </p>
+        </div>
+    </section>
+   
+    <section id="css-inline-inlineblock-block" class="topic">
+        <button class="topic-header">What is the difference between inline, inline-block, and block display values?</button>
+        <div class="subtopics">
+            <p>
+                <strong>inline:</strong> Elements only take up as much width as their content, and do not start on a new line.
+                <br><br>
+                <strong>inline-block:</strong> Behaves like `inline` but allows setting width and height.
+                <br><br>
+                <strong>block:</strong> Takes up the full width of its container and starts on a new line.
+            </p>
+        </div>
+    </section>
+   
+    <section id="css-grid" class="topic">
+        <button class="topic-header">Explain the purpose of CSS Grid and when to use it.</button>
+        <div class="subtopics">
+            <p>
+                CSS Grid is a two-dimensional layout system in CSS, ideal for complex layouts that require precise positioning both horizontally and vertically. It is useful for creating structured layouts and allows for more control than Flexbox over rows and columns.
+            </p>
+        </div>
+    </section>
+    
+    <section id="css-overflow" class="topic">
+        <button class="topic-header">How does the overflow property work, and what are its values?</button>
+        <div class="subtopics">
+            <p>
+                The `overflow` property controls what happens when content overflows an element’s box. Common values are:
+                <ul>
+                    <li><strong>visible:</strong> Default; content is not clipped and may overflow.</li>
+                    <li><strong>hidden:</strong> Content is clipped and not visible beyond the box.</li>
+                    <li><strong>scroll:</strong> Adds a scrollbar to view overflowing content.</li>
+                    <li><strong>auto:</strong> Adds a scrollbar only if necessary.</li>
+                </ul>
+            </p>
+        </div>
+    </section>
+            <div class="last"><p> !! JUST ONE LAST STEP..</p></div>
+           
+            <!-- Add more topics as needed -->
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

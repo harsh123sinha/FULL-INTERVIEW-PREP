@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree Traversal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        h2 {
+            color: #0056b3;
+        }
+        p {
+            line-height: 1.6;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tree Traversal in Data Structures</h1>
+        
+        <p>
+            Tree traversal is an essential technique used in data structures to access or manipulate the nodes of a tree in a specific order. Tree traversals are important in applications where data needs to be processed or analyzed in a hierarchical structure. There are several ways to traverse a tree, each of which serves different purposes based on the needs of the algorithm. The main types of tree traversal are In-Order, Pre-Order, and Post-Order traversal.
+        </p>
+
+        <h2>In-Order Traversal (Left, Root, Right)</h2>
+        <p>
+            In In-Order traversal, we follow the sequence: Left subtree, Root node, Right subtree. This traversal is particularly useful in binary search trees (BSTs), as it results in an ordered sequence of values from the tree. 
+        </p>
+        <p>
+            <strong>Steps for In-Order Traversal:</strong>
+        </p>
+        <ul>
+            <li>Visit the left subtree recursively.</li>
+            <li>Visit the root node.</li>
+            <li>Visit the right subtree recursively.</li>
+        </ul>
+        <p>
+            For example, if we apply in-order traversal to a BST, it outputs the nodes in ascending order, making it ideal for situations where sorted output is required.
+        </p>
+
+        <h2>Pre-Order Traversal (Root, Left, Right)</h2>
+        <p>
+            In Pre-Order traversal, we visit nodes in the following order: Root node, Left subtree, Right subtree. This traversal is useful when we want to copy or duplicate a tree structure because it first processes the root and then the subtrees.
+        </p>
+        <p>
+            <strong>Steps for Pre-Order Traversal:</strong>
+        </p>
+        <ul>
+            <li>Visit the root node.</li>
+            <li>Visit the left subtree recursively.</li>
+            <li>Visit the right subtree recursively.</li>
+        </ul>
+        <p>
+            Pre-order traversal is helpful in applications where the nodes need to be processed before exploring the children, such as in prefix expressions or for creating a copy of the tree.
+        </p>
+
+        <h2>Post-Order Traversal (Left, Right, Root)</h2>
+        <p>
+            Post-Order traversal follows the order: Left subtree, Right subtree, Root node. This traversal is commonly used in applications where we need to delete or process the nodes in a “bottom-up” approach.
+        </p>
+        <p>
+            <strong>Steps for Post-Order Traversal:</strong>
+        </p>
+        <ul>
+            <li>Visit the left subtree recursively.</li>
+            <li>Visit the right subtree recursively.</li>
+            <li>Visit the root node.</li>
+        </ul>
+        <p>
+            Post-order traversal is used in applications like deleting a tree, where each child node must be processed (or deleted) before the parent node. It is also used in evaluating postfix expressions.
+        </p>
+        <br><br><img src="PIP.png" alt="In-pre-post order">
+
+        <h2>Summary</h2>
+        <p>
+            Each traversal method has its unique use case and is applied based on the order in which nodes need to be accessed. In-Order traversal gives a sorted list in BSTs, Pre-Order is used for copying trees, and Post-Order is useful for deletion and bottom-up processing. Understanding these traversal methods is fundamental to working with tree structures in algorithms.
+        </p>
+    </div>
+</body>
+</html>

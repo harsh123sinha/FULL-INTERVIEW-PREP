@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="resume.css">
+    <title>Copy Content Interface</title>
+</head>
+<body>
+    <div class="container">
+        <div class="top">
+            <h2>Steps to Create a Resume on Overleaf</h2>
+            <ul>
+              <li><strong>Visit </strong><a href="https://www.overleaf.com" target="_blank">Overleaf's website</a>.</li>
+              <li><strong>Sign Up or Log In:</strong> If you're new to Overleaf, sign up; otherwise, log in.</li>
+              <li><strong>Start a New Project:</strong>
+                <ul>
+                  <li>On the top left corner, find the "New Project" button and click it.</li>
+                  <li>Choose a project name for your resume and proceed.</li>
+                </ul>
+              </li>
+              <li><strong>Code Editor Setup:</strong>
+                <ul>
+                  <li>Overleaf will open a split-screen editor with a code editor on the left and a preview on the right.</li>
+                  <li>In the left panel (code editor), paste the provided LaTeX code below.</li>
+                </ul>
+              </li>
+              <li><strong>Compile the Document:</strong>
+                <ul>
+                  <li>Click the "Recompile" button on the left to render your resume preview.</li>
+                  <li>Make adjustments as needed directly in the code editor.</li>
+                </ul>
+              </li>
+              <li><strong>Download Your Resume:</strong>
+                <ul>
+                  <li>When you’re satisfied with the resume, go to the right corner of the screen.</li>
+                  <li>Click the "Download" button to save your finished resume.</li>
+                </ul>
+              </li>
+            </ul>
+        </div>
+
+        <div>
+            <h1>Structure You Can Modify:</h1>
+        </div>
+
+        <div class="copy">
+            <pre>
+                \documentclass[a4paper, 10pt]{article}
+                \usepackage{xcolor}
+                \usepackage{geometry}
+                \usepackage{titlesec}
+                \usepackage{fancyhdr}
+                \usepackage{enumitem}
+                \usepackage[hidelinks]{hyperref}
+                \usepackage{graphicx}
+                \usepackage{multicol}
+                \usepackage{tcolorbox}
+                
+                \geometry{left=1.2cm, top=0.6cm, right=1.2cm, bottom=1cm}
+                \urlstyle{same}
+                
+                \raggedright
+                \setlength{\tabcolsep}{0in}
+                
+                % Use XCharter font for main text
+                \usepackage{XCharter}
+                
+                % Use Fira Sans font for sans-serif
+                \renewcommand*\rmdefault{XCharter}
+                \renewcommand*\sfdefault{FiraSans}
+                
+                % Sections formatting
+                \titleformat{\section}{
+                  \vspace{-2pt}\scshape\raggedright\large
+                }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+                
+                \usepackage{fancyhdr}
+                \pagestyle{fancy}
+                \fancyhf{} % clear all header and footer fields
+                \fancyfoot{}
+                \renewcommand{\headrulewidth}{0pt}
+                \renewcommand{\footrulewidth}{0pt}
+                
+                \begin{document}
+                
+                \begin{center}
+                  \vspace{2pt}
+                  \textbf{\LARGE Harsh Sinha}\\
+                 \hfill \\
+                  \hfill 
+                  
+                  {Kerala, India | \href{mailto:harshsinha1221@gmail.com}{harshsinhaa21@gmail.com} | +91 9334072476} 
+                \end{center}
+                
+                \vspace{-12pt} % Adjusted vertical space
+                
+                \section*{Education}
+                \begin{itemize}[leftmargin=*]
+                  \item \textbf{B.Tech in Information Technology} \hfill {\textit{2021 - 2025}}\\
+                  Cochin University Of Science And Technology , Kerala, India, CGPA: 7.5
+                  \item \textbf{12th} \hfill {\textit{2018 - 2020}}\\
+                  Anugrah Narayan College, Patna, India, Percentage: 75%
+                  \item \textbf{10th} \hfill {\textit{2017 - 2018}}\\
+                  Scholors Abod School, Patna, India, percentage: 86.7 %
+                \end{itemize}
+                
+                
+                
+                \section{COURSEWORK}
+                    %\resumeSubHeadingListStart
+                        \begin{multicols}{4}
+                            \begin{itemize}[itemsep=1pt, parsep=2pt]
+                                \item Data Structure and Algorithms Basics
+                                \item Database Management System (DBMS)
+                                \item Object-Oriented Programming(OOPS)
+                                \item Operating System
+                                \item Software Engineering
+                                
+                            \end{itemize}
+                        \end{multicols}
+                    
+                    %\resumeSubHeadingListEnd
+                
+                \section*{SKILLS}
+                \begin{itemize}[leftmargin=*]
+                   \item \textbf{Programming Languages:} C, C++
+                  \item \textbf{Web Technologies:} HTML, CSS, PHP
+                  \item \textbf{Tools:} Github, MYSQL, 
+                   \item \textbf{Familiar with:} Web Development
+                \end{itemize}
+                
+                
+                \section*{PROJECTS}
+                \begin{itemize}[leftmargin=*]
+                  \item \textbf{Real Estate Website} \hfill {\textit{\textbf{HTML, CSS, JQuery, PHP, MYSQL}}}
+                  \begin{itemize}[label=$\circ$]
+                    \item "Harsh To-Let services" is a full-stack platform built with Html ,CSS, PHP, Javascript.Featuring dynamic property listings, e-commerce-style product pages, and an admin portal for property management. It includes a navigation menu with various property categories, and a product entry form with detailed fields for managing property data.
+                  \end{itemize}
+                
+                
+                  \item \textbf{TO-DO List} \hfill {\textit{\textbf{HTML,CSS,Javascript}}
+                  \begin{itemize}[label=$\circ$]
+                    \item Todo List project is built using HTML,CSS,Javascript. It allows users to create, update, and delete tasks, with real-time updates across the application and also can mark the task done which are completed.
+                   
+                  \end{itemize}
+                
+                \section*{INTERNSHIP}
+                \begin{itemize}[leftmargin=*]
+                  \item \textbf{Web Development | NIT patna }
+                  \begin{itemize}[label=$\circ$]
+                   \item I've built my own portfolio website, where visitors can send messages that are directly forwarded to my Gmail.
+                    \item Designed and implemented a dynamic website page  - where facality can loged in with their own credentials and can change their profile setting.
+                    \item Ensured a seamless and mutually rewarding interface.
+                  \end{itemize}
+                
+                  
+                
+                \end{itemize}
+                
+                
+                
+                
+                \section*{Certifications}
+                \begin{itemize}[leftmargin=*]
+                
+                  \item web - Development \textbf{\href{https://drive.google.com/file/d/1VHtdwLjFQKBi1SsNykIalQMosEKZHXX_/view?usp=drive_link}{NIT Patna}}
+                   \item NSS (MINI ,SPECIAL AND BLOOD DONATION CAMP) 
+                \textbf{\href{https://drive.google.com/file/d/1UeAMlotIcj-jxhqEmdhbBcZWB8-ZNt-U/view?usp=drive_link}{NATIONAL SERVICE SCHEME}}
+                   
+                
+                
+                
+                \section*{Achievements}
+                \begin{itemize}[leftmargin=*]
+                 \item Completed satisfactorily the two year tenure in the National Service Scheme(NSS).
+                  \item Represented my College in Cricket as a captain, earning the opportunity to represent our college at the University level.
+                  \item Won a title in ramp walk competition held in my college.
+                   \item Solved over 100 problems on various Competitive Programming Platforms like LeetCode, GeeksForGeeks.
+                
+                
+                  
+                \end{itemize}
+                
+                \end{document}
+            </pre>
+        </div>
+
+        <button id="copyButton">Copy</button>
+    </div>
+
+    <script src="resume.js"></script>
+</body>
+</html>

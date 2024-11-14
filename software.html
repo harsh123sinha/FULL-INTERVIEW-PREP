@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA Course Interface</title>
+    
+</head>
+<style>
+    /* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #73ff00;
+}
+
+/* Header Styling */
+header {
+    background-color: #2d2d2d;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Banner Styling */
+.banner {
+    position: relative;
+}
+#my-image {
+    height: 14rem;
+    width: 14rem;
+    margin: auto;
+    margin-top: -16vh;
+  }
+  #my-image img {
+    height: 108%;
+    width: 108%;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+    border: 3px solid rgb(0, 0, 0);
+    margin-top: -135px;
+  }
+/* Container for Sidebar and Content */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 250px;
+    background-color: #333;
+    color: #fff;
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    padding: 0.5rem 1rem;
+}
+
+.sidebar nav ul li a {
+    color: #ccc;
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar nav ul li a:hover {
+    color: #fff;
+    background-color: #e72222;
+    border-radius: 4px;
+}
+
+/* Main Content Styling */
+.content {
+    flex: 1;
+    padding: 3rem;
+    overflow-y: auto;
+    background-color: #2d2d2d
+}
+
+.topic {
+    margin-bottom: 1.5rem;
+}
+
+.topic-header {
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #003c64f5;
+    color: #fff;
+    border: none;
+    padding: 1.2rem;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 4px;
+    outline: none;
+}
+
+.subtopics {
+    margin-top: 0.5rem;
+    padding-left: 1rem;
+    display: none;
+}
+
+.subtopics p {
+    padding: 0.5rem 0;
+    border-left: 2px solid #007acc;
+    margin: 0.3rem 0;
+}
+.subtopics a {
+    color: inherit; /* This makes the link inherit the color from the parent <p> */
+    text-decoration: none; /* This removes the underline */
+}
+
+.subtopics a:hover {
+    text-decoration: underline; /* Optional: Adds an underline on hover for better UX */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        overflow-x: auto;
+    }
+
+    .sidebar nav ul {
+        display: flex;
+    }
+
+    .sidebar nav ul li {
+        padding: 0.5rem;
+        flex: 1;
+        text-align: center;
+    }
+
+    .content {
+        padding: 1rem;
+    }
+}
+@media (min-width: 350px) {
+    header img{
+        height: 192px;
+        width: 331px;
+    }
+   
+    #my-image img {
+        height: 23%;
+        width: 23%;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+        border: 3px solid rgb(0, 0, 0);
+        margin-top: 23px;
+        margin-left: 9px;
+    }
+ }
+@media (min-width: 400px) {
+   header img{
+    height: 226px;
+    width: 365px;
+   }
+  
+#my-image img {
+    height: 28%;
+    width: 28%;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+    border: 3px solid rgb(0, 0, 0);
+    margin-top: 8px;
+    margin-left: 13px;
+}
+
+}
+
+@media (min-width: 550px) {
+    header img{
+     height: 262px;
+     width: 500px;
+    }
+    #my-image img {
+        height: 35%;
+        width: 35%;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+        border: 3px solid rgb(0, 0, 0);
+        margin-top: -18px;
+        margin-left: 11px;
+    }
+ }
+ @media (min-width: 650px) {
+    header img{
+     height: 244px;
+     width: 600px;
+    }
+    #my-image img {
+        height: 34%;
+        width: 34%;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+        border: 3px solid rgb(0, 0, 0);
+        margin-top: -16px;
+        margin-left: 13px;
+    }
+
+ }
+ @media (min-width: 750px) {
+    header img{
+     height: 281px;
+     width: 711px;
+    }
+    
+ }
+ @media (min-width: 950px) {
+    header img{
+     height: 330px;
+     width: 869px;
+    }
+    #my-image img {
+        height: 44%;
+        width: 44%;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+        border: 3px solid rgb(0, 0, 0);
+        margin-top: -52px;
+        margin-left: 13px;
+    }
+ }
+ @media (min-width: 1050px) {
+    header img{
+     height: 387px;
+     width: 968px;
+    }
+    
+ } @media (min-width: 1200px) {
+    header img{
+     height: 453px;
+     width: 1148px;
+    }
+    
+    #my-image img {
+        height: 95%;
+        width: 95%;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+        border: 3px solid rgb(0, 0, 0);
+        margin-top: -191px;
+        margin-left: 22px;
+    }
+ }
+ @media (min-width: 1200px) {
+    header img{
+     height: 600px;
+     width: 100%;
+    }
+
+ }
+ .last{
+    
+    height: 100px;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+ }
+ .last p{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 40px;
+ }
+ @media (max-width: 400px){
+.last p {
+    font-size:15px ;
+}
+ }
+ @media (max-width: 450px){
+    .last p {
+        font-size:20px ;
+    }
+     }
+     img {
+        max-width: 100%;
+        height: auto;
+    }
+    header h1 {
+        font-size: 3vw; /* responsive font-size based on viewport width */
+        font-weight: bold;
+        color: #ffffff;
+        margin-bottom: 0.5rem;
+    }
+    
+    /* Smaller screens adjustments */
+    @media (max-width: 768px) {
+        header h1 {
+            font-size: 5vw; /* adjust font-size for smaller screens */
+        }
+    }
+    
+    @media (max-width: 480px) {
+        header h1 {
+            font-size: 6vw; /* further reduce font-size for very small screens */
+        }
+    }
+    
+    
+ 
+
+
+
+</style>
+<body>
+    <header>
+        <h1>Fundamentals of software Engineering</h1>
+        <h1>Click on each question to know how to prepare the answer </h1>
+        
+       
+    </header>
+    <div class="container">
+        <main class="content">
+          
+            <section id="arrays" class="topic">
+                <button class="topic-header">What is SDLC and explain each phase concisely?</button>
+                <div class="subtopics">
+                    <p>
+                        <strong>answer:</strong> The Software Development Life Cycle (SDLC) is a structured process that guides the development of software applications through several key phases:
+                        <br> <br>
+                        <br> <br><strong>planning</strong> is the first step, where project goals, scope, resources, and timelines are established. This phase ensures alignment with stakeholder expectations and identifies potential risks.
+                        <br>  <br>In the <strong>Requirements Gathering and Analysis phase</strong>, detailed functional and non-functional requirements are collected from stakeholders. This documentation provides a clear understanding of what the software needs to achieve.
+                        <br> <br>Next is the <strong>Design phase</strong>, where the requirements are transformed into technical specifications. Designers create architecture, data models, and user interfaces, ensuring that the design meets user needs.
+                        <br> <br>The <strong>Implementation phase</strong> involves coding the software based on the design specifications. Developers write the code and conduct unit tests to verify the functionality of individual components.
+                        <br> <br>After implementation, the software enters the <strong>Testing phase</strong>, where various testing methods identify and fix defects. This ensures that the software meets all requirements and performs reliably.
+                        <br> <br>Once tested, the software is moved to the <strong>Deployment phase</strong>, where it is released to users. This phase includes installation and training to ensure effective use.
+                        <br> <br>Following deployment is the <strong>Maintenance phase</strong>, where the software is monitored for issues, updates, and enhancements based on user feedback. Continuous maintenance ensures ongoing functionality and user satisfaction.
+                        <br> <br>Lastly, an optional <strong>Evaluation phase </strong>reviews the project to assess its success and gather lessons learned for future improvements. Each phase of the SDLC is interconnected, contributing to the effective development and delivery of high-quality software applications.
+                        <br><br> <img src="SDLC.jpg" alt="TCP vs UDP">
+                    </p>
+        
+                </div>
+            </section>
+            <section id="arrays" class="topic">
+                <button class="topic-header"> What are all software development models?
+
+                   
+                    </button>
+                <div class="subtopics">
+                    <p>
+                        <strong>Answer:</strong>Software development models guide the structured approach teams take during the software development lifecycle (SDLC) to plan, create, test, and deploy software effectively. Here’s a concise overview of each commonly used software development model:
+                        <br><br><strong>Waterfall Model</strong>
+                        <br>The Waterfall Model is a linear approach where each SDLC phase (planning, design, implementation, testing, deployment, and maintenance) follows sequentially. Once a phase is completed, it doesn’t return to previous steps. This model is suitable for projects with well-defined requirements and a fixed scope, as changes are challenging to incorporate once the process starts.
+                        <br><br> <img src="water.png" alt="TCP vs UDP">
+                        <br><br><strong>Iterative Model</strong>
+                        <br>In the Iterative Model, the project is developed in small, manageable iterations. Each iteration includes a subset of requirements and goes through design, coding, and testing. New features and improvements are added in subsequent iterations, allowing for feedback and refinement as the project progresses.
+                        <br><br> <img src="prototype.png" alt="TCP vs UDP">
+                        <br><br><strong>Spiral Model</strong>
+                        <br><br>The Spiral Model combines elements of both iterative and waterfall approaches, adding a strong focus on risk analysis. Each phase (or “spiral”) includes planning, risk assessment, development, and evaluation. It’s ideal for large, high-risk projects, as risks are continuously assessed and mitigated with each cycle.
+                        <br><br> <img src="spiral.jpg" alt="TCP vs UDP">
+                        <br><br><strong>Agile Model</strong>
+                        <br><br>The Agile Model promotes flexibility and customer collaboration. It consists of short development cycles called "sprints," allowing for regular feedback, quick adaptations to changes, and incremental development. Agile is best for projects with dynamic requirements and encourages continuous improvement and rapid delivery.
+                        <br><br> <img src="agile.jpg" alt="TCP vs UDP">
+                        
+                    </p>
+        
+                </div>
+            </section>
+            <section id="arrays" class="topic">
+                <button class="topic-header">What is a Feasibility Study?</button>
+                <div class="subtopics">
+                    <p>
+                        <strong>Answer:</strong><br><br>The Feasibility Study in Software Engineering is a study that analyze whether a proposed software project is practical or not. It early detects the potential issues, analyzes technological possibilities, and determines the project’s financial and operational viability. This decreases the chance of project failure that also save time and money.
+                       
+                    </p>
+        
+                </div>
+            </section>
+            <section id="arrays" class="topic">
+                <button class="topic-header"> What is a Use Case Diagram?</button>
+                <div class="subtopics">
+                    <p>
+                        <strong>Answer:</strong> A use case diagram is a behavior diagram and visualizes the observable interactions between actors and the system under development. The diagram consists of the system, the related use cases, and actors and relates these to each other:
+                        <br><br>System: What is being described?
+                        <br><br>Actor: Who is using the system?
+                        <br><br>Use Case: What are the actors doing?
+                           
+
+                    </p>
+        
+                </div>
+            </section>
+            <section id="arrays" class="topic">
+                <button class="topic-header"> What is the difference between Verification and Validation?</button>
+                <div class="subtopics">
+                    <p>
+                        <br><br> <img src="validation.png" alt="TCP vs UDP">
+                                                    </p>
+        
+                </div>
+            </section>
+            <section id="arrays" class="topic">
+                <button class="topic-header">What is Cohesion and Coupling?</button>
+                <div class="subtopics">
+                    <p>
+                        <strong>Answer:</strong>Cohesion and coupling are important concepts in software engineering, particularly in the context of object-oriented design, as they affect the structure, readability, maintainability, and robustness of code.
+                        <br><br><strong>Cohesion</strong><br>
+                        <br>Measures how closely related the tasks within a module or class are. High cohesion means a module does one focused job, making it easier to understand and maintain.
+                        <br><br><strong>High Cohesion: </strong> Modules/classes have a single, well-defined purpose.
+                        <br><br><strong>Low Cohesion:</strong> Modules/classes handle unrelated tasks, leading to complexity.
+                        <br><br><strong>Coupling: </strong><br>
+                        <br> Measures the dependency between modules or classes. Low coupling means modules can function independently, making changes less likely to impact other parts.
+                        <br><br><strong>Low Coupling:  </strong> Modules/classes interact minimally, promoting flexibility.
+                        <br><br><strong>High Coupling: </strong> Modules/classes rely heavily on each other, which complicates modifications and testing.
+                        <br><br><strong>Goal:</strong> Aim for high cohesion (focused tasks) and low coupling (independent modules) to improve code quality and maintainability.
+                      
+                    </p>
+        
+                </div>
+            </section>
+            <section id="arrays" class="topic">
+                <button class="topic-header">Different Types of Software Testing?</button>
+                <div class="subtopics">
+                    <p>
+                        <br><br> <img src="testingmanual.png" alt="TCP vs UDP">
+                    </p>
+        
+                </div>
+            </section>
+            <section id="arrays" class="topic">
+                <button class="topic-header">Types of Manual Testing?</button>
+                <div class="subtopics">
+                   <p>
+                    <strong>Answer:</strong> <strong>Black Box Testing:<strong> Focuses on testing the functionality without looking at the internal code structure. Testers only interact with the user interface, verifying if the system behaves as expected.
+                        <br><br> <img src="black.png" alt="Black box"><br><br>
+                            <strong>White Box Testing:<strong> Involves testing the internal structure, logic, and code of the application. It’s usually performed by developers to ensure code correctness and coverage.
+                                <br><br> <img src="white.png" alt="White box"><br><br>
+                                <strong>Gray Box Testing<strong> It is a hybrid testing approach that combines aspects of both black box and white box testing. In gray box testing, the tester has partial knowledge of the internal workings of the application, typically including knowledge of high-level design or algorithms but not complete access to the source code. This method allows testers to create more effective test cases by understanding some internal processes while still focusing on functionality and user experience.
+                                    <br><br> <img src="gray.png" alt="Gray box"><br><br>
+                                    <strong> Unit Testing:<strong> Tests individual components or modules of an application to verify they work independently. It’s often the first stage of testing, usually conducted by developers.
+                                        
+                                        <br><br><strong>Integration Testing:<strong>  Tests the interactions between different modules or components to identify issues in how they work together.
+
+
+                                            <br><br><strong> Acceptance Testing:<strong> Ensures the software meets the business requirements and user needs. It includes:
+                                                <br><br><strong>&nbsp;&nbsp;&nbsp;&nbsp;Alpha Testing: <strong> Performed internally by the development and QA teams before release. 
+                                                    <br><br><strong> &nbsp;&nbsp;   Beta Testing: <strong> Conducted by a limited set of external users in a real-world environment.
+                  
+                        
+                     </p>
+            </section>
+           
+        
+    
+            
+            <div class="last"><p>KEEP GOING!! JUST ONE LAST STEP..</p></div>
+           
+            <!-- Add more topics as needed -->
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

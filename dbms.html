@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA Course Interface</title>
+    
+</head>
+<style>
+    /* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #73ff00;
+}
+
+/* Header Styling */
+header {
+    background-color: #2d2d2d;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Banner Styling */
+.banner {
+    position: relative;
+}
+#my-image {
+    height: 14rem;
+    width: 14rem;
+    margin: auto;
+    margin-top: -16vh;
+  }
+  #my-image img {
+    height: 108%;
+    width: 108%;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+    border: 3px solid rgb(0, 0, 0);
+    margin-top: -135px;
+  }
+/* Container for Sidebar and Content */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 250px;
+    background-color: #333;
+    color: #fff;
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    padding: 0.5rem 1rem;
+}
+
+.sidebar nav ul li a {
+    color: #ccc;
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar nav ul li a:hover {
+    color: #fff;
+    background-color: #e72222;
+    border-radius: 4px;
+}
+
+/* Main Content Styling */
+.content {
+    flex: 1;
+    padding: 3rem;
+    overflow-y: auto;
+    background-color: #2d2d2d
+}
+
+.topic {
+    margin-bottom: 1.5rem;
+}
+
+.topic-header {
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #003c64f5;
+    color: #fff;
+    border: none;
+    padding: 1.2rem;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 4px;
+    outline: none;
+}
+
+.subtopics {
+    margin-top: 0.5rem;
+    padding-left: 1rem;
+    display: none;
+}
+
+.subtopics p {
+    padding: 0.5rem 0;
+    border-left: 2px solid #007acc;
+    margin: 0.3rem 0;
+}
+.subtopics a {
+    color: inherit; /* This makes the link inherit the color from the parent <p> */
+    text-decoration: none; /* This removes the underline */
+}
+
+.subtopics a:hover {
+    text-decoration: underline; /* Optional: Adds an underline on hover for better UX */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        overflow-x: auto;
+    }
+
+    .sidebar nav ul {
+        display: flex;
+    }
+
+    .sidebar nav ul li {
+        padding: 0.5rem;
+        flex: 1;
+        text-align: center;
+    }
+
+    .content {
+        padding: 1rem;
+    }
+}
+@media (min-width: 350px) {
+    header img{
+        height: 192px;
+        width: 331px;
+    }
+   
+    #my-image img {
+        height: 23%;
+        width: 23%;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+        border: 3px solid rgb(0, 0, 0);
+        margin-top: 23px;
+        margin-left: 9px;
+    }
+ }
+@media (min-width: 400px) {
+   header img{
+    height: 226px;
+    width: 365px;
+   }
+  
+#my-image img {
+    height: 28%;
+    width: 28%;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+    border: 3px solid rgb(0, 0, 0);
+    margin-top: 8px;
+    margin-left: 13px;
+}
+
+}
+
+@media (min-width: 550px) {
+    header img{
+     height: 262px;
+     width: 500px;
+    }
+    #my-image img {
+        height: 35%;
+        width: 35%;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+        border: 3px solid rgb(0, 0, 0);
+        margin-top: -18px;
+        margin-left: 11px;
+    }
+ }
+ @media (min-width: 650px) {
+    header img{
+     height: 244px;
+     width: 600px;
+    }
+    #my-image img {
+        height: 34%;
+        width: 34%;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+        border: 3px solid rgb(0, 0, 0);
+        margin-top: -16px;
+        margin-left: 13px;
+    }
+
+ }
+ @media (min-width: 750px) {
+    header img{
+     height: 281px;
+     width: 711px;
+    }
+    
+ }
+ @media (min-width: 950px) {
+    header img{
+     height: 330px;
+     width: 869px;
+    }
+    #my-image img {
+        height: 44%;
+        width: 44%;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+        border: 3px solid rgb(0, 0, 0);
+        margin-top: -52px;
+        margin-left: 13px;
+    }
+ }
+ @media (min-width: 1050px) {
+    header img{
+     height: 387px;
+     width: 968px;
+    }
+    
+ } @media (min-width: 1200px) {
+    header img{
+     height: 453px;
+     width: 1148px;
+    }
+    
+    #my-image img {
+        height: 95%;
+        width: 95%;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px 9px rgb(10 11 12);
+        border: 3px solid rgb(0, 0, 0);
+        margin-top: -191px;
+        margin-left: 22px;
+    }
+ }
+ @media (min-width: 1200px) {
+    header img{
+     height: 600px;
+     width: 100%;
+    }
+
+ }
+ .last{
+    
+    height: 100px;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+ }
+ .last p{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 40px;
+ }
+ @media (max-width: 400px){
+.last p {
+    font-size:15px ;
+}
+ }
+ @media (max-width: 450px){
+    .last p {
+        font-size:20px ;
+    }
+     }
+     img {
+        max-width: 100%;
+        height: auto;
+    }
+    header h1 {
+        font-size: 3vw; /* responsive font-size based on viewport width */
+        font-weight: bold;
+        color: #ffffff;
+        margin-bottom: 0.5rem;
+    }
+    
+    /* Smaller screens adjustments */
+    @media (max-width: 768px) {
+        header h1 {
+            font-size: 5vw; /* adjust font-size for smaller screens */
+        }
+    }
+    
+    @media (max-width: 480px) {
+        header h1 {
+            font-size: 6vw; /* further reduce font-size for very small screens */
+        }
+    }
+    
+    
+ 
+
+
+
+</style>
+<body>
+    <header>
+        <h1>FUNDAMENTAL OF DATABASE MANAGEMENT SYSYTEM</h1>
+        <h1>Click on each question to know how to prepare the answer </h1>
+        
+       
+    </header>
+    <div class="container">
+        <main class="content">
+          
+            <section id="arrays" class="topic">
+                <button class="topic-header">What is DBMS and what is its utility? Explain RDBMS with examples.</button>
+                <div class="subtopics">
+                    <p>
+                        <strong>answer:</strong> DBMS stands for Database Management System, is a set of applications or programs that enable users to create and maintain a database. DBMS provides a tool or an interface for performing various operations such as inserting, deleting, updating, etc. into a database. It is software that enables the storage of data more compactly and securely as compared to a file-based system. A DBMS system helps a user to overcome problems like data inconsistency, data redundancy, etc. 
+                        <br>
+                        <br>Examples of popular DBMS systems are file systems, XML, Windows Registry, etc.
+                        <br>
+                        <br>RDBMS stands for Relational Database Management System and was introduced in the 1970s to access and store data more efficiently than DBMS. RDBMS stores data in the form of tables as compared to DBMS which stores data as files. Storing data as rows and columns makes it easier to locate specific values in the database and makes it more efficient as compared to DBMS.
+                        <br><br>Examples of popular RDBMS systems are MySQL, Oracle DB, etc.
+                        <br><br>Explain a few advantages of a DBMS?
+                        <br><br>Data Sharing: Data from a single database can be simultaneously shared by multiple users. Such sharing also enables end-users to react to changes quickly in the database environment.
+                        <br><br>Integrity constraints: The existence of such constraints allows storing of data in an organized and refined manner.
+                        <br><br>Controlling redundancy in a database: Eliminates redundancy in a database by providing a mechanism that integrates all the data in a single database.
+                        <br><br>Data Independence: This allows changing the data structure without altering the composition of any of the executing application programs.
+                        
+                    </p>
+        
+                </div>
+            </section>
+            <section id="arrays" class="topic">
+                <button class="topic-header">Explain different languages present in DBMS.
+
+                   
+                    </button>
+                <div class="subtopics">
+                    <p>
+                        <strong>Answer:</strong>Following are various languages present in DBMS:
+                        <br><br><strong>DDL(Data Definition Language):</strong> It contains commands which are required to define the database.
+                        <br>
+                        <br>E.g., CREATE, ALTER, DROP, TRUNCATE, RENAME, etc.
+                        <br><br><strong>DML(Data Manipulation Language):</strong> It contains commands which are required to manipulate the data present in the database.
+                        <br>
+                        <br>E.g., SELECT, UPDATE, INSERT, DELETE, etc.
+                        <br><br><strong>DCL(Data Control Language):</strong>  It contains commands which are required to deal with the user permissions and controls of the database system.
+                        <br>
+                        <br>E.g., GRANT and REVOKE.
+                       
+                        
+                    </p>
+        
+                </div>
+            </section>
+            <section id="arrays" class="topic">
+                <button class="topic-header">What is meant by ACID properties in DBMS?</button>
+                <div class="subtopics">
+                    <p>
+                        <strong>Answer:</strong><br><br>ACID stands for Atomicity, Consistency, Isolation, and Durability in a DBMS these are those properties that ensure a safe and secure way of sharing data among multiple users.
+                        <br><br><strong>Atomicity:</strong>  Atomicity ensures that each transaction is treated as a single "unit of work," which means it either fully completes or fully fails. If any part of the transaction fails, all changes made during that transaction are undone, leaving the database unchanged.
+                        <br>
+                        <br><br><strong>Example:</strong> In a fund transfer between two bank accounts, both the debit and credit must succeed together. If either operation fails, neither operation is applied.
+                        <br><br><strong>Consistency:</strong>  Consistency ensures that a transaction brings the database from one valid state to another, maintaining data integrity. This means any rules, constraints, or validations defined in the database schema must be preserved.
+                        <br>
+                        <br><br><strong>Example:</strong>A transaction that moves inventory stock from one warehouse to another must not violate inventory rules, such as allowing negative stock in any location.
+                        <br><br><strong>Isolation:</strong>  Isolation ensures that the execution of multiple transactions concurrently does not impact each other. Each transaction must occur independently, as if it were the only transaction in the system, to prevent issues like dirty reads, lost updates, and other anomalies.
+                        <br>
+                        <br><br><strong>Example:</strong> If two customers try to purchase the last item of a product simultaneously, isolation ensures that only one purchase transaction completes first, preventing both from "seeing" each other’s operations.
+                        <br><br><strong>Durability:</strong>Durability guarantees that once a transaction is committed, it will remain in the database even in the event of a system crash or power failure. This is typically achieved by saving the transaction’s details to a non-volatile storage.
+                        <br>
+                        <br><br><strong>Example:</strong> After a bank transaction completes and is committed, even if a sudden power outage occurs, the transaction details (such as account balance changes) will remain intact.
+                
+                       
+                        
+                    </p>
+        
+                </div>
+            </section>
+            <section id="arrays" class="topic">
+                <button class="topic-header">Explain the difference between the DELETE and TRUNCATE command in a DBMS.</button>
+                <div class="subtopics">
+                    <p>DELETE command: this command is needed to delete rows from a table based on the condition provided by the WHERE clause.
+
+                        <br><br>It deletes only the rows which are specified by the WHERE clause.
+                        <br><br>It can be rolled back if required.
+                        <br><br>It maintains a log to lock the row of the table before deleting it and hence it’s slow.
+                        
+                        <br><br>TRUNCATE command: this command is needed to remove complete data from a table in a database. It is like a DELETE command which has no WHERE clause.
+
+                        <br><br>It removes complete data from a table in a database.
+                        <br><br>It can't be rolled back even if required. ( truncate can be rolled back in some databases depending on their version but it can be tricky and can lead to data loss). Check this link for more details
+                        <br><br>It doesn’t maintain a log and deletes the whole table at once and hence it’s fast.
+                        <br><br> ALSO DROP: Deletes the entire table, including its structure and data, from the database.
+                       
+
+                    </p>
+        
+                </div>
+            </section>
+            <section id="arrays" class="topic">
+                <button class="topic-header">What is Data Warehousing?</button>
+                <div class="subtopics">
+                    <p>The process of collecting, extracting, transforming, and loading data from multiple sources and storing them in one database is known as data warehousing. A data warehouse can be considered as a central repository where data flows from transactional systems and other relational databases and is used for data analytics. A data warehouse comprises a wide variety of an organization’s historical data that supports the decision-making process in an organization.
+                        
+                      </p>
+        
+                </div>
+            </section>
+            <section id="arrays" class="topic">
+                <button class="topic-header">2. Explain different types of keys in a database?</button>
+                <div class="subtopics">
+                    <p>
+                        <strong>Answer:</strong>There are mainly 7 types of keys in a database:
+                        <br><br><strong>Candidate Key:</strong>The candidate key represents a set of properties that can uniquely identify a table. Each table may have multiple candidate keys. One key amongst all candidate keys can be chosen as a primary key.
+                        <br><br><strong>Super Key:</strong>The super key defines a set of attributes that can uniquely identify a tuple. Candidate key and primary key are subsets of the super key, in other words, the super key is their superset.
+                        <br><br><strong>Primary Key:</strong> The primary key defines a set of attributes that are used to uniquely identify every tuple. In the below example studentId and firstName are candidate keys and any one of them can be chosen as a Primary Key. In the given example studentId is chosen as the primary key for the student table.
+                        <br><br><strong>unique Key:</strong>The unique key is very similar to the primary key except that primary keys don’t allow NULL values in the column but unique keys allow them. So essentially unique keys are primary keys with NULL values. 
+                        <br><br><strong>Alternate Key: </strong> All the candidate keys which are not chosen as primary keys are considered as alternate Keys. In the below example, firstname and lastname are alternate keys in the database.
+                        <br><br><strong>Foreign Key:</strong> The foreign key defines an attribute that can only take the values present in one table common to the attribute present in another table. In the below example courseId from the Student table is a foreign key to the Course table, as both, the tables contain courseId as one of their attributes.
+                        <br><br><strong>Composite Key:</strong>   A composite key refers to a combination of two or more columns that can uniquely identify each tuple in a table. In the below example the studentId and firstname can be grouped to uniquely identify every tuple in the table.
+                    </p>
+        
+                </div>
+            </section>
+            <section id="arrays" class="topic">
+                <button class="topic-header">Are NULL values in a database the same as that of blank space or zero?</button>
+                <div class="subtopics">
+                    <p>
+                        <strong>PROCESS :-</strong>No, a NULL value is very different from that of zero and blank space as it represents a value that is assigned, unknown, unavailable, or not applicable as compared to blank space which represents a character and zero represents a number.
+
+                        <br><br><strong>Example:</strong> NULL value in “number_of_courses” taken by a student represents that its value is unknown whereas 0 in it means that the student hasn’t taken any courses.
+                       
+                       
+                    </p>
+        
+                </div>
+            </section>
+
+
+            <section id="arrays" class="topic">
+                <button class="topic-header">Explain different types of Normalization forms in a DBMS ?</button>
+                <div class="subtopics">
+                    <p>
+                        <strong>Answer :-</strong>Normalization in DBMS is a process of organizing data to reduce redundancy and improve data integrity. Here are the main types of normal forms:
+                        <br><br><strong>First Normal Form (1NF):</strong> Ensures that each column contains only atomic (indivisible) values and that each row is unique.
+                        <br><br>Removes repeating groups or arrays by creating separate rows.
+                        <br><br><strong>Second Normal Form (2NF):</strong> Achieves 1NF and ensures that all non-key attributes are fully dependent on the entire primary key.
+                        <br><br>Eliminates partial dependency, which occurs when non-key attributes depend only on part of a composite primary key.
+
+                        <br><br><strong>Third Normal Form (3NF):</strong> Achieves 2NF and ensures that all non-key attributes are directly dependent only on the primary key, not on other non-key attributes.
+                        <br><br>Eliminates transitive dependency, where one non-key attribute depends on another non-key attribute.
+
+                        <br><br><strong>Boyce-Codd Normal Form (BCNF):</strong>Achieves 3NF and requires that every determinant (an attribute on which other attributes are functionally dependent) is a candidate key.
+                        <br><br>Strengthens 3NF by eliminating any remaining redundancy caused by functional dependencies.
+                       
+                       
+                    </p>
+        
+                </div>
+            </section>
+
+
+
+         
+        
+    
+            
+            <div class="last"><p> DEED LOVK MISSINgKEEP GOING!! JUST ONE LAST STEP..</p></div>
+           
+            <!-- Add more topics as needed -->
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
