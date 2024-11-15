@@ -273,6 +273,16 @@ header {
     }
 
  }
+ @media (min-width: 1450px) {
+    header img{
+     height: 600px;
+     width: 100%;
+    }
+    header{
+        height: 60vh;
+    }
+
+ }
  .last{
     
     height: 100px;
