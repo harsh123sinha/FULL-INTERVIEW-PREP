@@ -171,7 +171,7 @@ header {
     width: 365px;
    }
    header{
-    height: 50vh;
+    height: 32vh;
 }
 #my-image img {
     height: 28%;
@@ -222,7 +222,7 @@ header {
      width: 711px;
     }
     header{
-        height: 55vh;
+        height: 39vh;
     }
  }
  @media (min-width: 950px) {
@@ -246,7 +246,7 @@ header {
      width: 968px;
     }
     header{
-        height: 65vh;
+        height: 56vh;
     }
  } @media (min-width: 1200px) {
     header img{
@@ -254,7 +254,7 @@ header {
      width: 1148px;
     }
     header{
-        height: 78vh;
+        height: 80vh;
     }
     #my-image img {
         height: 95%;
