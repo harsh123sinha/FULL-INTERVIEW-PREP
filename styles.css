@@ -16,6 +16,7 @@ header {
     color: #fff;
     text-align: center;
     padding: 1rem;
+    height: auto;
 }
 
 /* Banner Styling */
@@ -27,6 +28,7 @@ header {
     width: 14rem;
     margin: auto;
     margin-top: -16vh;
+
   }
   #my-image img {
     height: 108%;
@@ -169,7 +171,7 @@ header {
     width: 365px;
    }
    header{
-    height: 50vh;
+    height: 43vh;
 }
 #my-image img {
     height: 28%;
