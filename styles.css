@@ -153,7 +153,7 @@ header {
         width: 331px;
     }
     header{
-        height: 34vh;
+        height: 38vh;
     }
     #my-image img {
         height: 23%;
@@ -171,7 +171,7 @@ header {
     width: 365px;
    }
    header{
-    height: 32vh;
+    height: 40vh;
 }
 #my-image img {
     height: 28%;
@@ -222,7 +222,7 @@ header {
      width: 711px;
     }
     header{
-        height: 39vh;
+        height: 55vh;
     }
  }
  @media (min-width: 950px) {
@@ -239,6 +239,9 @@ header {
         margin-top: -52px;
         margin-left: 13px;
     }
+    header{
+        height: 65vh;
+    }
  }
  @media (min-width: 1050px) {
     header img{
@@ -246,7 +249,7 @@ header {
      width: 968px;
     }
     header{
-        height: 56vh;
+        height: 65vh;
     }
  } @media (min-width: 1200px) {
     header img{
@@ -254,7 +257,7 @@ header {
      width: 1148px;
     }
     header{
-        height: 80vh;
+        height: 101vh;
     }
     #my-image img {
         height: 95%;
@@ -279,7 +282,7 @@ header {
      width: 100%;
     }
     header{
-        height: 60vh;
+        height: 83vh;
     }
 
  }
