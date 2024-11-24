@@ -117,8 +117,20 @@
         <label>Degree: <input type="text" id="input-degree1" placeholder="e.g., B.Tech"></label>
         <label>Stream: <input type="text" id="input-stream1" placeholder="Your Stream"></label>
         <label>University: <input type="text" id="input-university1" placeholder="Your University"></label>
-        <label>Project Name: <input type="text" id="input-project1" placeholder="Project Name"></label>
+        <label>Family type: <input type="text" id="family-type" placeholder="Eg :- joint/nuclear"></label>
+        <label>City: <input type="text" id="city" placeholder="Eg :- Patna/kochi"></label>
+        <label>School Name: <input type="text" id="school -name" placeholder="Eg :- scool name"></label>
+        <label>School/college name: <input type="text" id="college" placeholder="Eg :- school/college name"></label>
+        <label>Number of projects: <input type="text" id="no-of-project" placeholder="Eg :- 2/3/4"></label>
+        <label>Project Name 1: <input type="text" id="input-project1" placeholder="Project Name"></label>
+        <label>project description: <input type="text" id="description1" placeholder="Eg :- short note on project"></label>
+
+        <label>Project Name 2: <input type="text" id="input-project2" placeholder="Project Name"></label>
+        <label>project description: <input type="text" id="description2" placeholder="Eg :- short note on project"></label>
         <label>Internship Company: <input type="text" id="input-internship-company1" placeholder="Internship Company"></label>
+        <label>Internship description: <input type="text" id="internship-description" placeholder="Description of work"></label>
+        <label>Hobbies: <input type="text" id="hobbies" placeholder="i like to play cricket etc"></label>
+        
         <button type="button" onclick="generateIntroduction(1)">Generate Introduction</button>
         <button type="button" onclick="copyIntroduction(1)">Copy Introduction</button>
         <div class="intro-output">
@@ -198,13 +210,25 @@
             let introText = '';
 
             if (introNumber === 1) {
+                const time = document.getElementById("input-time-of-day1").value;
                 const name = document.getElementById("input-name1").value;
                 const degree = document.getElementById("input-degree1").value;
                 const stream = document.getElementById("input-stream1").value;
                 const university = document.getElementById("input-university1").value;
-                const project = document.getElementById("input-project1").value;
+                const family = document.getElementById("family-type").value;
+                const city = document.getElementById("city").value;
+                const schoolname = document.getElementById("school -name").value;
+                const college =document.getElementById("college").value;
+                const no=document.getElementById("no-of-project").value;
+                const project1 = document.getElementById("input-project1").value;
+                const projectdec = document.getElementById("description1").value;
+                const project2 = document.getElementById("input-project2").value;
+                const projectdec2 = document.getElementById("description2").value;
                 const internshipCompany = document.getElementById("input-internship-company1").value;
-                introText = `Good morning! My name is ${name}, and I’m a ${degree} student at ${university} in the field of ${stream}. I’ve worked on projects like ${project}. Through my internships at ${internshipCompany}, I’ve gained valuable experience.`;
+                const internshipdec = document.getElementById("internship-description").value;
+                const hobbies=document.getElementById("hobbies").value;
+
+                introText = `Good ${time}, sir/mam. Thank you for this opportunity; I’m grateful to be part of this interview. My name is ${name}, and I’m currently pursuing ${degree} in ${stream} at ${university}. I come from a ${family} family based in ${city}.I completed my matriculation at ${schoolname} and my intermediate studies at ${college}. Over the years, I’ve undertaken ${no} projects. My first project,${project1}, involves ${projectdec}, and similarly, ${project2} focuses on ${projectdec2}. I also interned at ${internshipCompany}, where I ${internshipdec}. In my free time, I enjoy ${hobbies}.`
 
             } else if (introNumber === 2) {
                 const name = document.getElementById("input-name2").value;

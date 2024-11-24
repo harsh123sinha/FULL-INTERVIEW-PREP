@@ -19,6 +19,58 @@ header {
     height: auto;
 }
 
+
+.list li a:hover {
+    cursor: pointer;
+    display: inline-block;
+    color: rgb(150, 150, 150);
+    transition: color 0.3s;
+    border-bottom: solid 1px whitesmoke;
+    /* text-decoration:none; */
+    
+  }
+  a :hover {
+    text-decoration: none;
+  }
+  
+  .list li img {
+    block-size: 20px;
+    align-items: center;
+    backface-visibility: hidden;
+    background-blend-mode: lighten;
+  }
+
+  .list li a {
+    text-decoration: none;
+    margin: bottom -30px;
+  }
+  .round{
+    height: 200px;
+    width: 200px;
+  }
+  
+  .social-icons li a img {
+    padding: 10px;
+    list-style: none;
+    display: flex;
+  }
+  @media screen and (max-width: 400px) {
+    .social-icons li a img {
+      margin-top: 50px;
+    }
+  }
+  
+  .social-icons li a :hover {
+    box-shadow: 0px 0px 10px;
+    margin-top: -10px;
+    transition: 0.3s ease-in-out;
+    text-decoration: none;
+    color: purple;
+    border-radius: 22rem;
+    box-shadow: 0px opx 8px 6px rgb(13, 13, 13);
+    
+  }
+  
 /* Banner Styling */
 .banner {
     position: relative;
@@ -154,6 +206,9 @@ header {
     }
     header{
         height: 38vh;
+    }
+    link{
+        font-size: 50px;
     }
     #my-image img {
         height: 23%;
